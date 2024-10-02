@@ -1,0 +1,143 @@
+#info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    height: 90vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../imagenes/teatro-1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#info p{
+    color: white;
+    padding: 150px;
+    padding-right: 500px;
+    font-size: 22px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+#construccion .container{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    background-color: #1B263B;
+}
+
+#construccion .texto{
+    width: 45%;
+    max-width: 600px;
+    text-align: justify;
+    color: #E0E1DD;
+    line-height: 1.5;
+}
+
+#construccion .texto h2{
+    font-size: 30px;
+    color: #778DA9;
+    font-weight: bold;
+}
+
+#construccion .img-container{
+    background-image: url("../imagenes/teatro-2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+}
+
+#inauguracion .container{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    background-color: #E0E1DD;
+}
+
+#inauguracion .texto{
+    width: 45%;
+    max-width: 600px;
+    text-align: justify;
+    color: #1B263B;
+    line-height: 1.5;
+}
+
+#inauguracion .texto h2{
+    font-size: 30px;
+    color: #1B263B;
+    font-weight: bold;
+    text-align: right;
+}
+
+#inauguracion .img-container{
+    background-image: url("../imagenes/teatro-3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+}
+
+#detalles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    height: 80vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../imagenes/teatro-4.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#detalles p, #detalles h2{
+    color: white;
+    padding-left: 500px;
+    font-size: 22px;
+    line-height: 1.5;
+    font-style: italic;
+    text-align: right;
+    padding-right: 150px;
+    text-align: right;
+}
+
+#detalles h2{
+    padding-left: 1100px;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+#mapa .container{
+    display: flex;
+    flex-direction: column;
+    background-color: #E0E1DD;
+}
+
+#mapa .texto{
+    font-size: 22px;
+    color: #1B263B;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.map-container{
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: 30px auto;
+    border: 2px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.map-container iframe{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
