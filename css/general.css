@@ -1,5 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
+root{
+    --primary: #0b1320;
+    --secondary: #1e2c46;
+    --third: #3d5d76;
+    --fourth: #758cac;
+    --background: #f0ebd8;
+
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -8,7 +17,7 @@
 }
 
 html{
-    background-color: #ddd;
+    background-color: #dddddd5a;
 }
 .container{
     max-width: 1450px;
@@ -20,12 +29,13 @@ html{
 header {
     background-color: #0D1B2A;
     height: 95px;
-    border-bottom: #80858e 3px solid;
+    border-bottom: #758cac 3px solid;
 }
 
 header .logo {
     padding: 35px 30px;
     font-weight: bold;
+    font-size: 1.3rem;
     color: #E0E1DD;
     padding-left: 50px;
 }
@@ -49,9 +59,9 @@ header a {
 }
 
 header a:hover {
-    color: #d2d7e0;
+    color: #4f7ea3d3;
     padding-bottom: 10px;
-    border-bottom: #fff 1px solid;
+    border-bottom: #4f7ea3d3 1px solid;
     
 }
 
