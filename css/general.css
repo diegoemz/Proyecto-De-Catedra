@@ -1,5 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
+root{
+    --primary: #0b1320;
+    --secondary: #1e2c46;
+    --third: #3d5d76;
+    --fourth: #758cac;
+    --background: #f0ebd8;
+
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -8,7 +17,7 @@
 }
 
 html{
-    background-color: #ddd;
+    background-color: #dddddd5a;
 }
 .container{
     max-width: 1450px;
@@ -20,12 +29,13 @@ html{
 header {
     background-color: #0D1B2A;
     height: 95px;
-    border-bottom: #80858e 3px solid;
+    border-bottom: #758cac 3px solid;
 }
 
 header .logo {
     padding: 35px 30px;
     font-weight: bold;
+    font-size: 1.3rem;
     color: #E0E1DD;
     padding-left: 50px;
 }
@@ -49,118 +59,11 @@ header a {
 }
 
 header a:hover {
-    color: #d2d7e0;
+    color: #4f7ea3d3;
     padding-bottom: 10px;
-    border-bottom: #fff 1px solid;
+    border-bottom: #4f7ea3d3 1px solid;
     
 }
-
-/* SECCIÓN CARTELERA */
-
-.title{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 30px 0;
-    background-color:#d2d7e0;
-}
-.title h1{
-    text-align: center;
-    font-size: 30px;
-    color: #1B263B;
-    font-weight: bold;
-    margin: 0 auto;
-}
-.title img{
-    width: 200px;
-    height: auto;
-
-}
-.cartelera{
-    display: flex;
-    justify-content: space-between;
-    background-color: #0D1B2A;
-    margin-bottom: 20px;
-    margin-top: 50px;
-    padding: 40px;
-    box-shadow: #E0E1DD 0 4px 8px ;
-    border-radius: 8px;
-    overflow: hidden;
-}
-.cartelera img{
-    width: 35%;
-    height: 500px;
-    margin: 10px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-.contenido-cartelera{
-    padding: 20px;
-    width: 60%;
-    height: 100%;
-    background-color: #d2d7e0;
-    border-radius: 8px;
-    box-shadow: #80858e 0 6px 8px;
-    margin: 10px;
-
-}
-h2{
-    margin-top: 0;
-    font-size: 25px;
-    color: #0D1B2A;
-    text-align: center;
-}
-h3{
-    margin-top: 0;
-    font-size: 18px;
-    color: #0D1B2A;
-
-}
-
-p{
-    font-size: 20px;
-    line-height: 1.5;
-    text-align: justify;
-    color:#1B263B;
-}
-strong{
-    color: #0D1B2A;
-    font-weight: bold;
-}
-.Detalles{
-    margin: 10px 0;
-}
-.Detalles p{
-    margin: 4px 0;
-}
-.venta{
-    background-color: #415A77;
-    color: #d2d7e0;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 7px;
-    margin-top: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.venta p{
-    margin: 0;
-    font-size: 20px;
-}
-.ver-horarios{
-    background-color:#1B263B;
-    color: #d2d7e0;
-    border: none;
-    padding: 7px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: medium;
-    text-transform: uppercase;
-}
-
 
 /*Footer*/
 footer {
