@@ -36,11 +36,35 @@
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px #758cac;
+    box-shadow: 0 10px 10px 0 #758cac;
     text-align: center;
 }
 
 .grid img{
     width: 100%;
     height: auto;
+}
+
+.grid h3{
+    text-align: left;
+    font-size: 1.75em;
+}
+
+.grid p{
+    text-align: left;
+}
+
+.botoncito{
+    display: inline-block;
+    margin-right: 200px;
+    padding: 10px 20px; 
+    background-color: #778DA9;
+    color: white; 
+    text-decoration: none; 
+    border-radius: 30px;
+}
+
+.botoncito:hover{
+    padding: 15px 30px;
+    background-color: #0D1B2A;
 }
