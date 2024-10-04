@@ -19,26 +19,25 @@
     font-style: normal;
 }
 
-.segunda-seccion .grid{
-	width: 100%;
-    padding: 2%;
-    background-color: white;
-    margin: 30px 1.5%;
-    border: solid 0.5px rgba(0, 0, 0, 0.089);
+.segunda-seccion {
     text-align: center;
-	display:block;
-	position: relative;
-	margin-top: 30px;
-	align-items: center;
-	box-shadow: 0 10px 4px -4px rgba(0, 0, 0, 0.2);
+    padding: 50px;
 }
 
-.segunda-seccion .envoltorio-galeria{
-	width:100%;
-	margin:0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.envoltorio-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #758cac;
+    text-align: center;
 }
 
 .grid img{
