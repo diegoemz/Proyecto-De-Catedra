@@ -86,3 +86,60 @@ footer .container {
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 1rem;
+        padding-left: 20px;
+    }
+
+    header nav a {
+        padding: 0 10px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    footer .container {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    header .logo {
+        font-size: 1.1rem;
+        padding-left: 30px;
+    }
+
+    header nav {
+        justify-content: center;
+    }
+
+    header nav a {
+        padding: 0 12px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    footer .container {
+        height: 80px;
+    }
+    
+}@media (min-width: 769px){
+    header .logo {
+        font-size: 1.2rem;
+    }
+
+    header nav {
+        justify-content: space-between;
+    }
+
+    .container {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+}

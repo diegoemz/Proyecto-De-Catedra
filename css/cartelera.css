@@ -174,3 +174,142 @@ strong {
     background-color: var(--azul-4);
     transform: scale(1.05);
 }
+
+@media screen and (max-width: 480px) {
+    .title h1 {
+        font-size: 20px;
+    }
+
+    .title img {
+        width: 120px;
+    }
+
+    .cartelera-mov .cuadro {
+        padding: 20px;
+        height: 50vh;
+    }
+
+    .obras {
+        min-width: 280px;
+        height: 400px;
+    }
+
+    .obras img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .cartelera img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .contenido-cartelera {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .btn-regreso {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .Detalles p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .title h1 {
+        font-size: 25px;
+    }
+
+    .title img {
+        width: 150px;
+    }
+
+    .cartelera-mov .cuadro {
+        height: 60vh;
+    }
+
+    .obras {
+        min-width: 320px;
+        height: 450px;
+    }
+
+    .obras img {
+        height: 250px;
+        width: 250px;
+    }
+
+    .cartelera img {
+        width: 40%;
+        height: 400px;
+    }
+
+    .contenido-cartelera {
+        padding: 30px;
+        width: 60%;
+    }
+
+    .btn-regreso {
+        width: 250px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .Detalles p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .title h1 {
+        font-size: 30px;
+    }
+
+    .title img {
+        width: 200px;
+    }
+
+    .cartelera-mov .cuadro {
+        height: 70vh;
+    }
+
+    .obras {
+        min-width: 370px;
+        height: 500px;
+    }
+
+    .obras img {
+        height: 300px;
+        width: 300px;
+    }
+
+    .cartelera img {
+        width: 35%;
+        height: 500px;
+    }
+
+    .contenido-cartelera {
+        padding: 50px;
+        width: 65%;
+    }
+
+    .btn-regreso {
+        width: 300px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .Detalles p {
+        font-size: 20px;
+    }
+}
