@@ -1,0 +1,309 @@
+/*Variables*/
+:root {
+    --azul-1: #0D1B2A;
+    --azul-2: #1B263B;
+    --azul-3: #415A77;
+    --azul-4: #778DA9;
+    --beige-1: #E0E1DD;
+    --beige-2: #c3c3c1;
+    --titulos-1: 4.5em;
+    --titulos-2: 1.75em;
+    --subtitulo-1: 3em;
+    --texto-1: 1.25em;
+}
+
+/*------------------------------------------------------------*/
+/*Contenedor de inicio*/
+#contenedor-inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+    height: 90vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/lagocisnes-inicio.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Titulo de contenedor inicio*/
+#contenedor-inicio h2 {
+    color: var(--azul-4);
+    font-size: var(--titulos-1);
+    padding-left: 200px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/*Texto de inicio*/
+#des-inicio {
+    color: var(--beige-1);
+    font-size: var(--titulos-2);
+    padding-left: 200px;
+    display: flex;
+    padding-right: 550px;
+}
+
+/*Botones de contenedor de inicio*/
+#comprar-boletos {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--azul-4);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+#comprar-boletos:hover {
+    background-color: var(--azul-3);
+    transform: scale(1.05);
+}
+
+#masinfo-inicio {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--beige-1);
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+#masinfo-inicio:hover {
+    background-color: var(--beige-2);
+    transform: scale(1.05);
+}
+
+#comprar-boletos, #masinfo-inicio {
+    margin: 0 auto;
+}
+
+/*------------------------------------------------------------*/
+/*Contenedor de en-cartelera*/
+#en-cartelera {
+    background-color: var(--beige-1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+/*Titulo de en-cartelera*/
+#en-cartelera h2 {
+    font-size: var(--subtitulo-1);
+    text-align: right;
+    font-weight: bold;
+    padding: 60px 0 0 0;
+}
+
+/*Texto de en-cartelera*/
+#en-cartelera p {
+    color: rgba(0, 0, 0, 0.466);
+    text-align: right;
+    font-size: 1.25em;
+    display: flex;
+    text-align: right;
+    line-height: 1.5;
+    padding: 40px 0 0 0px;
+}
+
+/*Botón de ver funciones*/
+#ver-funciones-inicio {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--azul-4);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 150px;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+#ver-funciones-inicio:hover {
+    background-color: var(--azul-3);
+    transform: scale(1.05);
+}
+
+/*Imagen de en-cartelera*/
+#en-cartelera-inicio img {
+    margin: 60px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*Descripcion en-cartelera*/
+#descripcion-cartelera-inicio {
+    width: 800px;
+    height: auto;
+    float: left;
+}
+
+/*------------------------------------------------------------*/
+/*Contenedor de quienes-somos*/
+#quienessomos-inicio .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: var(--azul-1);
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#quienessomos-inicio .descripcion-quienes {
+    width: 45%;
+    text-align: justify;
+    color: var(--beige-1);
+    line-height: 1.5;
+}
+
+.descripcion-quienes p{
+    font-size: var(--texto-1);
+}
+
+.descripcion-quienes h2{
+    font-size: var(--subtitulo-1);
+}
+
+#quienessomos-inicio .imagen-quienes{
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+    object-fit: cover;
+}
+
+.imagen-quienes img{
+    width: 100%;
+}
+
+/*Botón de quienes-somos*/
+#info-somos-inicio {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--beige-1);
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 250px;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+#info-somos-inicio:hover {
+    background-color: var(--beige-2);
+    transform: scale(1.05);
+}
+
+/*------------------------------------------------------------*/
+@media screen and (max-width: 480px) {
+    #contenedor-inicio {
+        align-items: center;
+        text-align: center;
+        padding: 1em;
+    }
+
+    #contenedor-inicio h2,
+    #des-inicio {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 2em;
+    }
+
+    #comprar-boletos,
+    #masinfo-inicio {
+        margin: 0 auto;
+        padding: 8px 16px;
+    }
+
+    #en-cartelera h2 {
+        font-size: 2em;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #ver-funciones-inicio {
+        margin: 0 auto;
+    }
+
+    #en-cartelera #en-cartelera-inicio img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #contenedor-inicio h2 {
+        padding-left: 50px;
+        font-size: 3em;
+    }
+
+    #des-inicio {
+        padding-left: 100px;
+        padding-right: 250px;
+        font-size: 1.5em;
+    }
+
+    #comprar-boletos,
+    #masinfo-inicio {
+        margin-left: 50px;
+    }
+
+    #ver-funciones-inicio {
+        margin-left: 200px;
+    }
+
+    #en-cartelera h2 {
+        font-size: 2.5em;
+        padding-left: 100px;
+    }
+
+    #en-cartelera #en-cartelera-inicio img {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #contenedor-inicio h2 {
+        font-size: 4.5em;
+        padding-left: 200px;
+    }
+
+    #des-inicio {
+        font-size: 1.75em;
+        padding-left: 200px;
+        padding-right: 550px;
+    }
+
+    #comprar-boletos,
+    #masinfo-inicio {
+        margin-left: 200px;
+        margin-top: 20px;
+    }
+
+    #ver-funciones-inicio {
+        margin-left: 650px;
+    }
+}
