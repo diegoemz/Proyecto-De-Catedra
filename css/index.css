@@ -1,0 +1,164 @@
+#contenedor-inicio{
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    justify-content: center;
+    text-align: left;
+    height: 87vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/lagocisnes-inicio.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#contenedor-inicio h2{
+    color: #778DA9;
+    font-size: 4.5em;
+    padding-left:200px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+#des-inicio{
+    color: #E0E1DD;
+    font-size: 1.75em;
+    padding-left: 200px;
+    display: flex;
+    padding-right: 550px;
+}
+
+#comprar-boletos{
+	display: inline-block;
+    margin-left: 200px;
+    padding: 10px 20px; 
+    background-color: #778DA9;
+    color: white; 
+    text-decoration: none; 
+    margin-top:20px;
+    border-radius: 30px;
+}
+
+#comprar-boletos:hover{
+    padding: 15px 30px;
+}
+
+#masinfo-inicio{
+	display: inline-block;
+    margin-left: 200px;
+    padding: 10px 20px; 
+    background-color: #E0E1DD;
+    color: #0D1B2A; 
+    text-decoration: none; 
+    margin-top:20px;
+    border-radius: 30px;
+}
+
+#masinfo-inicio:hover{
+    padding: 15px 30px;
+}
+
+#en-cartelera h2{
+    font-size: 3em;
+    padding-left:450px;
+    font-weight: bold;
+    font-style: normal;
+    margin-top: 50px;
+}
+
+#en-cartelera p{
+    color: rgba(0, 0, 0, 0.466);
+    padding-left: 125px;
+    font-size: 1.25em;
+    font-weight: 5;
+    display: flex;
+    text-align: right;
+    line-height: 1.5;
+}
+
+#ver-funciones-inicio{
+    display: inline-block;
+    margin-left: 650px;
+    padding: 10px 20px; 
+    background-color: #778DA9;
+    color: white; 
+    text-decoration: none; 
+    margin-top:20px;
+    border-radius: 30px;
+    margin-bottom: 50px;
+}
+
+#ver-funciones-inicio:hover{
+    padding: 15px 30px;
+}
+
+#en-cartelera #en-cartelera-inicio img{
+    float: left;
+    width: 400px;
+    height: auto;
+}
+
+#en-cartelera-inicio img{
+    float: right;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 75px;
+}
+
+#descripcion-cartelera-inicio{
+    width: 800px;
+    height: auto;
+    float: left;
+}
+
+#quienessomos-inicio #somos-inicio img{
+    float: left;
+    width: 50%;
+    height: 600px;
+}
+
+#somos-inicio img{
+    float: right;
+}
+
+#descripcion-quienes-inicio{
+    width: 50%;
+    height: 600px;
+    background-color: #0D1B2A;
+    float: left;
+}
+
+#descripcion-quienes-inicio p{
+    margin: 5%;
+    color: white;
+    line-height: 180%;
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+#descripcion-quienes-inicio h2{
+    color: white;
+    margin: 5%;
+    font-weight: bold;
+    line-height: 180%;
+    text-align: justify;
+    margin-top: 10%;
+    font-size: 3em;
+}
+
+#info-somos-inicio{
+    display: inline-block;
+    margin: 5%;
+    padding: 10px 20px; 
+    background-color: #E0E1DD;
+    color: #0D1B2A; 
+    text-decoration: none; 
+    border-radius: 30px;
+    margin-bottom: 16.3%;
+}
+
+#info-somos-inicio:hover{
+    padding: 15px 30px;
+}
+footer{
+    margin-top: 45%;
+}
