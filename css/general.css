@@ -54,6 +54,10 @@ header nav {
     padding: 0;
 }
 
+#actual{
+    color: var(--fourth);
+    font-weight: bold;
+}
 header a {
     padding: 0px 15px;
     text-decoration: none;
