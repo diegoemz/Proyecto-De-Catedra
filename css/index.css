@@ -1,167 +1,220 @@
-#contenedor-inicio{
+/*Variables*/
+:root {
+    --azul-1: #0D1B2A;
+    --azul-2: #1B263B;
+    --azul-3: #415A77;
+    --azul-4: #778DA9;
+    --beige-1: #E0E1DD;
+    --beige-2: #c3c3c1;
+    --titulos-1: 4.5em;
+    --titulos-2: 1.75em;
+    --subtitulo-1: 3em;
+    --texto-1: 1.25em;
+}
+
+/*------------------------------------------------------------*/
+/*Contenedor de inicio*/
+#contenedor-inicio {
     display: flex;
     flex-direction: column;
-    align-items:start;
+    align-items: start;
     justify-content: center;
     text-align: left;
-    height: 87vh;
+    height: 90vh;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/lagocisnes-inicio.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#contenedor-inicio h2{
-    color: #778DA9;
-    font-size: 4.5em;
-    padding-left:200px;
+/*Titulo de contenedor inicio*/
+#contenedor-inicio h2 {
+    color: var(--azul-4);
+    font-size: var(-titulos-1);
+    padding-left: 200px;
     font-weight: bold;
     font-style: normal;
 }
 
-#des-inicio{
-    color: #E0E1DD;
-    font-size: 1.75em;
+/*Texto de inicio*/
+#des-inicio {
+    color: var(--beige-1);
+    font-size: var(-titulos-2);
     padding-left: 200px;
     display: flex;
     padding-right: 550px;
 }
 
-#comprar-boletos{
-	display: inline-block;
-    margin-left: 200px;
-    padding: 10px 20px; 
-    background-color: #778DA9;
-    color: white; 
-    text-decoration: none; 
-    margin-top:20px;
-    border-radius: 30px;
-}
-
-#comprar-boletos:hover{
-    padding: 15px 30px;
-}
-
-#masinfo-inicio{
-	display: inline-block;
-    margin-left: 200px;
-    padding: 10px 20px; 
-    background-color: #E0E1DD;
-    color: #0D1B2A; 
-    text-decoration: none; 
-    margin-top:20px;
-    border-radius: 30px;
-}
-
-#masinfo-inicio:hover{
-    padding: 15px 30px;
-}
-
-#en-cartelera h2{
-    font-size: 3em;
-    padding-left:450px;
+/*Botones de contenedor de inicio*/
+#comprar-boletos {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--azul-4);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    padding: 10px;
+    margin-top: 30px;
     font-weight: bold;
-    font-style: normal;
-    margin-top: 50px;
 }
 
-#en-cartelera p{
+#comprar-boletos:hover {
+    background-color: var(--azul-3);
+    transform: scale(1.05);
+}
+
+#masinfo-inicio {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--beige-1);
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+#masinfo-inicio:hover {
+    background-color: var(--beige-2);
+    transform: scale(1.05);
+}
+
+/*------------------------------------------------------------*/
+/*Contenedor de en-cartelera*/
+#en-cartelera {
+    background-color: var(--beige-1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+/*Titulo de en-cartelera*/
+#en-cartelera h2 {
+    font-size: var(--subtitulo-1);
+    text-align: right;
+    font-weight: bold;
+    padding: 60px 0 0 0;
+}
+
+/*Texto de en-cartelera*/
+#en-cartelera p {
     color: rgba(0, 0, 0, 0.466);
-    padding-left: 125px;
+    text-align: right;
     font-size: 1.25em;
-    font-weight: 5;
     display: flex;
     text-align: right;
     line-height: 1.5;
+    padding: 40px 0 0 0px;
 }
 
-#ver-funciones-inicio{
-    display: inline-block;
-    margin-left: 650px;
-    padding: 10px 20px; 
-    background-color: #778DA9;
-    color: white; 
-    text-decoration: none; 
-    margin-top:20px;
-    border-radius: 30px;
-    margin-bottom: 50px;
+/*Botón de ver funciones*/
+#ver-funciones-inicio {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--azul-4);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 150px;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
 }
 
-#ver-funciones-inicio:hover{
-    padding: 15px 30px;
+#ver-funciones-inicio:hover {
+    background-color: var(--azul-3);
+    transform: scale(1.05);
 }
 
-#en-cartelera #en-cartelera-inicio img{
-    float: left;
-    width: 400px;
-    height: auto;
+/*Imagen de en-cartelera*/
+#en-cartelera-inicio img {
+    margin: 60px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
-#en-cartelera-inicio img{
-    float: right;
-    padding: 20px;
-    margin: 20px;
-    margin-top: 75px;
-}
-
-#descripcion-cartelera-inicio{
+/*Descripcion en-cartelera*/
+#descripcion-cartelera-inicio {
     width: 800px;
     height: auto;
     float: left;
 }
 
-#quienessomos-inicio #somos-inicio img{
-    float: left;
-    width: 50%;
-    height: 600px;
+/*------------------------------------------------------------*/
+/*Contenedor de quienes-somos*/
+#quienessomos-inicio .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: var(--azul-1);
+    height: auto;
+    margin-bottom: 10px;
 }
 
-#somos-inicio img{
-    float: right;
-}
-
-#descripcion-quienes-inicio{
-    width: 50%;
-    height: 600px;
-    background-color: #0D1B2A;
-    float: left;
-}
-
-#descripcion-quienes-inicio p{
-    margin: 5%;
-    color: white;
-    line-height: 180%;
+#quienessomos-inicio .descripcion-quienes {
+    width: 45%;
     text-align: justify;
-    font-size: 1.2em;
+    color: var(--beige-1);
+    line-height: 1.5;
 }
 
-#descripcion-quienes-inicio h2{
-    color: white;
-    margin: 5%;
+.descripcion-quienes p{
+    font-size: var(--texto-1);
+}
+
+.descripcion-quienes h2{
+    font-size: var(--subtitulo-1);
+}
+
+#quienessomos-inicio .imagen-quienes{
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+    object-fit: cover;
+}
+
+.imagen-quienes img{
+    width: 100%;
+}
+
+/*Botón de quienes-somos*/
+#info-somos-inicio {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--beige-1);
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 250px;
+    padding: 10px;
+    margin-top: 30px;
     font-weight: bold;
-    line-height: 180%;
-    text-align: justify;
-    margin-top: 10%;
-    font-size: 3em;
 }
 
-#info-somos-inicio{
-    display: inline-block;
-    margin: 5%;
-    padding: 10px 20px; 
-    background-color: #E0E1DD;
-    color: #0D1B2A; 
-    text-decoration: none; 
-    border-radius: 30px;
-    margin-bottom: 16.3%;
+#info-somos-inicio:hover {
+    background-color: var(--beige-2);
+    transform: scale(1.05);
 }
 
-#info-somos-inicio:hover{
-    padding: 15px 30px;
-}
-footer{
-    margin-top: 45%;
-}
+/*------------------------------------------------------------*/
 @media screen and (max-width: 480px) {
     #contenedor-inicio {
         align-items: center;
@@ -169,13 +222,15 @@ footer{
         padding: 1em;
     }
 
-    #contenedor-inicio h2, #des-inicio {
+    #contenedor-inicio h2,
+    #des-inicio {
         padding-left: 0;
         padding-right: 0;
         font-size: 2em;
     }
 
-    #comprar-boletos, #masinfo-inicio {
+    #comprar-boletos,
+    #masinfo-inicio {
         margin-left: 0;
         padding: 8px 16px;
     }
@@ -213,7 +268,8 @@ footer{
         font-size: 1.5em;
     }
 
-    #comprar-boletos, #masinfo-inicio {
+    #comprar-boletos,
+    #masinfo-inicio {
         margin-left: 100px;
     }
 
@@ -248,7 +304,8 @@ footer{
         padding-right: 550px;
     }
 
-    #comprar-boletos, #masinfo-inicio {
+    #comprar-boletos,
+    #masinfo-inicio {
         margin-left: 200px;
     }
 
