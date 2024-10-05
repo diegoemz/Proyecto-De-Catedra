@@ -196,7 +196,7 @@ strong {
     }
 
     .cartelera-mov .cuadro {
-        flex-direction: column;
+        flex-direction: row;
         padding: 10px;
         height: auto;
     }
@@ -210,6 +210,7 @@ strong {
         justify-content: space-between;
         min-height: 200px;
     }
+
     .obras p{
         white-space: normal;
         word-wrap: break-word;
@@ -223,7 +224,7 @@ strong {
     }
 
     .cartelera img {
-        width: 100%;
+        width: 200px;
         height: auto;
         overflow: hidden;
     }
