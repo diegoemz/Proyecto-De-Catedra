@@ -212,8 +212,8 @@
 
     #info-cartelera .img-container,
     #info-quienes .img-container {
-        width: 100%;
-        height: 300px;
+        width: 90%;
+        height: 500px;
     }
 }
 
