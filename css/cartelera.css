@@ -17,14 +17,14 @@
 }
 
 .title h1 {
-    font-size: 30px;
+    font-size: 25px;
     color: var(--azul-2);
     font-weight: bold;
     margin: 0 auto;
 }
 
 .title img {
-    width: 200px;
+    width: 100px;
     height: auto;
     padding-left: 25px;
 }
@@ -55,7 +55,8 @@
 }
 
 .obras {
-    height: 500px;
+    height: auto;
+    min-height: 300px;
     min-width: 370px;
     background-color: var(--azul-3);
     text-align: center;
@@ -68,12 +69,16 @@
 
 .obras p {
     text-align: center;
+    white-space: normal;/*para que no se desborde*/
     padding-top: 20px;
     color: var(--beige-1);
     font-size: 22px;
     font-weight: bold;
     border-bottom: 1px solid var(--beige-1);
     padding-bottom: 10px;
+    padding: 10px 0;
+    flex-grow: 1;/*para que el texto crezca cuando se agrande*/
+    word-wrap: break-word;/*que el texto no se desborde del contenedor*/
 }
 
 .obras button {
@@ -148,6 +153,8 @@ h2 {
     line-height: 1.40;
     text-align: justify;
     color: var(--azul-2);
+    height: auto;
+    overflow: visible;
 }
 
 strong {
@@ -185,13 +192,24 @@ strong {
     }
 
     .cartelera-mov .cuadro {
-        padding: 20px;
-        height: 50vh;
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
     }
 
     .obras {
-        min-width: 280px;
-        height: 400px;
+        min-width: 100%;
+        margin-bottom: 20px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 200px;
+    }
+    .obras p{
+        white-space: normal;
+        word-wrap: break-word;
+        padding-top: 10px;
     }
 
     .obras img {
@@ -201,16 +219,17 @@ strong {
 
     .cartelera img {
         width: 100%;
-        height: 300px;
+        height: auto;
     }
 
     .contenido-cartelera {
-        padding: 20px;
+        padding: 15px;
         width: 100%;
     }
 
     .btn-regreso {
-        width: 100%;
+        width: 90%;
+        padding: 15px;
     }
 
     h2 {
@@ -219,6 +238,19 @@ strong {
 
     .Detalles p {
         font-size: 16px;
+        height: auto;
+        overflow: visible;
+    }
+    .cartelera{
+        flex-direction: column;
+    }
+    .title, .cartelera-mov, .cartelera{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .title-2{
+        margin-top: 50px;
+        font-size: 18px;
     }
 }
 
