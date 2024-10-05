@@ -183,9 +183,8 @@ strong {
     .title img {
         width: 120px;
     }
-
+    
     .cartelera-mov .cuadro {
-        padding: 20px;
         height: auto;
     }
 
@@ -200,13 +199,13 @@ strong {
     }
 
     .cartelera img {
-        width: 100%;
+        width: 30%;
         height: 300px;
     }
 
     .contenido-cartelera {
         padding: 20px;
-        width: 100%;
+        width: 50%;
     }
 
     .btn-regreso {
