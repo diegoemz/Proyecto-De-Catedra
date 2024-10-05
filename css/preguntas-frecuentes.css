@@ -78,14 +78,3 @@ body {
         padding: 15px;
     }
 }
-
-@media screen and (min-width: 769px) {
-    .servicios .grid {
-        width: calc(30.3% - 1%);
-    }
-
-    footer {
-        font-size: 1em;
-        padding: 20px;
-    }
-}
