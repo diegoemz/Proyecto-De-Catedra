@@ -65,6 +65,9 @@
     border-radius: 10px;
     padding: 30px;
     margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .obras p {
@@ -138,6 +141,7 @@
     box-shadow: #80858e 0 6px 8px;
     margin: 10px;
     text-align: justify;
+    overflow: hidden;
 }
 
 h2 {
@@ -215,16 +219,19 @@ strong {
     .obras img {
         height: 200px;
         width: 200px;
+        overflow: hidden;
     }
 
     .cartelera img {
         width: 100%;
         height: auto;
+        overflow: hidden;
     }
 
     .contenido-cartelera {
         padding: 15px;
         width: 100%;
+        overflow: hidden;
     }
 
     .btn-regreso {
@@ -280,11 +287,13 @@ strong {
     .cartelera img {
         width: 40%;
         height: 400px;
+        overflow: hidden;
     }
 
     .contenido-cartelera {
         padding: 30px;
         width: 60%;
+        overflow: hidden;
     }
 
     .btn-regreso {
@@ -297,6 +306,7 @@ strong {
 
     .Detalles p {
         font-size: 18px;
+        overflow: hidden;
     }
 }
 
@@ -331,6 +341,7 @@ strong {
     .contenido-cartelera {
         padding: 50px;
         width: 65%;
+        overflow: hidden;
     }
 
     .btn-regreso {
@@ -343,5 +354,6 @@ strong {
 
     .Detalles p {
         font-size: 20px;
+        overflow: hidden;
     }
 }
