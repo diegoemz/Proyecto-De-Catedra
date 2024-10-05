@@ -194,10 +194,8 @@ strong {
     .title img {
         width: 120px;
     }
-
+    
     .cartelera-mov .cuadro {
-        flex-direction: column;
-        padding: 10px;
         height: auto;
     }
 
@@ -224,15 +222,13 @@ strong {
     }
 
     .cartelera img {
-        width: 200px;
-        height: auto;
-        overflow: hidden;
+        width: 30%;
+        height: 300px;
     }
 
     .contenido-cartelera {
-        padding: 15px;
-        width: 100%;
-        overflow: hidden;
+        padding: 20px;
+        width: 50%;
     }
 
     .btn-regreso {
