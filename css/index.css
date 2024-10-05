@@ -97,9 +97,11 @@
 #en-cartelera {
     background-color: var(--beige-1);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
+    text-align: left;
+    height: auto;
 }
 
 /*Titulo de en-cartelera*/
@@ -159,7 +161,8 @@
 
 /*------------------------------------------------------------*/
 /*Contenedor de quienes-somos*/
-#quienessomos-inicio .container{
+
+#quienessomos-inicio{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -168,6 +171,14 @@
     background-color: var(--azul-1);
     height: auto;
     margin-bottom: 10px;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%; 
+}
+
+#quienessomos-inicio .container{
+    display: flex;
+    justify-content: space-between;
 }
 
 #quienessomos-inicio .descripcion-quienes {
@@ -188,12 +199,14 @@
 #quienessomos-inicio .imagen-quienes{
     width: 45%;
     border-radius: 10px;
-    box-shadow: 10px 10px 10px black;
-    object-fit: cover;
+    object-fit: contain;
+    height: fit-content;
 }
 
 .imagen-quienes img{
     width: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
 }
 
 /*Botón de quienes-somos*/
@@ -218,94 +231,106 @@
     transform: scale(1.05);
 }
 
-/*------------------------------------------------------------*/
-/* Estilos de en-cartelera */
-#en-cartelera {
-    background-color: var(--beige-1);
+
+
+/*Botón de quienes-somos*/
+#info-somos-inicio {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--beige-1);
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 250px;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
 }
 
-/* Estilos responsive para en-cartelera */
+#info-somos-inicio:hover {
+    background-color: var(--beige-2);
+    transform: scale(1.05);
+}
+
+/*------------------------------------------------------------*/
 @media screen and (max-width: 480px) {
-    #en-cartelera {
+    #contenedor-inicio h2 {
+        font-size: 2.5em;
+        padding-left: 20px;
+    }
+
+    #des-inicio {
+        font-size: 1.25em;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #comprar-boletos, #masinfo-inicio, #ver-funciones-inicio, #info-somos-inicio {
+        width: 80%;
+    }
+
+    #en-cartelera h2, #en-cartelera p {
+        text-align: center;
+    }
+
+    #quienessomos-inicio {
         flex-direction: column;
-        align-items: center;
+        padding: 20px;
     }
 
-    #en-cartelera h2 {
-        font-size: 1.5em;
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    #descripcion-cartelera-inicio {
-        width: 90%;
-        text-align: center;
-        margin: 0;
-    }
-
-    #en-cartelera-inicio img {
+    #quienessomos-inicio .descripcion-quienes, #quienessomos-inicio .imagen-quienes {
         width: 100%;
-        height: auto;
-        margin: 10px 0;
-    }
-
-    #ver-funciones-inicio {
-        margin: 10px 0;
     }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    #en-cartelera {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
+    #contenedor-inicio h2 {
+        font-size: 3em;
+        padding-left: 50px;
     }
 
-    #en-cartelera h2 {
-        font-size: 2em;
+    #des-inicio {
+        font-size: 1.5em;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #comprar-boletos, #masinfo-inicio, #ver-funciones-inicio, #info-somos-inicio {
+        width: 70%;
+    }
+
+    #en-cartelera h2, #en-cartelera p {
         text-align: center;
-        margin: 20px 0;
     }
 
-    #descripcion-cartelera-inicio {
-        width: 80%;
-        text-align: center;
+    #quienessomos-inicio {
+        padding: 30px;
     }
 
-    #en-cartelera-inicio img {
-        width: 80%;
-        margin: 20px 0;
-    }
-
-    #ver-funciones-inicio {
-        margin-top: 20px;
+    #quienessomos-inicio .descripcion-quienes, #quienessomos-inicio .imagen-quienes {
+        width: 48%;
     }
 }
 
 @media screen and (min-width: 769px) {
-    #en-cartelera {
-        flex-direction: row;
+    #contenedor-inicio h2 {
+        font-size: var(--titulos-1);
     }
 
-    #en-cartelera h2 {
-        font-size: 3em;
-        padding-left: 20px;
+    #des-inicio {
+        font-size: var(--titulos-2);
+        padding-left: 200px;
+        padding-right: 550px;
     }
 
-    #descripcion-cartelera-inicio {
-        width: 60%;
+    #quienessomos-inicio {
+        padding: 50px;
     }
 
-    #en-cartelera-inicio img {
-        width: 40%;
-    }
-
-    #ver-funciones-inicio {
-        margin-left: 20px;
+    #quienessomos-inicio .descripcion-quienes, #quienessomos-inicio .imagen-quienes {
+        width: 45%;
     }
 }
