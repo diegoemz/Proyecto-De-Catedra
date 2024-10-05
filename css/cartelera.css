@@ -196,7 +196,7 @@ strong {
     }
 
     .cartelera-mov .cuadro {
-        flex-direction: row;
+        flex-direction: column;
         padding: 10px;
         height: auto;
     }
