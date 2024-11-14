@@ -1,0 +1,148 @@
+:root {
+    /* Colores */
+    --blanco-1: #F8F8F8;
+    --beige-1: #F2E3D5;
+    --azul-1: #012E40;
+    --azul-2: #024959;
+    --azul-3: #026773;
+    --azul-4: #3CA6A6;
+    --celeste-1: #234459;
+    --celeste-2: #3C7499;
+    --celeste-3: #5AAEE6;
+    --celeste-4: #94C1FF;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: var(--celeste-1);
+    color: var(--blanco-1);
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nombre {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--blanco-1);
+}
+
+.decoration {
+    height: 3px;
+    width: 75%;
+    background-color: var(--celeste-3);
+    margin: 10px auto;
+}
+
+/* Contenedor de Login */
+.login-container {
+    background: var(--azul-1);
+    padding: 2em;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+#ingresar {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-align: center;
+    color: var(--beige-1);
+}
+
+/* Input y Botón */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.subtitulo {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--celeste-4);
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid var(--azul-3);
+    border-radius: 5px;
+    background-color: var(--azul-2);
+    color: var(--beige-1);
+    font-size: 1em;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: var(--beige-1);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--celeste-3);
+    box-shadow: 0px 0px 8px rgba(90, 174, 230, 0.5);
+    transition: 0.3s;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background: var(--celeste-3);
+    color: var(--azul-1);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-login:hover {
+    background: var(--celeste-4);
+}
+
+/* Pie de página */
+footer {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    color: var(--beige-1);
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1.5em;
+        width: 90%;
+    }
+
+    .nombre {
+        font-size: 1.5em;
+    }
+}
+
+.btn-login:hover {
+    background: var(--celeste-4);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}

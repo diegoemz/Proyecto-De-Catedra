@@ -18,6 +18,25 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const db=getFirestore()
 
+  //Empleados
+  export const saveEmployee=(employee)=>{
+    addDoc(collection(db, 'empleador'), employee);
+  }
+
+  export const getEmployees=()=>getDocs(collection(db, 'empleador'))
+
+  export const getEmployee=(id)=>getDoc(doc(db,'empleador',id))
+
+  export const getEmployeesListSize=async()=>{
+    const employee = collection(db, "empleador");
+    const snapshot = await getCountFromServer(employee);
+    return snapshot.data().count;
+  }
+
+  export const deleteEmployee=(id)=> deleteDoc(doc(db, 'empleador', id))
+
+
+//Funciones
   export const saveProduct=(product)=>{
     addDoc(collection(db,'products'),product);
   }

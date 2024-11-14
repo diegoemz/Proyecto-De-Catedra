@@ -7,24 +7,46 @@
     <title>Página de Administrador Teatro Nacional</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
     <!-- navbar start -->
-    <h4 class="m-2 ms-3 text-center">Menú Principal</h4>
-    <nav class="navbar nav-bar sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex justify-content-between">
-                <button type="button" class="btn btn-primary btn-add" data-bs-toggle="modal"
-                    data-bs-target="#addDataModal">Agregar Función</button>
-            </a>
+            <a class="navbar-brand" href="#">Teatro Nacional</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-container d-flex justify-content-between w-100">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Funciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Empleados</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <button type="button" class="btn btn-add" data-bs-toggle="modal" data-bs-target="#addDataModal">Agregar Función</button>
+                        <button type="button" class="btn btn-add ms-2" data-bs-toggle="modal" data-bs-target="#addEmpleado">Agregar Empleado</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
+    
     <div class="container card-body-all">
         <div class="card-container d-flex flex-wrap" id="crud-table">
         </div>
-    </div>
+        <div class="card-container d-flex flex-wrap" id="crud-table-2">
+        </div>
+    </div>    
     <!-- navbar end -->
 
     <!-- Add Module Start -->
@@ -113,7 +135,7 @@
                 </div>
                 <div class="modal-footer">
 
-                    <button type="submit" class="btn submitButton w-100" id="submitdata">Agregar</button>
+                    <button type="submit" class="btn btn-success w-100" id="submitdata">Agregar</button>
                 </div>
             </div>
         </div>
@@ -201,6 +223,93 @@
         </div>
     </div>
     <!-- Edit Module End -->
+
+    <!-- Empleado Module Start -->
+    <div class="modal fade" id="addEmpleado" tabindex="-1" aria-labelledby="addEmpleado">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="form">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addEmpleado">Agregar Empleados</h1>
+                    <button type="button" id="close-btn" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Campo de DUI -->
+                        <div class="form-group mb-3">
+                            <label for="dui-emp" class="form-label">DUI Empleado</label>
+                            <input type="text" class="form-control" id="dui-emp" required>
+                            <small id="dui-emp-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de Nombre -->
+                        <div class="form-group mb-3">
+                            <label for="nombre-emp" class="form-label">Nombre Empleado</label>
+                            <input type="text" class="form-control" id="nombre-emp" required>
+                            <small id="nombre-emp-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de Apellido -->
+                        <div class="form-group mb-3">
+                            <label for="apellido-emp" class="form-label">Apellido Empleado</label>
+                            <input type="text" class="form-control" id="apellido-emp" required>
+                            <small id="apellido-emp-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de Fecha de nacimiento -->
+                        <div class="form-group mb-3">
+                            <label for="date" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="date" required>
+                            <small id="date-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de Correo Electrónico -->
+                        <div class="form-group mb-3">
+                            <label for="email-emp" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email-emp" required>
+                            <small id="email-emp-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de Teléfono -->
+                        <div class="form-group mb-3">
+                            <label for="telefono-emp" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefono-emp" required>
+                            <small id="telefono-emp-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de Cargo -->
+                        <div class="form-group mb-3">
+                            <label for="cargo-emp" class="form-label">Cargo</label>
+                            <select class="form-control" id="cargo-emp">
+                                <option value="Director-artistico">Director Artístico</option>
+                                <option value="Productor-ejecutivo">Productor Ejecutivo</option>
+                                <option value="Asistente-direccion">Asistente de Dirección</option>
+                                <option value="Tecnico-sonido">Técnico de Sonido</option>
+                                <option value="Coordinador-eventos">Coordinador de Eventos</option>
+                            </select>
+                            <small id="cargo-emp-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de Departamento -->
+                        <div class="form-group mb-3">
+                            <label for="departamento-emp" class="form-label">Departamento</label>
+                            <select class="form-control" id="departamento-emp">
+                                <option value="Direccion-artistica">Dirección Artística</option>
+                                <option value="Produccion">Producción</option>
+                                <option value="Eventos">Eventos y Relaciones Públicas</option>
+                                <option value="Tecnicos">Técnico y Logística</option>
+                            </select>                            
+                            <small id="departamento-emp-error-msg" style="color:red;"></small>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-success w-100" id="submitdataemp">Agregar Empleado</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Add Module End -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
