@@ -1,115 +1,188 @@
+:root {
+    --azul-1: #0D1B2A;
+    --azul-2: #1B263B;
+    --azul-3: #415A77;
+    --azul-4: #778DA9;
+    --azul-5: #d2d7e0;
+    --beige-1: #E0E1DD;
+    --beige-2: #c3c3c1;
+}
 
-/* SECCIÓN CARTELERA */
-
-.title{
+/*Encabezado*/
+.title {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin: 30px 0;
-    background-color:#d2d7e0;
+    background-color: var(--azul-5);
 }
-.title h1{
-    text-align: center;
-    font-size: 30px;
-    color: #1B263B;
+
+.title h1 {
+    font-size: 25px;
+    color: var(--azul-2);
     font-weight: bold;
     margin: 0 auto;
 }
-.title img{
-    width: 200px;
-    height: auto;
 
+.title img {
+    width: 100px;
+    height: auto;
+    padding-left: 25px;
 }
-.cartelera{
-    display: flex;
-    justify-content: space-between;
-    background-color: #0D1B2A;
-    margin-bottom: 20px;
-    margin-top: 50px;
-    padding: 40px;
-    box-shadow: #E0E1DD 0 4px 8px ;
-    border-radius: 8px;
+
+/*Title-2*/
+.title-2 {
+    margin: 100px 0 50px 0;
+    color: var(--azul-1);
+    font-weight: bold;
+    text-align: center;
+    border-bottom: var(--azul-1) 1px solid;
+    padding-bottom: 40px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
     overflow: hidden;
 }
-.cartelera img{
-    width: 35%;
-    height: 500px;
-    margin: 10px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-.contenido-cartelera{
-    padding: 20px;
-    width: 60%;
-    height: 100%;
-    background-color: #d2d7e0;
-    border-radius: 8px;
-    box-shadow: #80858e 0 6px 8px;
-    margin: 10px;
 
-}
-h2{
-    margin-top: 0;
-    font-size: 25px;
-    color: #0D1B2A;
-    text-align: center;
-}
-h3{
-    margin-top: 0;
-    font-size: 18px;
-    color: #0D1B2A;
-
-}
-
-p{
-    font-size: 20px;
-    line-height: 1.5;
-    text-align: justify;
-    color:#1B263B;
-}
-strong{
-    color: #0D1B2A;
-    font-weight: bold;
-}
-.Detalles{
-    margin: 10px 0;
-}
-.Detalles p{
-    margin: 4px 0;
-}
-.venta{
-    background-color: #415A77;
-    color: #d2d7e0;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 7px;
-    margin-top: 10px;
-    text-align: center;
+.carousel-images {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.venta p{
-    margin: 0;
-    font-size: 20px;
-}
-.ver-horarios{
-    background-color:#1B263B;
-    color: #d2d7e0;
-    border: none;
-    padding: 7px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: medium;
-    text-transform: uppercase;
+    transition: transform 0.5s ease;
 }
 
-<<<<<<< Updated upstream
-=======
+.image-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.image-slide img {
+    width: 100%;
+    height: auto;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.image-slide p {
+    font-size: 18px; /* Aumenta el tamaño de la fuente */
+    font-weight: bold; /* Hace que el texto sea más prominente */
+    color: #333; /* Cambia el color del texto a un gris oscuro para mejor legibilidad */
+    margin-top: 10px; /* Espacio entre la imagen y el texto */
+    text-align: center; /* Centra el texto */
+    line-height: 1.5; /* Mejora el espaciado entre líneas */
+}
+
+
+.carousel p {
+    font-size: 16px; /* Tamaño de fuente para descripciones */
+    color: #555; /* Un gris más suave para el texto de descripción */
+    text-align: center; /* Centra el texto de descripción */
+    margin: 10px 0; /* Espaciado arriba y abajo */
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Estilos para la cartelera */
+.cartelera-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar elementos */
+}
+
+.cartelera-item {
+    position: relative; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0;
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    background-color: #ffffff; /* Fondo blanco para los elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s; /* Transición suave */
+}
+.cartelera-item:hover {
+    background-color: #d2d7e0; /* Cambia el color de fondo al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.cartelera-item:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.cartelera-item img {
+    width: 35%; /* Ancho fijo para la imagen */
+    height: auto; /* Mantener la proporción */
+    border-radius: 10px 0 0 10px; /* Bordes redondeados en la imagen */
+}
+
+.contenido-cartelera {
+    padding: 20px;
+    flex: 1; /* Ocupa el espacio restante */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2c3e50; /* Color del título */
+    font-size: 2.5rem;
+}
+
+.detalles p {
+    line-height: 1.7;
+    color: #000000; /* Color del texto */
+    font-size: 1.3rem;
+}
+
+.btn-regreso {
+    position: absolute; /* Posicionar el botón de manera absoluta */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #0e4367; /* Color del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición para el color del botón */
+    font-size: 1em; /* Aumentar tamaño del texto del botón */
+}
+
 .btn-regreso:hover {
     background-color: #2980b9; /* Color del botón al pasar el mouse */
 }
+
+
+.btn-regreso:hover {
+    background-color: #2980b9; /* Color del botón al pasar el mouse */
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -126,10 +199,17 @@ strong{
 
 
 /* Estilos del modal */
+
 .modal {
     display: none; /* Ocultar el modal por defecto */
     position: fixed; /* Queda fijo en la pantalla */
     z-index: 1000; /* Asegura que el modal esté encima de otros elementos */
+=======
+/* Estilo para el fondo del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Por encima de otros elementos */
     left: 0;
     top: 0;
     width: 100%; /* Ancho completo */
@@ -239,4 +319,79 @@ p {
         align-items: end;
     }
 }
->>>>>>> Stashed changes
+  
+    overflow: auto; /* Habilitar scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+/* Estilo para el contenido del modal */
+.modal-content {
+    background-color: #f0f8ff; /* Color de fondo claro */
+    margin: 15% auto; /* Margen superior e inferior, centrado */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #153b63; /* Borde azul */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 80%; /* Ancho del modal */
+    max-width: 500px; /* Ancho máximo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+/* Estilo para el botón de cerrar */
+.close {
+    color: #2980b9; /* Color azul */
+    float: right; /* A la derecha */
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    cursor: pointer; /* Cursor de puntero */
+}
+
+.close:hover {
+    color: #11253b; /* Color más oscuro al pasar el ratón */
+}
+
+/* Estilo para el título del modal */
+#modal-title {
+    color: #415A77; /* Color azul */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+/* Estilo para los botones dentro del modal */
+.al-carrito {
+    background-color: #778DA9; /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.al-carrito:hover {
+    background-color: #11253b; /* Color más oscuro al pasar el ratón */
+}
+
+/* Estilo para el input de cantidad */
+input[type="number"] {
+    width: 60px; /* Ancho del input */
+    padding: 5px; /* Espaciado interno */
+    margin: 10px 0; /* Margen superior e inferior */
+    border: 1px solid #0f2c4a; /* Borde azul */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+h2 {
+    color: #333; /* Color del título */
+    font-size: 1.5em; /* Tamaño de la fuente del título */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+p {
+    color: #555; /* Color del texto */
+    font-size: 1em; /* Tamaño de la fuente del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+
+.al-carrito:focus {
+    outline: none; /* Sin contorno en el enfoque */
+}

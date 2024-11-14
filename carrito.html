@@ -50,7 +50,7 @@
             </table>
             <div id="total-container">
                 <h2>Total: $<span id="total-price">0.00</span></h2>
-                <button id="checkout-button">Proceder al Pago</button>
+                <button id="checkout-button" onclick="redirectToCheckout()">Proceder al Pago </button>
             </div>
         </div>
     </main>
@@ -60,8 +60,13 @@
             <p>&copy; Teatro Nacional de San Salvador</p>
         </div>
     </footer>
-
     <script src="js/carrito.js"></script> <!-- Lógica del carrito -->
     <script src="./js/hamburguesa.js"></script>
+    
+    <script>
+        function redirectToCheckout() {
+            window.location.href = 'checkout.html'; // Redirige a checkout.html
+        }
+    </script>
 </body>
 </html>
