@@ -1,16 +1,118 @@
-
-:root{
-    --primary: #0b1320;
-    --secondary: #1e2c46;
-    --third: #3d5d76;
-    --fourth: #758cac;
-    --background: #f0ebd8;
-
+:root {
+    --primary: #0b1320; /* Color principal */
+    --secondary: #1e2c46; /* Color secundario */
+    --third: #3d5d76; /* Tercero */
+    --fourth: #758cac; /* Cuarto */
+    --background: #f0ebd8; /* Color de fondo */
 }
 
+body {
+    font-family: Arial, sans-serif; /* Fuente general */
+    color: var(--primary); /* Color de texto principal */
+}
 
+/* Estilo para el título principal */
 h1 {
     text-align: center;
-    margin: 20px 0;
+    margin: 40px 0;
+    color: var(--third); /* Color del título */
 }
+
+/* Estilo general del contenedor del carrito */
+#carrito-container {
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px auto; /* Centrado */
+    max-width: 80%; /* Ancho máximo */
+    background-color: white; /* Fondo blanco para el contenedor */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilo de la tabla del carrito */
+#carrito {
+    margin-top: 20px;
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsar bordes */
+}
+
+/* Estilo para las cabeceras de la tabla */
+#carrito thead {
+    margin-top: 20px;
+    background-color: var(--third); /* Fondo azul */
+    color: white; /* Texto blanco */
+}
+
+/* Estilo para las celdas de la tabla */
+#carrito th, #carrito td {
+    padding: 15px; /* Espaciado interno */
+    text-align: left; /* Alinear a la izquierda */
+    border: 1px solid var(--third); /* Borde azul */
+    font-size: 1.2em; /* Aumentar tamaño de letra en la tabla */
+}
+
+/* Estilo para las filas de la tabla */
+#carrito tbody tr:nth-child(even) {
+    background-color: #f1f8ff; /* Color de fondo claro para filas pares */
+}
+
+#carrito tbody tr:hover {
+    background-color: var(--fourth); /* Color al pasar el ratón */
+    color: white; /* Texto blanco al pasar el ratón */
+}
+
+/* Estilo para el contenedor del total */
+#total-container {
+    margin-top: 40px; /* Margen superior */
+    margin-bottom: 20px;
+    padding: 15px; /* Espaciado interno */
+    background-color: #e7f3ff; /* Fondo claro */
+    border: 1px solid var(--third); /* Borde azul */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilo para el total */
+#total-container h2 {
+    color: var(--third); /* Color del total */
+    margin: 0; /* Sin margen */
+}
+
+/* Estilo para el botón de proceder al pago */
+#checkout-button {
+    background-color: var(--third); /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 12px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s, transform 0.2s; /* Transición suave */
+    margin-top: 10px; /* Margen superior */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+#checkout-button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+}
+
+#checkout-button:active {
+    transform: translateY(0); /* Volver a la posición original al hacer clic */
+}
+
+/* Estilo para el botón de eliminar */
+.btn-eliminar {
+    background-color: #d9534f; /* Color de fondo rojo */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centrar texto */
+}
+
+.btn-eliminar:hover {
+    background-color: #c9302c; /* Color más oscuro al pasar el ratón */
+    transform:scale(1.1); /* Efecto de elevación al pasar el ratón */
 

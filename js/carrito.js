@@ -21,7 +21,7 @@ function renderizarCarrito() {
             <td>$${ item.precio.toFixed(2)}</td>
             <td>${item.cantidad}</td>
             <td>$${totalItem.toFixed(2)}</td>
-            <td><button onclick="eliminarDelCarrito(${index})">Eliminar</button></td>
+            <td><button class="btn-eliminar" onclick="eliminarDelCarrito(${index})">Eliminar</button></td>
         `;
         carritoItems.appendChild(row);
     });
