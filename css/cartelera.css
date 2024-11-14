@@ -178,12 +178,6 @@ h2 {
     background-color: #2980b9; /* Color del botón al pasar el mouse */
 }
 
-
-.btn-regreso:hover {
-    background-color: #2980b9; /* Color del botón al pasar el mouse */
-}
-
-
 /* Responsive */
 @media (max-width: 768px) {
     .cartelera-item {
@@ -199,12 +193,6 @@ h2 {
 
 
 /* Estilos del modal */
-
-.modal {
-    display: none; /* Ocultar el modal por defecto */
-    position: fixed; /* Queda fijo en la pantalla */
-    z-index: 1000; /* Asegura que el modal esté encima de otros elementos */
-=======
 /* Estilo para el fondo del modal */
 .modal {
     display: none; /* Oculto por defecto */
@@ -214,112 +202,6 @@ h2 {
     top: 0;
     width: 100%; /* Ancho completo */
     height: 100%; /* Alto completo */
-    overflow: auto; /* Permitir desplazamiento si es necesario */
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
-}
-
-.modal-content {
-    background-color: #fff; /* Color de fondo del contenido */
-    margin: 10% auto; /* Margen superior y centrado */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
-    width: 60%; /* Ancho del modal */
-    height: 0 auto;
-}
-
-h2 {
-    color: #333; /* Color del título */
-    font-size: 1.5em; /* Tamaño de la fuente del título */
-    margin-bottom: 15px; /* Espaciado inferior */
-}
-
-p {
-    color: #555; /* Color del texto */
-    font-size: 1em; /* Tamaño de la fuente del texto */
-    margin-bottom: 10px; /* Espaciado inferior */
-}
-
-/* Estilos del botón "Agregar al Carrito" */
-.al-carrito {
-    background-color: #2863a7; /* Color verde del botón */
-    color: #fff; /* Color del texto del botón */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 10px 15px; /* Espaciado interno */
-    font-size: 1em; /* Tamaño de la fuente del botón */
-    cursor: pointer; /* Cambiar cursor al pasar el mouse */
-    transition: background-color 0.3s, transform 0.2s; /* Transiciones para el color y la transformación */
-    display: inline-block; /* Para que el botón respete el padding */
-}
-
-.al-carrito:hover {
-    background-color: #1B263B; /* Color más oscuro al pasar el mouse */
-    transform: scale(1.05); /* Aumentar ligeramente el tamaño del botón */
-}
-
-.al-carrito:focus {
-    outline: none; /* Sin contorno en el enfoque */
-}
-
-.nav-list{
-    list-style-type: none;
-    display: flex;
-    gap: 1rem;
-}
-.nav-list li a{
-    text-decoration: none;
-}
-
-.abrir-menu, .cerrar-menu {
-    display: none;
-}
-
-#abrir:hover{
-    background-color: transparent;
-}
-
-@media screen and (max-width: 1400px){
-    .abrir-menu, .cerrar-menu{
-        display: block;
-        border: 0;
-        font-size: 2rem;
-        background-color: transparent;
-        cursor: pointer;
-        color: #E0E1DD;
-    }
-
-    .cerrar-menu{
-        padding: 7px;
-    }
-
-    .nav{
-        opacity: 0;
-        visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        gap: 1rem;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #1B263B;
-        padding: 2rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-    }
-
-    .nav.visible{
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .nav-list{
-        flex-direction: column;
-        align-items: end;
-    }
-}
-  
     overflow: auto; /* Habilitar scroll si es necesario */
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
 }
