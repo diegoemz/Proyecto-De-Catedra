@@ -1,32 +1,31 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
-:root{
+:root {
     --primary: #0b1320;
     --secondary: #1e2c46;
     --third: #3d5d76;
     --fourth: #758cac;
     --background: #f0ebd8;
-
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
-html{
+html {
     background-color: #dddddd5a;
 }
 
-.container{
+.container {
     max-width: 1450px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/*Header*/
+/* Header */
 header {
     background-color: #0D1B2A;
     height: 95px;
@@ -54,10 +53,13 @@ header nav {
     padding: 0;
 }
 
-#actual{
-    color: var(--fourth);
-    font-weight: bold;
+/* Estilos para el menú */
+#nav-menu {
+    display: flex; /* Cambiar a flex para que los elementos se alineen en fila */
+    flex-direction: row; /* Alinear horizontalmente */
+    align-items: center; /* Centrar verticalmente los elementos del menú */
 }
+
 header a {
     padding: 0px 15px;
     text-decoration: none;
@@ -70,7 +72,12 @@ header a:hover {
     border-bottom: #4f7ea3d3 1px solid;
 }
 
-/*Footer*/
+#actual {
+    color: var(--fourth);
+    font-weight: bold;
+}
+
+/* Footer */
 footer {
     background-color: #0D1B2A;
 }
@@ -87,6 +94,57 @@ footer .container {
     align-items: center;
 }
 
+/* Estilos generales para el menú en pantallas pequeñas */
+#nav-menu {
+    display: none; /* Ocultar el menú por defecto */
+}
+
+/* Mostrar el menú cuando se activa */
+#nav-menu.active {
+    display: flex; /* Cambiar a flex para que los elementos se alineen en fila */
+}
+
+/* Estilos para el botón de menú hamburguesa */
+.menu-toggle {
+    display: none; /* Ocultar por defecto */
+    font-size: 30px; /* Tamaño del icono */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: #333; /* Cambia este color según el que uses en tu menú */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-left: auto; /* Alinear a la derecha */
+}
+
+/* Mostrar el botón de menú hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar el botón en pantallas pequeñas */
+    }
+    
+    #nav-menu {
+        display: none; /* Asegurarse de que el menú esté oculto */
+        position: absolute;
+        top: 60px; /* Ajustar según sea necesario */
+        left: 0;
+        width: 100%;
+        background-color: white; /* Cambiar según tu diseño */
+        z-index: 1000; /* Asegúrate de que esté por encima */
+        flex-direction: column; /* Cambiar a columna para menú vertical */
+    }
+    
+    #nav-menu.active {
+        display: flex; /* Mostrar el menú cuando está activo */
+    }
+    
+    #nav-menu a {
+        display: block; /* Hacer que los enlaces ocupen todo el ancho */
+        padding: 10px;
+        text-align: left; /* Alinear texto a la izquierda */
+        color: #333; /* Cambia este color según el que uses en tu menú */
+    }
+}
+
+/* Media queries para diferentes tamaños de pantalla */
 @media (max-width: 480px) {
     header .logo {
         font-size: 1rem;
@@ -128,8 +186,9 @@ footer .container {
     footer .container {
         height: 80px;
     }
-    
-}@media (min-width: 769px){
+}
+
+@media (min-width: 769px) {
     header .logo {
         font-size: 1.2rem;
     }
