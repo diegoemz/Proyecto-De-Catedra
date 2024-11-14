@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Página de Administrador Teatro Nacional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- navbar start -->
+    <h4 class="m-2 ms-3 text-center">Menú Principal</h4>
+    <nav class="navbar nav-bar sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex justify-content-between">
+                <button type="button" class="btn btn-primary btn-add" data-bs-toggle="modal"
+                    data-bs-target="#addDataModal">Agregar Función</button>
+            </a>
+        </div>
+    </nav>
+    <div class="container card-body-all">
+        <div class="card-container d-flex flex-wrap" id="crud-table">
+        </div>
+    </div>
+    <!-- navbar end -->
+
+    <!-- Add Module Start -->
+    <div class="modal fade" id="addDataModal" tabindex="-1" aria-labelledby="addDataModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="form">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addDataModal">Agregar Función</h1>
+                    <button type="button" id="close-btn" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Campo de Nombre -->
+                        <div class="form-group mb-3">
+                            <label for="nombre" class="form-label">Nombre de la Obra</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                            <small id="nombre-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de fecha y hora -->
+                        <div class="form-group mb-3">
+                            <label for="dateTime" class="form-label">Fecha y Hora de la Obra</label>
+                            <input type="datetime-local" class="form-control" id="dateTime" required>
+                            <small id="dateTime-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de Director -->
+                        <div class="form-group mb-3">
+                            <label for="director" class="form-label">Director de la Obra</label>
+                            <input type="text" class="form-control" id="director" required>
+                            <small id="director-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de Director -->
+                        <div class="form-group mb-3">
+                            <label for="productor" class="form-label">Productor de la Obra</label>
+                            <input type="text" class="form-control" id="productor" required>
+                            <small id="productor-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de localidades -->
+                        <div class="form-group mb-3">
+                            <label for="localidades" class="form-label">Localidades</label>
+                            <select class="form-control" id="localidades">
+                                <option value="Platea">Platea</option>
+                                <option value="Balcones">Balcones</option>
+                                <option value="Galería">Galería</option>
+                            </select>
+                            <small id="localidades-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de precio -->
+                        <div class="form-group mb-3">
+                            <label for="price" class="form-label">Precio de la Obra</label>
+                            <input type="number" class="form-control" id="price" placeholder="Ingrese el precio en USD" min="0" step="0.01" required>
+                            <small id="price-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de descripción -->
+                        <div class="form-group mb-3">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcion" rows="3" placeholder="Ingrese una descripción detallada" required></textarea>
+                            <small id="descripcion-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de clasificación -->
+                        <div class="form-group mb-3">
+                            <label for="clasificacion" class="form-label">Clasificación</label>
+                            <select class="form-control" id="clasificacion" required>
+                                <option value="General">General</option>
+                                <option value="PG-13">PG-13</option>
+                                <option value="R">R</option>
+                            </select>
+                            <small id="clasificacion-error-msg" style="color:red;"></small>
+                        </div>
+
+                        <!-- Campo de archivo de imagen -->
+                        <div class="form-group mt-2">
+                            <label for="inputGroupFile01" class="form-label">Imagen de la Obra</label>
+                            <input type="file" class="form-control" id="inputGroupFile01" accept="image/*">
+                            <small id="image-error-msg" style="color:red;"></small>
+                        </div>
+                    
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn submitButton w-100" id="submitdata">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Module Start -->
+    <div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="form">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Función</h1>
+                    <button type="button" id="btn-close" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div id="image-div"></div>
+                            <input type="hidden" class="form-control" id="id-edit" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default" disabled>
+                        </div>
+
+                        <!-- Campo de Nombre -->
+                        <div class="form-group mb-3">
+                            <label for="exampleFormControlSelect1" class="form-label">Nombre de la Obra</label>
+                            <input type="text" class="form-control" id="nombre-edit">
+                        </div>
+
+                        <!-- Campo de Fecha y Hora -->
+                        <div class="form-group mb-3">
+                            <label for="exampleFormControlSelect1" class="form-label">Fecha y Hora de la Obra</label>
+                            <input type="datetime-local" class="form-control" id="dateTime-edit">
+                        </div>
+
+                        <!-- Campo de Director -->
+                        <div class="form-group mb-3">
+                            <label for="exampleFormControlSelect1" class="form-label">Director de la Obra</label>
+                            <input type="text" class="form-control" id="director-edit">
+                        </div>
+
+                        <!-- Campo de Productor -->
+                        <div class="form-group mb-3">
+                            <label for="exampleFormControlSelect1" class="form-label">Productor de la Obra</label>
+                            <input type="text" class="form-control" id="productor-edit">
+                        </div>
+
+                        <!-- Campo de Localidades -->
+                        <div class="form-group mb-3">
+                            <label for="exampleFormControlSelect1" class="form-label">Localidades</label>
+                            <select class="form-control" id="localidades-edit">
+                                <option value="Platea">Platea</option>
+                                <option value="Balcones">Balcones</option>
+                                <option value="Galería">Galería</option>
+                            </select>
+                        </div>
+
+                        <!-- Campo de Precio -->
+                        <div class="form-group mb-3">
+                            <label for="exampleFormControlSelect1" class="form-label">Precio de la Obra</label>
+                            <input type="number" class="form-control" id="price-edit" placeholder="Ingrese el precio en USD" min="0" step="0.01">
+                        </div>
+
+                        <!-- Campo de Descripción -->
+                        <div class="form-group mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcion-edit" rows="3" placeholder="Ingrese una descripción detallada"></textarea>
+                        </div>
+
+                        <!-- Campo de Clasificación -->
+                        <div class="form-group mb-3">
+                            <label for="exampleFormControlSelect1" class="form-label">Clasificación</label>
+                            <select class="form-control" id="clasificacion-edit">
+                                <option value="General">General</option>
+                                <option value="PG-13">PG-13</option>
+                                <option value="R">R</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger w-100" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success w-100" id="update">Actualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Module End -->
+
+    <!-- Add Module End -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script type="module" src="js/script.js" defer></script>
+</body>
+
+</html>
