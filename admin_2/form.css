@@ -1,0 +1,25 @@
+/* Estilos personalizados para la barra lateral */
+.sidebar {
+    height: 110vh;
+    background-color: rgb(34, 37, 41);
+    color: #fff;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: rgb(110, 117, 124); 
+}
+
+.content {
+    padding: 20px;
+}
+#form-container {
+    display: none;
+    width: 100%; /* Hacer el formulario más ancho */
+}
