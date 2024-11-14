@@ -1,11 +1,14 @@
 import { saveProduct, getProducts, getProductListSize, 
-    deleteProduct, getProduct, updateProduct } from "./firebase.js";
+    deleteProduct, getProduct, updateProduct, saveEmployee, getEmployees, getEmployeesListSize, deleteEmployee } from "./firebase.js";
 
 let addButton = document.getElementById("submitdata");
+let addButton_2 = document.getElementById("submitdataemp")
 // Agrega un listener para el evento de click
 addButton.addEventListener("click", AddData);
+addButton_2.addEventListener("click", AddData_2);
 
 showData();
+showData_2();
 
 function validateData(){
     let nombre = document.getElementById("nombre").value.trim();
@@ -142,31 +145,27 @@ async function showData(){
         productList.forEach(element => {
             console.log(element);
             const product=element.data();
-            html+=`<div class="row gx-2">
-                        <div class="col">
-                            <div class="p-3">
-                                <div class="card d-flex card-all">
-                                    <div class="card-body" style="width: 18rem;">
-                                        <h5 class="card-title text-center">${product.nombre}</h5>
-                                        <img src="${product.image}" class="card-img-top" alt="Imagen de la obra">
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><strong>Fecha y Hora:</strong> ${product.dateTime}</li>
-                                        <li class="list-group-item"><strong>Director:</strong> ${product.director}</li>
-                                        <li class="list-group-item"><strong>Productor:</strong> ${product.productor}</li>
-                                        <li class="list-group-item"><strong>Descripción:</strong> ${product.descripcion}</li>
-                                        <li class="list-group-item"><strong>Clasificación:</strong> ${product.clasificacion}</li>
-                                        <li class="list-group-item"><strong>Localidades:</strong> ${product.localidades}</li>
-                                        <li class="list-group-item"><strong>Precio:</strong> $${product.price}</li>
-                                    </ul>
-                                    <div class="card-body text-center">
-                                        <button class="btn btn-success btn-edit" data-id="${element.id}" data-bs-toggle='modal' data-bs-target='#exampleModal-2'>Editar</button>
-                                        <button class="btn btn-danger btn-delete" data-id="${element.id}">Eliminar</button>                               
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
+            html+=`<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="${product.image}" class="card-img-top" alt="Imagen de la obra">
+                <div class="card-body">
+                    <h5 class="card-title text-center">${product.nombre}</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Fecha y Hora:</strong> ${product.dateTime}</li>
+                        <li class="list-group-item"><strong>Director:</strong> ${product.director}</li>
+                        <li class="list-group-item"><strong>Productor:</strong> ${product.productor}</li>
+                        <li class="list-group-item"><strong>Descripción:</strong> ${product.descripcion}</li>
+                        <li class="list-group-item"><strong>Clasificación:</strong> ${product.clasificacion}</li>
+                        <li class="list-group-item"><strong>Localidades:</strong> ${product.localidades}</li>
+                        <li class="list-group-item"><strong>Precio:</strong> $${product.price}</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-success btn-edit" data-id="${element.id}" data-bs-toggle="modal" data-bs-target="#exampleModal-2">Editar</button>
+                    <button class="btn btn-danger btn-delete" data-id="${element.id}">Eliminar</button>
+                </div>
+            </div>
+        </div>`;
         });
     }
     document.getElementById("crud-table").innerHTML=html;
@@ -275,5 +274,154 @@ document.querySelector("#update").onclick = async function () {
     }
 };
 
+function validateData_2() {
+    let nombre_emp = document.getElementById("nombre-emp").value.trim();
+    let apellido_emp = document.getElementById("apellido-emp").value.trim();
+    let fecha_nac = document.getElementById("date").value;
+    let email = document.getElementById("email-emp").value.trim();
+    let telefono = document.getElementById("telefono-emp").value;
+    let cargo = document.getElementById("cargo-emp").value;
+    let departamento = document.getElementById("departamento-emp").value;
+
+    // Resetear mensajes de error
+    ["nombre-emp", "apellido-emp", "date", "email-emp", "telefono-emp", "cargo-emp", "departamento-emp"].forEach(id => {
+        document.getElementById(id + "-error-msg").innerHTML = "";
+    });
+
+    let isValid = true;
+
+    // Validaciones
+    if (nombre_emp === "") {
+        document.getElementById("nombre-emp-error-msg").innerHTML = "Debes ingresar el nombre del empleado";
+        isValid = false;
+    }
+    if (apellido_emp === "") {
+        document.getElementById("apellido-emp-error-msg").innerHTML = "Debes ingresar el apellido del empleado";
+        isValid = false;
+    }
+    if (fecha_nac === "") {
+        document.getElementById("date-error-msg").innerHTML = "Debes ingresar la fecha de nacimiento del empleado";
+        isValid = false;
+    }
+    if (email === "") {
+        document.getElementById("email-emp-error-msg").innerHTML = "Debes ingresar el correo del empleado";
+        isValid = false;
+    }
+    if (telefono === "") {
+        document.getElementById("telefono-emp-error-msg").innerHTML = "Debes ingresar el teléfono del empleado";
+        isValid = false;
+    }
+    if (cargo === "") {
+        document.getElementById("cargo-emp-error-msg").innerHTML = "Debes seleccionar un cargo";
+        isValid = false;
+    }
+    if (departamento === "") {
+        document.getElementById("departamento-emp-error-msg").innerHTML = "Debes seleccionar un departamento";
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+async function AddData_2() {
+    if (validateData_2()) {
+        try {
+            // Obtener valores de los campos
+            let dui = document.getElementById("dui-emp").value;
+            let nombre_emp = document.getElementById("nombre-emp").value;
+            let apellido_emp = document.getElementById("apellido-emp").value;
+            let fecha_nac = document.getElementById("date").value;
+            let email = document.getElementById("email-emp").value;
+            let telefono = document.getElementById("telefono-emp").value;
+            let cargo = document.getElementById("cargo-emp").value;
+            let departamento = document.getElementById("departamento-emp").value;
+
+            // Guardar datos del empleado
+            await saveEmployee({
+                dui,
+                nombre: nombre_emp,
+                apellido: apellido_emp,
+                fecha_nacimiento: fecha_nac,
+                email,
+                telefono,
+                cargo,
+                departamento
+            });
+
+            // Limpiar campos después de guardar
+            ["dui-emp","nombre-emp", "apellido-emp", "date", "email-emp", "telefono-emp", "cargo-emp", "departamento-emp"].forEach(id => {
+                document.getElementById(id).value = "";
+            });
+
+            // Cerrar modal y mostrar confirmación
+            document.getElementById("close-btn").click();
+            alert('Empleado añadido exitosamente');
+            showData_2();
+        } catch (error) {
+            console.error("Error al añadir el empleado:", error);
+            alert("Hubo un error al añadir el empleado.");
+        }
+    }
+}
+
+async function showData_2() {
+    let html = "";
+    try {
+        // Recuperando el tamaño de la lista de empleados
+        let size = await getEmployeesListSize();
+
+        if (size === 0) { // Si no hay empleados en la colección
+            html = `<div class="card-body">
+                    <div class="row gx-2">
+                    <div class="col">
+                    <div class="p-3">
+                        <img src="img/no-data-found.png" class="img-fluid d-block">
+                    </div></div></div></div>`;
+            
+        } else { // Si hay empleados
+            const employeeList = await getEmployees();
+            employeeList.forEach(element => {
+                const employee = element.data();
+                html += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">${employee.nombre} ${employee.apellido}</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>DUI:</strong> ${employee.dui}</li>
+                            <li class="list-group-item"><strong>Fecha de Nacimiento:</strong> ${employee.fecha_nacimiento}</li>
+                            <li class="list-group-item"><strong>Email:</strong> ${employee.email}</li>
+                            <li class="list-group-item"><strong>Teléfono:</strong> ${employee.telefono}</li>
+                            <li class="list-group-item"><strong>Cargo:</strong> ${employee.cargo}</li>
+                            <li class="list-group-item"><strong>Departamento:</strong> ${employee.departamento}</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-danger btn-delete" data-id="${element.id}">Eliminar</button>
+                    </div>
+                </div>
+            </div>`;
+            });
+        }
+        document.getElementById("crud-table-2").innerHTML = html;
+
+        // Asociar manejadores de eventos a botones de eliminar
+        document.querySelectorAll('.btn-delete').forEach(btn => {
+            btn.addEventListener('click', async (event) => {
+                try {
+                    await deleteEmployee(event.target.dataset.id);
+                    alert('Empleado eliminado correctamente.');
+                    showData_2();
+                } catch (error) {
+                    console.error("Error al eliminar el empleado:", error);
+                    alert("Hubo un error al eliminar el empleado.");
+                }
+            });
+        });
+    } catch (error) {
+        console.error("Error al mostrar los empleados:", error);
+        alert("Hubo un error al mostrar los empleados.");
+    }
+}
 
 document.addEventListener("DOMContentLoaded", showData);
+document.addEventListener("DOMContentLoaded", showData_2);
