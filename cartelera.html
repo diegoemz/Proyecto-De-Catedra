@@ -34,32 +34,31 @@
         </div>
 
         <div class="cartelera-mov">
-            <div class="cuadro">
-                <div class="obras">
-                    <img src="img/cartelera.png" alt="Lago de los Cisnes">
-                    <p>LAGO DE LOS CISNES</p>
-                    <button onclick="location.href='#des-1'"">Más Información</button>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <div class="image-slide">
+                        <img src="img/cisnes.jpg" alt="Lago de los Cisnes">
+                        <p>LAGO DE LOS CISNES</p>
+                    </div>
+                    <div class="image-slide">
+                        <img src="img/casca.jpg" alt="El Cascanueces">
+                        <p>EL CASCANUECES</p>
+                    </div>
+                    <div class="image-slide">
+                        <img src="img/nochepeli.jpg" alt="Una noche de película">
+                        <p>UNA NOCHE DE PELÍCULA</p>
+                    </div>
+                    <div class="image-slide">
+                        <img src="img/hanselgretel.jpg" alt="Hansel y Gretel">
+                        <p>HANSEL Y GRETEL</p>
+                    </div>
+                    <div class="image-slide">
+                        <img src="img/romeojuelita.png" alt="Romeo y Julieta">
+                        <p>ROMEO Y JULIETA</p>
+                    </div>
                 </div>
-                <div class=" obras">
-                    <img src="img/cartelera2.jpg" alt="El Cascanueces">
-                    <p>EL CASCANUECES</p>
-                    <button onclick="location.href='#des-2'">Más Información</button>
-                </div>
-                <div class="obras">
-                    <img src="img/cartelera 3.jpg" alt="Una noche de película">
-                    <p>UNA NOCHE DE PELÍCULA</p>
-                    <button onclick="location.href='#des-3'">Más Información</button>
-                </div>
-                <div class="obras">
-                    <img src="img/cartelera4.jpg" alt="Hansel y Gretel">
-                    <p>HANSEL Y GRETEL</p>
-                    <button onclick="location.href='#des-4'">Más Información</button>
-                </div>
-                <div class="obras">
-                    <img src="img/cartelera5.png" alt="Romeo y Julieta">
-                    <p>ROMEO Y JULIETA</p>
-                    <button onclick="location.href='#des-5'">Más Información</button>
-                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
             </div>
         </div>
 
@@ -175,6 +174,31 @@
         </div>
 
     </div>
+
+
+    <script>
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.image-slide');
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+            const offset = -currentSlide * 100; // -100% por cada slide
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+        
+        function moveSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+        
+        // Inicializa el carrusel mostrando el primer slide
+        showSlide(currentSlide);
+        </script>
 
     <footer>
         <div class="container">

@@ -189,6 +189,58 @@ strong {
     transform: scale(1.05);
 }
 
+
+.cartelera {
+    display: flex; /* Usar flexbox para organizar las obras */
+    flex-direction: column; /* Coloca las obras en una columna */
+    align-items: center; /* Centra los elementos */
+    margin: 20px 0; /* Espaciado entre las obras */
+    border: 1px solid #ddd; /* Borde suave alrededor de cada obra */
+    border-radius: 10px; /* Esquinas redondeadas */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    background-color: #fff; /* Fondo blanco para las obras */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.cartelera img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    aspect-ratio: 4 / 5; /* Establece la relación de aspecto 4:5 */
+    object-fit: cover; /* Recorta la imagen para que llene el contenedor */
+    border-bottom: 1px solid #ddd; /* Borde entre la imagen y el texto */
+}
+
+.contenido-cartelera {
+    padding: 15px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+}
+
+.contenido-cartelera h2 {
+    font-size: 20px; /* Tamaño de fuente para el título */
+    color: #2c3e50; /* Color del título */
+    margin: 10px 0; /* Espacio arriba y abajo del título */
+}
+
+.contenido-cartelera .Detalles {
+    font-size: 14px; /* Tamaño de fuente para los detalles */
+    color: #555; /* Color del texto de detalles */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+.btn-regreso {
+    background-color: #3498db; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.btn-regreso:hover {
+    background-color: #2980b9; /* Color de fondo al pasar el mouse */
+}
+
 @media screen and (max-width: 480px) {
     .title h1 {
         font-size: 20px;
@@ -341,4 +393,66 @@ strong {
     .cartelera img {
         width: auto;
     }
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.image-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.image-slide img {
+    width: 100%;
+    height: auto;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.image-slide p {
+    font-size: 18px; /* Aumenta el tamaño de la fuente */
+    font-weight: bold; /* Hace que el texto sea más prominente */
+    color: #333; /* Cambia el color del texto a un gris oscuro para mejor legibilidad */
+    margin-top: 10px; /* Espacio entre la imagen y el texto */
+    text-align: center; /* Centra el texto */
+    line-height: 1.5; /* Mejora el espaciado entre líneas */
+}
+
+.carousel p {
+    font-size: 16px; /* Tamaño de fuente para descripciones */
+    color: #555; /* Un gris más suave para el texto de descripción */
+    text-align: center; /* Centra el texto de descripción */
+    margin: 10px 0; /* Espaciado arriba y abajo */
 }
