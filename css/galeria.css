@@ -67,4 +67,137 @@
 .botoncito:hover{
     padding: 15px 30px;
     background-color: #0D1B2A;
+<<<<<<< Updated upstream
+=======
+}
+
+@media (max-width: 480px) {
+    #primera-seccion-contendor {
+        height: 50vh;
+        background-size: cover;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #primera-seccion h2 {
+        font-size: 2em;
+    }
+
+    .envoltorio-galeria {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .grid h3 {
+        font-size: 1.5em;
+    }
+
+    .botoncito {
+        margin-right: 0;
+        padding: 10px 15px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    #primera-seccion-contendor {
+        height: 55vh;
+        background-size: cover;
+        text-align: center;
+    }
+
+    #primera-seccion h2 {
+        font-size: 3em;
+    }
+
+    .envoltorio-galeria {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .grid h3 {
+        font-size: 1.6em;
+    }
+
+    .botoncito {
+        margin-right: 50px;
+        padding: 10px 15px;
+    }
+}
+
+
+@media (min-width: 769px){
+    #primera-seccion-contendor {
+        height: 60vh;
+    }
+
+    #primera-seccion h2 {
+        font-size: 3.2em;
+    }
+
+    .envoltorio-galeria {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+    }
+
+    .botoncito {
+        margin-right: 100px;
+        padding: 10px 20px;
+    }
+} 
+
+.nav-list{
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+.nav-list li a{
+    text-decoration: none;
+}
+
+.abrir-menu, .cerrar-menu {
+    display: none;
+}
+
+@media screen and (max-width: 1400px){
+    .abrir-menu, .cerrar-menu{
+        display: block;
+        border: 0;
+        font-size: 2rem;
+        background-color: transparent;
+        cursor: pointer;
+        color: #E0E1DD;
+    }
+
+    .cerrar-menu{
+        padding: 7px;
+    }
+
+    .nav{
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1B263B;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    }
+
+    .nav.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list{
+        flex-direction: column;
+        align-items: end;
+    }
+>>>>>>> Stashed changes
 }

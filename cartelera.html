@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teatro Nacional</title>
+<<<<<<< Updated upstream
     <meta name="description" content="Cartelera del Teatro Nacional de El Salvador. Conoce nuestras próximas presentaciones y compra tus boletos.">
+=======
+    <meta name="description"
+        content="Cartelera del Teatro Nacional de El Salvador. Conoce nuestras próximas presentaciones y compra tus boletos.">
+        
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+>>>>>>> Stashed changes
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/cartelera.css"
 </head>
@@ -12,6 +19,7 @@
     <header>
         <div class="container">
             <p class="logo">Teatro Nacional</p>
+<<<<<<< Updated upstream
             <nav>
                 <a href="index.html">Inicio</a>
                 <a href="cartelera.html">Cartelera</a>
@@ -20,6 +28,21 @@
                 <a href="quienes-somos.html">Quiénes Somos</a>
                 <a href="staff.html">Staff</a>
                 <a href="contactanos.html">Contáctanos</a>
+=======
+            <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cartelera.html">Cartelera</a></li>
+                    <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                    <li><a id="actual" href="galeria.html">Galería</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="staff.html">Staff</a></li>
+                    <li><a href="contactanos.html">Contáctanos</a></li>
+                    <li><a href="carrito.html">Mis Tickets</a></li>
+                </ul>
+                <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+>>>>>>> Stashed changes
             </nav>
         </div>
     </header>
@@ -126,5 +149,26 @@
         </div>
     </footer>
 
+<<<<<<< Updated upstream
+=======
+
+    <!-- Modal -->
+<div id="ticketModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title">Detalles de la Obra</h2>
+        <p><strong>Fecha:</strong> <span id="modal-date"></span></p>
+        <p><strong>Hora:</strong> <span id="modal-time"></span></p>
+        <p><strong>Precio:</strong> $<span id="modal-price"></span></p>
+        <label for="quantity">Cantidad de boletos:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+        <button class="al-carrito" onclick="addToCart()">Agregar al Carrito</button>
+    </div>
+</div>
+
+<script src="js/cartelera.js"></script>
+<script src="./js/hamburguesa.js"></script>
+
+>>>>>>> Stashed changes
 </body>
 </html>
