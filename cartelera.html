@@ -23,6 +23,7 @@
                 <a href="quienes-somos.html">Quiénes Somos</a>
                 <a href="staff.html">Staff</a>
                 <a href="contactanos.html">Contáctanos</a>
+                <a href="carrito.html">Mis Tickets</a>
             </nav>
         </div>
     </header>
@@ -34,153 +35,172 @@
         </div>
 
         <div class="cartelera-mov">
-            <div class="cuadro">
-                <div class="obras">
-                    <img src="img/cartelera.png" alt="Lago de los Cisnes">
-                    <p>LAGO DE LOS CISNES</p>
-                    <button onclick="location.href='#des-1'"">Más Información</button>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <div class="image-slide">
+                        <img src="img/cisnes.jpg" alt="Lago de los Cisnes">
+                        <p>LAGO DE LOS CISNES</p>
+                    </div>
+                    <div class="image-slide">
+                        <img src="img/casca.jpg" alt="El Cascanueces">
+                        <p>EL CASCANUECES</p>
+                    </div>
+                    <div class="image-slide">
+                        <img src="img/nochepeli.jpg" alt="Una noche de película">
+                        <p>UNA NOCHE DE PELÍCULA</p>
+                    </div>
+                    <div class="image-slide">
+                        <img src="img/hanselgretel.jpg" alt="Hansel y Gretel">
+                        <p>HANSEL Y GRETEL</p>
+                    </div>
+                    <div class="image-slide">
+                        <img src="img/romeojuelita.png" alt="Romeo y Julieta">
+                        <p>ROMEO Y JULIETA</p>
+                    </div>
                 </div>
-                <div class=" obras">
-                    <img src="img/cartelera2.jpg" alt="El Cascanueces">
-                    <p>EL CASCANUECES</p>
-                    <button onclick="location.href='#des-2'">Más Información</button>
-                </div>
-                <div class="obras">
-                    <img src="img/cartelera 3.jpg" alt="Una noche de película">
-                    <p>UNA NOCHE DE PELÍCULA</p>
-                    <button onclick="location.href='#des-3'">Más Información</button>
-                </div>
-                <div class="obras">
-                    <img src="img/cartelera4.jpg" alt="Hansel y Gretel">
-                    <p>HANSEL Y GRETEL</p>
-                    <button onclick="location.href='#des-4'">Más Información</button>
-                </div>
-                <div class="obras">
-                    <img src="img/cartelera5.png" alt="Romeo y Julieta">
-                    <p>ROMEO Y JULIETA</p>
-                    <button onclick="location.href='#des-5'">Más Información</button>
-                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
             </div>
         </div>
+    <div>
 
-        <div class="title-2">
-            <h1>⎯ INFORMACIÓN DE OBRAS ⎯</h1>
-        </div>
-
-        <div class="cartelera" id="des-1">
-            <img src="img/cartelera.png" alt="Lago de los Cisnes">
-            <div class="contenido-cartelera">
-                <h2>EL LAGO DE LOS CISNES</h2><br>
-                <div class="Detalles">
-                    <p><strong>De: Macholah Escuela de Danza</strong><br></p>
-                    <p><strong>Producción:</strong> Machola Escuela de Danza<br></p>
-                    <p><strong>Dirección:</strong> Orlando López<br></p>
-                    <p><strong>Elenco:</strong> Camila Melara, Beraly Parada, Daniela Pineda, Melissa Torres, Enrique
-                        Zepeda<br></p>
-                    <p><strong>Descripción:</strong> "El Lago de los Cisnes” llega al majestuoso Teatro Nacional de San
-                        Salvador, presentado por Macholah Ballet junto a bailarines internacionales.La historia narra un amor entre el príncipe Siegfried y Odette.<br>
-                    </p>
-                    <p><strong>Clasificación:</strong> Apto para todo el público<br></p>
-                    <p><strong>Precio:</strong> $25 (VIP), $20 (Platinum), $15 (Preferencial), $10 (General)<br></p>
-                    <p><strong>Venta de boletos en el Teatro:</strong> martes y miércoles de 2:00 p.m. a 6:00 p.m. y
-                        jueves a domingo a partir de las 2.00 p.m.</p>
-                    <button onclick="location.href='#car-mov'" class="btn-regreso">Regresar a cartelera</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="cartelera" id="des-2">
-            <img src="img/cartelera2.jpg" alt="El Cascanueces">
-            <div class="contenido-cartelera">
-                <h2>EL CASCANUECES</h2><br>
-                <div class="Detalles">
-                    <p><strong>De: Alcira Alonso</strong><br></p>
-                    <p><strong>Producción:</strong> Fundación Ballet de El Salvador<br></p>
-                    <p><strong>Dirección:</strong> Maximiliano Burghi<br></p>
-                    <p><strong>Elenco:</strong> Camila Melara, Beraly Parada, Daniela Pineda, Melissa Torres, Enrique
-                        Zepeda<br></p>
-                    <p><strong>Descripción:</strong> La historia de la niña Clara que recibe un juguete de cascanueces
-                        que cobra vida y la lleva por diferentes aventuras llenas de batallas, música y danza...<br></p>
-                    <p><strong>Clasificación:</strong> Apto para todo el público<br></p>
-                    <p><strong>Precio:</strong> $12.00 (Preferencial), $8.00 (General)<br></p>
-                    <p><strong>Venta de boletos en el Teatro:</strong> martes y miércoles de 2:00 p.m. a 6:00 p.m. y
-                        jueves a domingo a partir de las 2.00 p.m.</p>
-                    <button onclick="location.href='#car-mov'" class="btn-regreso">Regresar a cartelera</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="cartelera" id="des-3">
-            <img src="img/GGz4mWFXAAAdZWp.jpeg" alt="Una Noche de Película">
-
-            <div class="contenido-cartelera">
-                <h2>UNA NOCHE DE PELÍCULA</h2><br>
-                <div class="Detalles">
-                    <p><strong>De: La Orquesta Sinfónica de El Salvador </strong><br></p>
-                    <p><strong>Producción:</strong> Orquesta Sinfónica de El Salvador<br></p>
-                    <p><strong>Dirección:</strong> Edwin Torres<br></p>
-                    <p><strong>Artistas:</strong> Orquesta Sinfónica de El Salvador<br></p>
-                    <p><strong>Clasificación:</strong> Supervisión por un adulto recomendada<br></p>
-                    <p><strong>Descripción:</strong> Disfruta de un concierto donde la magia del cine se fusiona con la
-                        excelencia musical de nuestra orquesta...<br></p>
-                    <p><strong>Precio:</strong> $1.00 (Salvadoreños), $2.00 (Extranjeros Residentes), $3.00 (No
-                        Residentes)<br></p>
-                    <p><strong>Venta de boletos en el Teatro:</strong> martes y miércoles de 2:00 p.m. a 6:00 p.m. y
-                        jueves a domingo a partir de las 2.00 p.m.</p>
-                    <button onclick="location.href='#car-mov'" class="btn-regreso">Regresar a cartelera</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="cartelera" id="des-4">
-            <img src="img/cartelera4.jpg" alt="Hansel y Gretel">
-            <div class="contenido-cartelera">
-                <h2>HANSEL Y GRETEL</h2><br>
-                <div class="Detalles">
-                    <p><strong>De: Circus Contemporaneum</strong><br></p>
-                    <p><strong>Producción:</strong> Circus Contemporaneum<br></p>
-                    <p><strong>Dirección:</strong> Jorge Barrera<br></p>
-                    <p><strong>Elenco:</strong> Camila Melara, Beraly Parada, Daniela Pineda, Melissa Torres, Enrique
-                        Zepeda<br></p>
-                    <p><strong>Descripción:</strong> Esta adaptación moderna de un cuento clásico llevará al público por
-                        un viaje lleno de color, música y reflexiones sobre el medioambiente...<br></p>
-                    <p><strong>Clasificación:</strong> Apto para mayores de 12 años<br></p>
-                    <p><strong>Precio:</strong> Entrada gratis, hasta agotar aforo<br></p>
-                    <p><strong>Venta de boletos en el Teatro:</strong> martes y miércoles de 2:00 p.m. a 6:00 p.m. y
-                        jueves a domingo a partir de las 2.00 p.m.</p>
-                    <button onclick="location.href='#car-mov'" class="btn-regreso">Regresar a cartelera</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="cartelera" id="des-5">
-            <img src="img/cartelera5.png" alt="Romeo y Julieta">
-            <div class="contenido-cartelera">
-                <h2>ROMEO Y JULIETA</h2><br>
-                <div class="Detalles">
-                    <p><strong>De: Orlando López</strong><br></p>
-                    <p><strong>Producción:</strong> Orlando López<br></p>
-                    <p><strong>Dirección:</strong> Ballet de El Salvador<br></p>
-                    <p><strong>Elenco:</strong> Camila Melara, Beraly Parada, Daniela Pineda, Melissa Torres, Enrique Zepeda<br></p>
-                    <p><strong>Descripción:</strong> Una nueva creación coreográfica para celebrar el 50 aniversario
-                        de la Compañía, fiel a la narrativa de Shakespeare...<br></p>
-                    <p><strong>Clasificación:</strong> Supervisión por un adulto requerida para niños menores de 15
-                        años</p>
-                    <p><strong>Precio:</strong> VIP $25, Platinum $20, Preferencial $15, General $10<br></p>
-                    <p><strong>Venta de boletos en el Teatro:</strong> martes y miércoles de 2:00 p.m. a 6:00 p.m. y jueves a domingo a
-                        partir de las 2.00 p.m.</p>
-                    <button onclick="location.href='#car-mov'" class="btn-regreso">Regresar a cartelera</button>
-                </div>
-            </div>
-        </div>
-
+    <div class="title-2">
+        <h1>⎯ INFORMACIÓN DE OBRAS ⎯</h1>
     </div>
+
+    <div class="cartelera-container">
+        <!-- El Lago de los Cisnes -->
+        <section class="cartelera-item" id="des-1">
+            <img src="img/cisnes2.jpg" alt="Lago de los Cisnes">
+            <div id="lago-de-los-cisnes" class="contenido-cartelera">
+                <h2>EL LAGO DE LOS CISNES</h2>
+                <div class="detalles">
+                    <p><strong>Fecha:</strong> 15 de noviembre 2024</p>
+                    <p><strong>Hora:</strong> 7:00 p.m.</p>
+                    <p><strong>Precio:</strong> $15.00</p>
+                    <p><strong>Descripción:</strong> "El Lago de los Cisnes” llega al majestuoso Teatro Nacional de San
+                        Salvador, presentado por Macholah Ballet junto a bailarines internacionales. La historia narra un amor entre el príncipe Siegfried y Odette.</p>
+                    <p><strong>Producción:</strong> Machola Escuela de Danza</p>
+                    <p><strong>Dirección:</strong> Orlando López</p>
+                    <button onclick="openModal('El Lago de los Cisnes', '15 de noviembre 2024', '7:00 p.m.', 15)" class="btn-regreso">Adquirir Boletos</button>                </div>
+            </div>
+        </section>
+
+        <!-- El Cascanueces -->
+        <section class="cartelera-item" id="des-2">
+            <img src="img/casca2.jpg" alt="El Cascanueces">
+            <div class="contenido-cartelera">
+                <h2>EL CASCANUECES</h2>
+                <div class="detalles">
+                    <p><strong>Fecha:</strong> 22 de diciembre 2024</p>
+                    <p><strong>Hora:</strong> 8:00 p.m.</p>
+                    <p><strong>Precio:</strong> $20.00</p>
+                    <p><strong>Descripción:</strong> La historia de la niña Clara que recibe un juguete de cascanueces
+                        que cobra vida y la lleva por diferentes aventuras llenas de batallas, música y danza.</p>
+                    <p><strong>Producción:</strong> Fundación Ballet de El Salvador</p>
+                    <p><strong>Dirección:</strong> Maximiliano Burghi</p>
+                    <button onclick="openModal('El Cascanueces', '22 de diciembre de 2024', '8:00 p.m.', 20)" class="btn-regreso">Adquirir Boletos</button>                </div>
+            </div>
+        </section>
+
+        <!-- Una Noche de Película -->
+        <section class="cartelera-item" id="des-3">
+            <img src="img/nochepeli2.jpeg" alt="Una Noche de Película">
+            <div class="contenido-cartelera">
+                <h2>UNA NOCHE DE PELÍCULA</h2>
+                <div class="detalles">
+                    <p><strong>Fecha:</strong> 30 de diciembre de 2024</p>
+                    <p><strong>Hora:</strong> 6:00 p.m.</p>
+                    <p><strong>Precio:</strong> $10.00</p>
+                    <p><strong>Descripción:</strong> Disfruta de un concierto donde la magia del cine se fusiona con la
+                        excelencia musical de nuestra orquesta.</p>
+                    <p><strong>Producción:</strong> Orquesta Sinfónica de El Salvador</p>
+                    <p><strong>Dirección:</strong> Edwin Torres</p>
+                    <button onclick="openModal('Una Noche de Pelicula', '30 de diciembre de 2024', '6:00 p.m.', 10)" class="btn-regreso">Adquirir Boletos</button>                </div>
+            </div>
+        </section>
+
+        <!-- Hansel y Gretel -->
+        <section class="cartelera-item" id="des-4">
+            <img src="img/hanselgretel2.jpg" alt="Hansel y Gretel">
+            <div class="contenido-cartelera">
+                <h2>HANSEL Y GRETEL</h2>
+                <div class="detalles">
+                    <p><strong>Fecha:</strong> 2 de enero de 2025</p>
+                    <p><strong>Hora:</strong> 8:00 p.m.</p>
+                    <p><strong>Precio:</strong> $15.00</p>
+                    <p><strong>Descripción:</strong> Esta adaptación moderna de un cuento clásico llevará al público por
+                        un viaje lleno de color, música y reflexiones sobre el medioambiente.</p>
+                    <p><strong>Producción:</strong> Circus Contemporaneum</p>
+                    <p><strong>Dirección:</strong> Jorge Barrera</p>
+                    <button onclick="openModal('Hansel & Gretel', '2 de enero de 2025', '8:00 p.m.', 15)" class="btn-regreso">Adquirir Boletos</button>                </div>
+            </div>
+        </section>
+
+        <!-- Romeo y Julieta -->
+        <section class="cartelera-item" id="des-5">
+            <img src="img/romeojulieta2.jpeg" alt="Romeo y Julieta">
+            <div class="contenido-cartelera">
+                <h2>ROMEO Y JULIETA</h2>
+                <div class="detalles">
+                    <p><strong>Fecha:</strong> 2 de febrero de 2025</p>
+                    <p><strong>Hora:</strong> 7:00 p.m.</p>
+                    <p><strong>Precio:</strong> $20.00</p>
+                    <p><strong>Descripción:</strong> Una nueva creación coreográfica para celebrar el 50 aniversario
+                        de la Compañía, fiel a la narrativa de Shakespeare.</p>
+                    <p><strong>Producción:</strong> Orlando López</p>
+                    <p><strong>Dirección:</strong> Ballet de El Salvador</p>
+                    <button onclick="openModal('Romeo & Julieta', '2 de febrero de 2025', '7:00 p.m.', 20)" class="btn-regreso">Adquirir Boletos</button>                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.image-slide');
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+            const offset = -currentSlide * 100; // -100% por cada slide
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+        
+        function moveSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+        
+        // Inicializa el carrusel mostrando el primer slide
+        showSlide(currentSlide);
+        </script>
 
     <footer>
         <div class="container">
             <p>&copy; Teatro Nacional de San Salvador</p>
         </div>
     </footer>
+
+
+    <!-- Modal -->
+<div id="ticketModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title">Detalles de la Obra</h2>
+        <p><strong>Fecha:</strong> <span id="modal-date"></span></p>
+        <p><strong>Hora:</strong> <span id="modal-time"></span></p>
+        <p><strong>Precio:</strong> $<span id="modal-price"></span></p>
+        <label for="quantity">Cantidad de boletos:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+        <button class="al-carrito" onclick="addToCart()">Agregar al Carrito</button>
+    </div>
+</div>
+
+<script src="js/cartelera.js"></script>
 
 </body>
 

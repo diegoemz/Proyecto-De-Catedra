@@ -39,306 +39,241 @@
     padding-bottom: 40px;
 }
 
-/*Cartelera*/
-.cartelera-mov .cuadro {
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.image-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.image-slide img {
+    width: 100%;
+    height: auto;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.image-slide p {
+    font-size: 18px; /* Aumenta el tamaño de la fuente */
+    font-weight: bold; /* Hace que el texto sea más prominente */
+    color: #333; /* Cambia el color del texto a un gris oscuro para mejor legibilidad */
+    margin-top: 10px; /* Espacio entre la imagen y el texto */
+    text-align: center; /* Centra el texto */
+    line-height: 1.5; /* Mejora el espaciado entre líneas */
+}
+
+
+.carousel p {
+    font-size: 16px; /* Tamaño de fuente para descripciones */
+    color: #555; /* Un gris más suave para el texto de descripción */
+    text-align: center; /* Centra el texto de descripción */
+    margin: 10px 0; /* Espaciado arriba y abajo */
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Estilos para la cartelera */
+.cartelera-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar elementos */
+}
+
+.cartelera-item {
+    position: relative; 
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 80vh;
-    overflow-x: auto;
-    background-color: var(--azul-1);
-    padding: 40px;
-    border-radius: 10px;
     align-items: center;
-    text-align: center;
-    justify-items: center;
-}
-
-.obras {
-    height: auto;
-    min-height: 300px;
-    min-width: 370px;
-    background-color: var(--azul-3);
-    text-align: center;
-    line-height: 1.5;
-    font-size: 18px;
+    margin: 20px 0;
+    border: 1px solid #ddd; /* Borde suave */
     border-radius: 10px;
-    padding: 30px;
-    margin-right: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.obras p {
-    text-align: center;
-    white-space: normal;
-    /*para que no se desborde*/
-    padding-top: 20px;
-    color: var(--beige-1);
-    font-size: 22px;
-    font-weight: bold;
-    border-bottom: 1px solid var(--beige-1);
-    padding-bottom: 10px;
-    padding: 10px 0;
-    flex-grow: 1;
-    /*para que el texto crezca cuando se agrande*/
-    word-wrap: break-word;
-    /*que el texto no se desborde del contenedor*/
-}
-
-.obras button {
-    background-color: var(--beige-1);
-    color: var(--azul-1);
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.2s ease;
-    border-radius: 20px;
-    height: 40px;
-    width: 200px;
-    padding: 10px;
-}
-
-.obras button:hover {
-    background-color: var(--beige-2);
-    transform: scale(1.05);
-}
-
-.obras img {
-    height: 300px;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgb(47, 47, 47);
-}
-
-/*Información de obras*/
-.cartelera {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--azul-1);
-    margin-bottom: 20px;
-    margin-top: 50px;
-    padding: 40px;
-    box-shadow: var(--beige-1) 0 4px 8px;
-    border-radius: 8px;
     overflow: hidden;
-    height: 800px;
-    align-items: center;
+    width: 100%;
+    background-color: #ffffff; /* Fondo blanco para los elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s; /* Transición suave */
+}
+.cartelera-item:hover {
+    background-color: #d2d7e0; /* Cambia el color de fondo al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
 }
 
-.cartelera img {
-    width: 35%;
-    height: 500px;
-    object-fit: cover;
-    margin: 20px;
+.cartelera-item:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.cartelera-item img {
+    width: 35%; /* Ancho fijo para la imagen */
+    height: auto; /* Mantener la proporción */
+    border-radius: 10px 0 0 10px; /* Bordes redondeados en la imagen */
 }
 
 .contenido-cartelera {
-    padding: 50px;
-    width: 65%;
-    height: 90%;
-    background-color: var(--azul-5);
-    border-radius: 8px;
-    box-shadow: #80858e 0 6px 8px;
-    margin: 10px;
-    text-align: justify;
-    overflow: hidden;
+    padding: 20px;
+    flex: 1; /* Ocupa el espacio restante */
 }
 
 h2 {
-    margin-top: 0;
-    font-size: 25px;
-    color: var(--azul-1);
-    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Color del título */
+    font-size: 2.5rem;
 }
 
-.Detalles p {
-    padding-top: 10px;
-    font-size: 20px;
-    line-height: 1.40;
-    text-align: justify;
-    color: var(--azul-2);
-    height: auto;
-    overflow: visible;
-}
-
-strong {
-    color: var(--azul-1);
-    font-weight: bold;
+.detalles p {
+    line-height: 1.7;
+    color: #000000; /* Color del texto */
+    font-size: 1.3rem;
 }
 
 .btn-regreso {
-    background-color: var(--azul-3);
-    color: var(--beige-1);
+    position: absolute; /* Posicionar el botón de manera absoluta */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #0e4367; /* Color del botón */
+    color: #ffffff; /* Color del texto del botón */
     border: none;
-    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px 15px;
     cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.2s ease;
-    border-radius: 20px;
-    height: 40px;
-    width: 300px;
-    padding: 10px;
-    font-weight: bold;
+    transition: background-color 0.3s; /* Transición para el color del botón */
+    font-size: 1em; /* Aumentar tamaño del texto del botón */
 }
 
 .btn-regreso:hover {
-    background-color: var(--azul-4);
-    transform: scale(1.05);
+    background-color: #2980b9; /* Color del botón al pasar el mouse */
 }
 
-@media screen and (max-width: 480px) {
-    .title h1 {
-        font-size: 20px;
+/* Responsive */
+@media (max-width: 768px) {
+    .cartelera-item {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinear a la izquierda */
     }
 
-    .title img {
-        width: 120px;
-    }
-
-    .cartelera-mov .cuadro {
-        height: auto;
-    }
-
-    .obras {
-        min-width: 100%;
-        margin-bottom: 20px;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 200px;
-    }
-
-    .obras p {
-        white-space: normal;
-        word-wrap: break-word;
-        padding-top: 10px;
-    }
-
-    .obras img {
-        height: 200px;
-        width: 200px;
-        overflow: hidden;
-    }
-
-    .cartelera img {
-        width: 30%;
-        height: 300px;
-    }
-
-    .contenido-cartelera {
-        padding: 20px;
-        width: 100%;
-    }
-
-    .btn-regreso {
-        width: 90%;
-        padding: 15px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    .Detalles{
-        width: 200px;
-    }
-
-    .Detalles p {
-        font-size: 16px;
-        height: auto;
-        overflow: visible;
-    }
-
-    .cartelera {
-        flex-direction: column;
-    }
-
-    .title,
-    .cartelera-mov,
-    .cartelera {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-
-    .title-2 {
-        margin-top: 50px;
-        font-size: 18px;
-    }
-
-    .cartelera {
-        flex-direction: column;
-        padding: 20px;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-    }
-
-    .cartelera img {
-        width: auto;
+    .cartelera-item img {
+        width: 100%; /* Imagen ocupa todo el ancho en móviles */
+        max-width: none; /* Sin límite de ancho */
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    .title h1 {
-        font-size: 25px;
-    }
 
-    .title img {
-        width: 150px;
-    }
+/* Estilos del modal */
+/* Estilo para el fondo del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilitar scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
 
-    .cartelera-mov .cuadro {
-        height: auto;
-    }
+/* Estilo para el contenido del modal */
+.modal-content {
+    background-color: #f0f8ff; /* Color de fondo claro */
+    margin: 15% auto; /* Margen superior e inferior, centrado */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #153b63; /* Borde azul */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 80%; /* Ancho del modal */
+    max-width: 500px; /* Ancho máximo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+}
 
-    .obras {
-        min-width: 320px;
-        height: 450px;
-    }
+/* Estilo para el botón de cerrar */
+.close {
+    color: #2980b9; /* Color azul */
+    float: right; /* A la derecha */
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    cursor: pointer; /* Cursor de puntero */
+}
 
-    .obras img {
-        height: 250px;
-        width: 250px;
-    }
+.close:hover {
+    color: #11253b; /* Color más oscuro al pasar el ratón */
+}
 
-    .cartelera img {
-        width: 40%;
-        height: 400px;
-        overflow: hidden;
-    }
+/* Estilo para el título del modal */
+#modal-title {
+    color: #415A77; /* Color azul */
+    margin-bottom: 15px; /* Margen inferior */
+}
 
-    .contenido-cartelera {
-        padding: 30px;
-        width: 60%;
-        overflow: hidden;
-    }
+/* Estilo para los botones dentro del modal */
+.al-carrito {
+    background-color: #778DA9; /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s; /* Transición suave */
+}
 
-    .btn-regreso {
-        width: 250px;
-    }
+.al-carrito:hover {
+    background-color: #11253b; /* Color más oscuro al pasar el ratón */
+}
 
-    h2 {
-        font-size: 22px;
-    }
+/* Estilo para el input de cantidad */
+input[type="number"] {
+    width: 60px; /* Ancho del input */
+    padding: 5px; /* Espaciado interno */
+    margin: 10px 0; /* Margen superior e inferior */
+    border: 1px solid #0f2c4a; /* Borde azul */
+    border-radius: 5px; /* Bordes redondeados */
+}
 
-    .Detalles p {
-        font-size: 18px;
-        overflow: hidden;
-    }
+h2 {
+    color: #333; /* Color del título */
+    font-size: 1.5em; /* Tamaño de la fuente del título */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
 
-    .cartelera {
-        flex-direction: column;
-        padding: 30px;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-    }
+p {
+    color: #555; /* Color del texto */
+    font-size: 1em; /* Tamaño de la fuente del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
 
-    .cartelera img {
-        width: auto;
-    }
+
+.al-carrito:focus {
+    outline: none; /* Sin contorno en el enfoque */
 }
