@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/carrito.css"> <!-- Estilo específico para el carrito -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Teatro Nacional</p>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="cartelera.html">Cartelera</a>
+                <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                <a href="galeria.html">Galería</a>
+                <a href="quienes-somos.html">Quiénes Somos</a>
+                <a href="contactanos.html">Contáctanos</a>
+                <a id="actual" href="carrito.html">Mis Tickets</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Tu Carrito de Compras</h1>
+        <div id="carrito-container">
+            <table id="carrito">
+                <thead>
+                    <tr>
+                        <th>Obra</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="carrito-items">
+                    <!-- Los artículos del carrito se agregarán aquí dinámicamente -->
+                </tbody>
+            </table>
+            <div id="total-container">
+                <h2>Total: $<span id="total-price">0.00</span></h2>
+                <button id="checkout-button">Proceder al Pago</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Teatro Nacional de San Salvador</p>
+        </div>
+    </footer>
+
+    <script src="js/carrito.js"></script> <!-- Lógica del carrito -->
+</body>
+</html>
