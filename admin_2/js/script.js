@@ -145,31 +145,27 @@ async function showData(){
         productList.forEach(element => {
             console.log(element);
             const product=element.data();
-            html+=`<div class="row gx-2">
-                        <div class="col">
-                            <div class="p-3">
-                                <div class="card d-flex card-all">
-                                    <div class="card-body" style="width: 18rem;">
-                                        <h5 class="card-title text-center">${product.nombre}</h5>
-                                        <img src="${product.image}" class="card-img-top" alt="Imagen de la obra">
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><strong>Fecha y Hora:</strong> ${product.dateTime}</li>
-                                        <li class="list-group-item"><strong>Director:</strong> ${product.director}</li>
-                                        <li class="list-group-item"><strong>Productor:</strong> ${product.productor}</li>
-                                        <li class="list-group-item"><strong>Descripción:</strong> ${product.descripcion}</li>
-                                        <li class="list-group-item"><strong>Clasificación:</strong> ${product.clasificacion}</li>
-                                        <li class="list-group-item"><strong>Localidades:</strong> ${product.localidades}</li>
-                                        <li class="list-group-item"><strong>Precio:</strong> $${product.price}</li>
-                                    </ul>
-                                    <div class="card-body text-center">
-                                        <button class="btn btn-success btn-edit" data-id="${element.id}" data-bs-toggle='modal' data-bs-target='#exampleModal-2'>Editar</button>
-                                        <button class="btn btn-danger btn-delete" data-id="${element.id}">Eliminar</button>                               
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
+            html+=`<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="${product.image}" class="card-img-top" alt="Imagen de la obra">
+                <div class="card-body">
+                    <h5 class="card-title text-center">${product.nombre}</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Fecha y Hora:</strong> ${product.dateTime}</li>
+                        <li class="list-group-item"><strong>Director:</strong> ${product.director}</li>
+                        <li class="list-group-item"><strong>Productor:</strong> ${product.productor}</li>
+                        <li class="list-group-item"><strong>Descripción:</strong> ${product.descripcion}</li>
+                        <li class="list-group-item"><strong>Clasificación:</strong> ${product.clasificacion}</li>
+                        <li class="list-group-item"><strong>Localidades:</strong> ${product.localidades}</li>
+                        <li class="list-group-item"><strong>Precio:</strong> $${product.price}</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-success btn-edit" data-id="${element.id}" data-bs-toggle="modal" data-bs-target="#exampleModal-2">Editar</button>
+                    <button class="btn btn-danger btn-delete" data-id="${element.id}">Eliminar</button>
+                </div>
+            </div>
+        </div>`;
         });
     }
     document.getElementById("crud-table").innerHTML=html;
@@ -331,6 +327,7 @@ async function AddData_2() {
     if (validateData_2()) {
         try {
             // Obtener valores de los campos
+            let dui = document.getElementById("dui-emp").value;
             let nombre_emp = document.getElementById("nombre-emp").value;
             let apellido_emp = document.getElementById("apellido-emp").value;
             let fecha_nac = document.getElementById("date").value;
@@ -341,6 +338,7 @@ async function AddData_2() {
 
             // Guardar datos del empleado
             await saveEmployee({
+                dui,
                 nombre: nombre_emp,
                 apellido: apellido_emp,
                 fecha_nacimiento: fecha_nac,
@@ -351,7 +349,7 @@ async function AddData_2() {
             });
 
             // Limpiar campos después de guardar
-            ["nombre-emp", "apellido-emp", "date", "email-emp", "telefono-emp", "cargo-emp", "departamento-emp"].forEach(id => {
+            ["dui-emp","nombre-emp", "apellido-emp", "date", "email-emp", "telefono-emp", "cargo-emp", "departamento-emp"].forEach(id => {
                 document.getElementById(id).value = "";
             });
 
@@ -384,27 +382,24 @@ async function showData_2() {
             const employeeList = await getEmployees();
             employeeList.forEach(element => {
                 const employee = element.data();
-                html += `<div class="row gx-2">
-                            <div class="col">
-                                <div class="p-3">
-                                    <div class="card d-flex card-all">
-                                        <div class="card-body" style="width: 18rem;">
-                                            <h5 class="card-title text-center">${employee.nombre} ${employee.apellido}</h5>
-                                        </div>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item"><strong>Fecha de Nacimiento:</strong> ${employee.fecha_nacimiento}</li>
-                                            <li class="list-group-item"><strong>Email:</strong> ${employee.email}</li>
-                                            <li class="list-group-item"><strong>Teléfono:</strong> ${employee.telefono}</li>
-                                            <li class="list-group-item"><strong>Cargo:</strong> ${employee.cargo}</li>
-                                            <li class="list-group-item"><strong>Departamento:</strong> ${employee.departamento}</li>
-                                        </ul>
-                                        <div class="card-body text-center">
-                                            <button class="btn btn-danger btn-delete" data-id="${element.id}">Eliminar</button>                               
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`;
+                html += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">${employee.nombre} ${employee.apellido}</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>DUI:</strong> ${employee.dui}</li>
+                            <li class="list-group-item"><strong>Fecha de Nacimiento:</strong> ${employee.fecha_nacimiento}</li>
+                            <li class="list-group-item"><strong>Email:</strong> ${employee.email}</li>
+                            <li class="list-group-item"><strong>Teléfono:</strong> ${employee.telefono}</li>
+                            <li class="list-group-item"><strong>Cargo:</strong> ${employee.cargo}</li>
+                            <li class="list-group-item"><strong>Departamento:</strong> ${employee.departamento}</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-danger btn-delete" data-id="${element.id}">Eliminar</button>
+                    </div>
+                </div>
+            </div>`;
             });
         }
         document.getElementById("crud-table-2").innerHTML = html;
