@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teatro Nacional</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="./css/checkout.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Teatro Nacional</p>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="cartelera.html">Cartelera</a>
+                <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                <a href="galeria.html">Galería</a>
+                <a href="quienes-somos.html">Quiénes Somos</a>
+                <a href="staff.html">Staff</a>
+                <a href="contactanos.html">Contáctanos</a>
+                <a href="carrito.html">Mis Tickets</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="cart-summary">
+        <h2>Tu carrito</h2>
+        <ul id="cart-items">
+            <!-- Ejemplo de artículos en el carrito -->
+            <li>
+                <span>Nombre del Producto</span>
+                <span>$12</span>
+            </li>
+            <li>
+                <span>Segundo Producto</span>
+                <span>$8</span>
+            </li>
+            <li>
+                <span>Tercer Producto</span>
+                <span>$5</span>
+            </li>
+            <li class="promo">
+                <span>Código promocional</span>
+                <span>- $5</span>
+            </li>
+        </ul>
+        <p>Total (USD): <strong>$20</strong></p>
+    </div>
+    
+    <div id="checkout-container">
+        <!-- Sección de Dirección de Facturación -->
+        <section id="billing-address">
+            <h2>Dirección de Facturación</h2>
+            <form>
+                <div class="form-group">
+                    <label for="first-name">Nombres</label>
+                    <input type="text" id="first-name" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Apellidos</label>
+                    <input type="text" id="last-name" placeholder="Apellido">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico (Opcional)</label>
+                    <input type="email" id="email" placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Número de Teléfono</label>
+                    <input type="tel" id="phone" placeholder="Ej: 12345678" required pattern="[0-9]{8}">
+                </div>
+                <div class="form-group">
+                    <label for="country">País</label>
+                    <select id="country">
+                        <option value="">Seleccionar...</option>
+                        <option value="sv">El Salvador</option>
+                        <option value="us">Estados Unidos</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+                </div>
+            </form>
+        </section>
+    
+        <!-- Sección de Pago -->
+        <section id="payment">
+            <h2>Pago</h2>
+            <form>
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="payment-method" value="credit-card" checked> Tarjeta de Crédito
+                    </label>
+                    <label>
+                        <input type="radio" name="payment-method" value="debit-card"> Tarjeta de Débito
+                    </label>
+                    <label>
+                        <input type="radio" name="payment-method" value="paypal"> PayPal
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="card-name">Nombre en la tarjeta</label>
+                    <input type="text" id="card-name" placeholder="Nombre completo en la tarjeta">
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Número de Tarjeta</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="form-group">
+                    <label for="expiration">Expiración</label>
+                    <input type="text" id="expiration" placeholder="MM/AA">
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="123">
+                </div>
+                <button type="submit" id="checkout-button">Continuar al Pago</button>
+            </form>
+        </section>
+    </div>
+    

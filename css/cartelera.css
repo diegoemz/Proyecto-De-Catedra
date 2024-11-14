@@ -193,26 +193,72 @@ h2 {
 
 
 /* Estilos del modal */
+/* Estilo para el fondo del modal */
 .modal {
-    display: none; /* Ocultar el modal por defecto */
-    position: fixed; /* Queda fijo en la pantalla */
-    z-index: 1000; /* Asegura que el modal esté encima de otros elementos */
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Por encima de otros elementos */
     left: 0;
     top: 0;
     width: 100%; /* Ancho completo */
     height: 100%; /* Alto completo */
-    overflow: auto; /* Permitir desplazamiento si es necesario */
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+    overflow: auto; /* Habilitar scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
 }
 
+/* Estilo para el contenido del modal */
 .modal-content {
-    background-color: #fff; /* Color de fondo del contenido */
-    margin: 10% auto; /* Margen superior y centrado */
+    background-color: #f0f8ff; /* Color de fondo claro */
+    margin: 15% auto; /* Margen superior e inferior, centrado */
     padding: 20px; /* Espaciado interno */
+    border: 1px solid #153b63; /* Borde azul */
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
-    width: 60%; /* Ancho del modal */
-    height: 0 auto;
+    width: 80%; /* Ancho del modal */
+    max-width: 500px; /* Ancho máximo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+/* Estilo para el botón de cerrar */
+.close {
+    color: #2980b9; /* Color azul */
+    float: right; /* A la derecha */
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    cursor: pointer; /* Cursor de puntero */
+}
+
+.close:hover {
+    color: #11253b; /* Color más oscuro al pasar el ratón */
+}
+
+/* Estilo para el título del modal */
+#modal-title {
+    color: #415A77; /* Color azul */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+/* Estilo para los botones dentro del modal */
+.al-carrito {
+    background-color: #778DA9; /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.al-carrito:hover {
+    background-color: #11253b; /* Color más oscuro al pasar el ratón */
+}
+
+/* Estilo para el input de cantidad */
+input[type="number"] {
+    width: 60px; /* Ancho del input */
+    padding: 5px; /* Espaciado interno */
+    margin: 10px 0; /* Margen superior e inferior */
+    border: 1px solid #0f2c4a; /* Borde azul */
+    border-radius: 5px; /* Bordes redondeados */
 }
 
 h2 {
@@ -227,23 +273,6 @@ p {
     margin-bottom: 10px; /* Espaciado inferior */
 }
 
-/* Estilos del botón "Agregar al Carrito" */
-.al-carrito {
-    background-color: #2863a7; /* Color verde del botón */
-    color: #fff; /* Color del texto del botón */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 10px 15px; /* Espaciado interno */
-    font-size: 1em; /* Tamaño de la fuente del botón */
-    cursor: pointer; /* Cambiar cursor al pasar el mouse */
-    transition: background-color 0.3s, transform 0.2s; /* Transiciones para el color y la transformación */
-    display: inline-block; /* Para que el botón respete el padding */
-}
-
-.al-carrito:hover {
-    background-color: #1B263B; /* Color más oscuro al pasar el mouse */
-    transform: scale(1.05); /* Aumentar ligeramente el tamaño del botón */
-}
 
 .al-carrito:focus {
     outline: none; /* Sin contorno en el enfoque */
