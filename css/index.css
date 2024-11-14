@@ -12,11 +12,12 @@
     --texto-1: 1.25em;
 }
 
-/*Informacion inicio*/
-#info-inicio{
+/*------------------------------------------------------------*/
+/*Contenedor de inicio*/
+#contenedor-inicio {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     text-align: left;
     height: 90vh;
@@ -26,25 +27,26 @@
     background-size: cover;
 }
 
-#info-texto{
-    width: 70%;
-    max-width: 1000px;
-}
-
-#info-texto h2{
+/*Titulo de contenedor inicio*/
+#contenedor-inicio h2 {
     color: var(--azul-4);
     font-size: var(--titulos-1);
+    padding-left: 200px;
     font-weight: bold;
+    font-style: normal;
 }
 
-#info-inicio p{
-    color: white;
+/*Texto de inicio*/
+#des-inicio {
+    color: var(--beige-1);
     font-size: var(--titulos-2);
-    line-height: 1.5;
-    font-style: italic;
+    padding-left: 200px;
+    display: flex;
+    padding-right: 550px;
 }
 
-#btn-1 {
+/*Botones de contenedor de inicio*/
+#comprar-boletos {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -60,66 +62,12 @@
     font-weight: bold;
 }
 
-#btn-1:hover {
+#comprar-boletos:hover {
     background-color: var(--azul-3);
     transform: scale(1.05);
 }
 
-#info-quienes .container-1{
-    display: flex;
-    justify-content: space-evenly;
-    padding: 50px;
-    background-color: var(--azul-2);
-    height: 550px;
-}
-
-#info-quienes .texto{
-    width: 45%;
-    max-width: 600px;
-    text-align: justify;
-    color: var(--beige-1);
-    line-height: 1.5;
-    font-size: var(--texto-1);
-}
-
-#info-quienes .texto h2{
-    font-size: var(--subtitulo-1);
-    color: var(--azul-4);
-    font-weight: bold;
-}
-
-#info-quienes .img-container{
-    background-image: url("../img/teatro-5.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 45%;
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px black;
-}
-
-#btn-3{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    background-color: var(--azul-4);
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    height: 40px;
-    width: 250px;
-    margin-top: 30px;
-    font-weight: bold;
-    padding: 5px;
-}
-
-#btn-3:hover{
-    background-color: var(--azul-3);
-    transform: scale(1.05);
-}
-
-#btn-2, #btn-4 {
+#masinfo-inicio {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -131,118 +79,254 @@
     height: 40px;
     width: 200px;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 30px;
     font-weight: bold;
 }
 
-#btn-2:hover, #btn-4 {
+#masinfo-inicio:hover {
     background-color: var(--beige-2);
     transform: scale(1.05);
 }
 
-#btn-4{
-    padding: 5px;
+#comprar-boletos, #masinfo-inicio {
+    margin: 0 auto;
 }
 
-/*Informacion quienes somos*/
-#info-cartelera .container-1{
-    display: flex;
-    justify-content: space-evenly;
-    padding: 50px;
+/*------------------------------------------------------------*/
+/*Contenedor de en-cartelera*/
+#en-cartelera {
     background-color: var(--beige-1);
-    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    height: auto;
 }
 
-#info-cartelera .texto{
-    width: 45%;
-    max-width: 600px;
-    text-align: justify;
-    color: var(--azul-2);
+/*Titulo de en-cartelera*/
+#en-cartelera h2 {
+    font-size: var(--subtitulo-1);
+    text-align: right;
+    font-weight: bold;
+    padding: 60px 0 0 0;
+}
+
+/*Texto de en-cartelera*/
+#en-cartelera p {
+    color: rgba(0, 0, 0, 0.466);
+    text-align: right;
+    font-size: 1.25em;
+    display: flex;
+    text-align: right;
     line-height: 1.5;
+    padding: 40px 0 0 0px;
+}
+
+/*Botón de ver funciones*/
+#ver-funciones-inicio {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--azul-4);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 150px;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+#ver-funciones-inicio:hover {
+    background-color: var(--azul-3);
+    transform: scale(1.05);
+}
+
+/*Imagen de en-cartelera*/
+#en-cartelera-inicio img {
+    margin: 60px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*Descripcion en-cartelera*/
+#descripcion-cartelera-inicio {
+    width: 800px;
+    height: auto;
+    float: left;
+}
+
+/*------------------------------------------------------------*/
+/*Contenedor de quienes-somos*/
+
+#quienessomos-inicio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--azul-1);
+    height: auto;
+    margin-bottom: 10px;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%; 
+}
+
+#quienessomos-inicio .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+#quienessomos-inicio .descripcion-quienes {
+    width: 45%;
+    text-align: justify;
+    color: var(--beige-1);
+    line-height: 1.5;
+}
+
+.descripcion-quienes p{
     font-size: var(--texto-1);
 }
 
-#info-cartelera .texto h2{
+.descripcion-quienes h2{
     font-size: var(--subtitulo-1);
-    color: var(--azul-2);
-    font-weight: bold;
-    text-align: right;
-    text-align: left;
 }
 
-#info-cartelera .img-container{
-    background-image: url("../img/cartelera.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#quienessomos-inicio .imagen-quienes{
     width: 45%;
+    border-radius: 10px;
+    object-fit: contain;
+    height: fit-content;
+}
+
+.imagen-quienes img{
+    width: 100%;
     border-radius: 10px;
     box-shadow: 10px 10px 10px black;
 }
 
+/*Botón de quienes-somos*/
+#info-somos-inicio {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--beige-1);
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 250px;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+#info-somos-inicio:hover {
+    background-color: var(--beige-2);
+    transform: scale(1.05);
+}
+
 /*------------------------------------------------------------*/
 @media screen and (max-width: 480px) {
-    #info-inicio p {
-        padding: 20px;
-        font-size: 16px;
+
+    #quienessomos-inicio{
+        padding: 2rem;
     }
 
-    #info-inicio h2{
-        font-size: 1.5em;
-    }
-
-    #info-cartelera .container-1,
-    #info-quienes .container-1 {
-        height: auto;
+    #quienessomos-inicio .container{
         flex-direction: column;
-        padding: 10px;
-        justify-content: center;
+    }
+
+    #contenedor-inicio {
         align-items: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 1em;
     }
 
-    #btn-1, #btn-2, #btn-3, #btn-4{
+    #contenedor-inicio h2,
+    #des-inicio {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 2em;
+    }
+
+    #comprar-boletos,
+    #masinfo-inicio {
+        margin: 0 auto;
+        padding: 8px 16px;
+    }
+
+    #en-cartelera h2 {
+        font-size: 2em;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #ver-funciones-inicio {
+        margin: 0 auto;
+    }
+
+    #en-cartelera #en-cartelera-inicio img {
         width: 100%;
-    }
-
-    #info-cartelera .texto,
-    #info-quienes .texto {
-        width: 100%;
-        padding: 5px;
-    }
-
-    #info-cartelera .img-container,
-    #info-quienes .img-container {
-        width: 90%;
-        height: 500px;
     }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    #info-inicio p {
-        padding: 20px;
-        font-size: 18px;
+    #contenedor-inicio h2 {
+        padding-left: 50px;
+        font-size: 3em;
     }
 
-    #info-inicio h2{
-        font-size: 3.5em;
+    #des-inicio {
+        padding-left: 100px;
+        padding-right: 250px;
+        font-size: 1.5em;
     }
 
-    #info-cartelera .container-1,
-    #info-quienes .container-1{
-        height: auto;
-        flex-direction: column;
-        padding: 20px;
-        justify-content: center;
-        align-items: center;
+    #comprar-boletos,
+    #masinfo-inicio {
+        margin-left: 50px;
     }
 
-    #info-cartelera .img-container,
-    #info-quienes .img-container {
-        width: 100%;
-        height: 400px;
+    #ver-funciones-inicio {
+        margin-left: 200px;
     }
 
-    #btn-1, #btn-2, #btn-3, #btn-4 {
-        width: 80%; /* Botones más anchos en pantallas medianas */
+    #en-cartelera h2 {
+        font-size: 2.5em;
+        padding-left: 100px;
+    }
+
+    #en-cartelera #en-cartelera-inicio img {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #contenedor-inicio h2 {
+        font-size: 4.5em;
+        padding-left: 200px;
+    }
+
+    #des-inicio {
+        font-size: 1.75em;
+        padding-left: 200px;
+        padding-right: 550px;
+    }
+
+    #comprar-boletos,
+    #masinfo-inicio {
+        margin-left: 200px;
+        margin-top: 20px;
+    }
+
+    #ver-funciones-inicio {
+        margin-left: 650px;
     }
 }
