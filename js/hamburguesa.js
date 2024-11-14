@@ -1,6 +1,11 @@
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
+const nav = document.querySelector("#nav");
+const abrir = document.querySelector("#abrir");
+const cerrar = document.querySelector("#cerrar")
 
-menuToggle.addEventListener('click', function() {
-    navMenu.classList.toggle('active'); // Alternar la clase 'active'
+abrir.addEventListener("click", function() {
+    nav.classList.add("visible"); // Alternar la clase 'active'
+});
+
+cerrar.addEventListener("click", function(){
+    nav.classList.remove("visible");
 });
