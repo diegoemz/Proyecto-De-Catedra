@@ -1,4 +1,4 @@
-:root{   
+:root {
     --azul-1: #0D1B2A;
     --azul-2: #1B263B;
     --azul-3: #415A77;
@@ -30,7 +30,7 @@
 }
 
 /*Title-2*/
-.title-2{
+.title-2 {
     margin: 100px 0 50px 0;
     color: var(--azul-1);
     font-weight: bold;
@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     overflow-x: auto;
     background-color: var(--azul-1);
     padding: 40px;
@@ -72,7 +72,8 @@
 
 .obras p {
     text-align: center;
-    white-space: normal;/*para que no se desborde*/
+    white-space: normal;
+    /*para que no se desborde*/
     padding-top: 20px;
     color: var(--beige-1);
     font-size: 22px;
@@ -80,8 +81,10 @@
     border-bottom: 1px solid var(--beige-1);
     padding-bottom: 10px;
     padding: 10px 0;
-    flex-grow: 1;/*para que el texto crezca cuando se agrande*/
-    word-wrap: break-word;/*que el texto no se desborde del contenedor*/
+    flex-grow: 1;
+    /*para que el texto crezca cuando se agrande*/
+    word-wrap: break-word;
+    /*que el texto no se desborde del contenedor*/
 }
 
 .obras button {
@@ -166,7 +169,7 @@ strong {
     font-weight: bold;
 }
 
-.btn-regreso{
+.btn-regreso {
     background-color: var(--azul-3);
     color: var(--beige-1);
     border: none;
@@ -181,7 +184,7 @@ strong {
     font-weight: bold;
 }
 
-.btn-regreso:hover{
+.btn-regreso:hover {
     background-color: var(--azul-4);
     transform: scale(1.05);
 }
@@ -196,8 +199,6 @@ strong {
     }
 
     .cartelera-mov .cuadro {
-        flex-direction: column;
-        padding: 10px;
         height: auto;
     }
 
@@ -210,7 +211,8 @@ strong {
         justify-content: space-between;
         min-height: 200px;
     }
-    .obras p{
+
+    .obras p {
         white-space: normal;
         word-wrap: break-word;
         padding-top: 10px;
@@ -223,15 +225,13 @@ strong {
     }
 
     .cartelera img {
-        width: 100%;
-        height: auto;
-        overflow: hidden;
+        width: 30%;
+        height: 300px;
     }
 
     .contenido-cartelera {
-        padding: 15px;
+        padding: 20px;
         width: 100%;
-        overflow: hidden;
     }
 
     .btn-regreso {
@@ -243,21 +243,42 @@ strong {
         font-size: 20px;
     }
 
+    .Detalles{
+        width: 200px;
+    }
+
     .Detalles p {
         font-size: 16px;
         height: auto;
         overflow: visible;
     }
-    .cartelera{
+
+    .cartelera {
         flex-direction: column;
     }
-    .title, .cartelera-mov, .cartelera{
+
+    .title,
+    .cartelera-mov,
+    .cartelera {
         margin-left: 5px;
         margin-right: 5px;
     }
-    .title-2{
+
+    .title-2 {
         margin-top: 50px;
         font-size: 18px;
+    }
+
+    .cartelera {
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    .cartelera img {
+        width: auto;
     }
 }
 
@@ -271,7 +292,7 @@ strong {
     }
 
     .cartelera-mov .cuadro {
-        height: 60vh;
+        height: auto;
     }
 
     .obras {
@@ -308,52 +329,16 @@ strong {
         font-size: 18px;
         overflow: hidden;
     }
-}
 
-@media screen and (min-width: 769px) {
-    .title h1 {
-        font-size: 30px;
-    }
-
-    .title img {
-        width: 200px;
-    }
-
-    .cartelera-mov .cuadro {
-        height: 70vh;
-    }
-
-    .obras {
-        min-width: 370px;
-        height: 500px;
-    }
-
-    .obras img {
-        height: 300px;
-        width: 300px;
+    .cartelera {
+        flex-direction: column;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+        height: auto;
     }
 
     .cartelera img {
-        width: 35%;
-        height: 500px;
-    }
-
-    .contenido-cartelera {
-        padding: 50px;
-        width: 65%;
-        overflow: hidden;
-    }
-
-    .btn-regreso {
-        width: 300px;
-    }
-
-    h2 {
-        font-size: 25px;
-    }
-
-    .Detalles p {
-        font-size: 20px;
-        overflow: hidden;
+        width: auto;
     }
 }
