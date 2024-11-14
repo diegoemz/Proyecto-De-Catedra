@@ -15,7 +15,6 @@ function validateData(){
     let localidades = document.getElementById("localidades").value;
     let price = document.getElementById("price").value.trim();
     let descripcion = document.getElementById("descripcion").value.trim();
-    let elenco = document.getElementById("elenco").value.trim();
     let clasificacion = document.getElementById("clasificacion").value;
     let image = document.getElementById("inputGroupFile01").files;
 
@@ -27,7 +26,6 @@ function validateData(){
     document.getElementById("localidades-error-msg").innerHTML = "";
     document.getElementById("price-error-msg").innerHTML = "";
     document.getElementById("descripcion-error-msg").innerHTML = "";
-    document.getElementById("elenco-error-msg").innerHTML = "";
     document.getElementById("clasificacion-error-msg").innerHTML = "";
     document.getElementById("image-error-msg").innerHTML = "";
 
@@ -63,10 +61,6 @@ function validateData(){
         document.getElementById("descripcion-error-msg").innerHTML = "Debes ingresar una descripción de la obra";
         isValid = false;
     }
-    if (elenco === "") {
-        document.getElementById("elenco-error-msg").innerHTML = "Debes ingresar el elenco de la obra";
-        isValid = false;
-    }
     if (clasificacion === "") {
         document.getElementById("clasificacion-error-msg").innerHTML = "Debes seleccionar una clasificación";
         isValid = false;
@@ -89,7 +83,6 @@ async function AddData(){
         let localidades = document.getElementById("localidades").value;
         let price = document.getElementById("price").value;
         let descripcion = document.getElementById("descripcion").value;
-        let elenco = document.getElementById("elenco").value;
         let clasificacion = document.getElementById("clasificacion").value;
         let image = document.getElementById("inputGroupFile01");
 
@@ -105,7 +98,6 @@ async function AddData(){
                 localidades,
                 price,
                 descripcion,
-                elenco,
                 clasificacion,
                 image: reader.result
             });
@@ -119,7 +111,6 @@ async function AddData(){
         document.getElementById("localidades").value = "Platea";
         document.getElementById("price").value = "";
         document.getElementById("descripcion").value = "";
-        document.getElementById("elenco").value = "";
         document.getElementById("clasificacion").value = "General";
         document.getElementById("inputGroupFile01").value = "";
 
@@ -163,7 +154,6 @@ async function showData(){
                                         <li class="list-group-item"><strong>Fecha y Hora:</strong> ${product.dateTime}</li>
                                         <li class="list-group-item"><strong>Director:</strong> ${product.director}</li>
                                         <li class="list-group-item"><strong>Productor:</strong> ${product.productor}</li>
-                                        <li class="list-group-item"><strong>Elenco:</strong> ${product.elenco}</li>
                                         <li class="list-group-item"><strong>Descripción:</strong> ${product.descripcion}</li>
                                         <li class="list-group-item"><strong>Clasificación:</strong> ${product.clasificacion}</li>
                                         <li class="list-group-item"><strong>Localidades:</strong> ${product.localidades}</li>
@@ -215,7 +205,6 @@ async function showData(){
                     document.getElementById("localidades-edit").value = prod.localidades || '';
                     document.getElementById("price-edit").value = prod.price || '';
                     document.getElementById("descripcion-edit").value = prod.descripcion || '';
-                    document.getElementById("elenco-edit").value = prod.elenco || '';
                     document.getElementById("clasificacion-edit").value = prod.clasificacion || '';
 
                     // Mostrar la imagen del producto
@@ -249,12 +238,11 @@ document.querySelector("#update").onclick = async function () {
     const localidades = document.getElementById("localidades-edit").value;
     const price = document.getElementById("price-edit").value;
     const descripcion = document.getElementById("descripcion-edit").value;
-    const elenco = document.getElementById("elenco-edit").value;
     const clasificacion = document.getElementById("clasificacion-edit").value;
     const image = document.getElementById("inputGroupFile01-edit").files[0];
 
     // Validación de campos
-    if (!id || !nombre || !dateTime || !director || !productor || !localidades || !price || !descripcion || !elenco || !clasificacion) {
+    if (!id || !nombre || !dateTime || !director || !productor || !localidades || !price || !descripcion || !clasificacion) {
         alert("Todos los campos deben estar completos.");
         return;
     }
@@ -272,7 +260,6 @@ document.querySelector("#update").onclick = async function () {
             localidades, 
             price, 
             descripcion, 
-            elenco, 
             clasificacion, 
             image: imageData // Se pasa la imagen o null si no se seleccionó una
         });
