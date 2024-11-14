@@ -40,6 +40,11 @@ header .logo {
     padding-left: 50px;
 }
 
+header {
+    position: relative; /* Asegúrate de que el header tenga un contexto de apilamiento */
+    z-index: 10; /* Ajusta según sea necesario */
+}
+
 header .container {
     display: flex;
     align-items: center;
@@ -59,6 +64,19 @@ header nav {
     flex-direction: row; /* Alinear horizontalmente */
     align-items: center; /* Centrar verticalmente los elementos del menú */
 }
+
+
+/* Estilos generales para el menú en pantallas pequeñas */
+#nav-menu {
+    display: none; /* Ocultar el menú por defecto */
+}
+
+/* Mostrar el menú cuando se activa */
+#nav-menu.active {
+    display: flex; /* Cambiar a flex para que los elementos se alineen en fila */
+}
+
+
 
 header a {
     padding: 0px 15px;
@@ -94,15 +112,6 @@ footer .container {
     align-items: center;
 }
 
-/* Estilos generales para el menú en pantallas pequeñas */
-#nav-menu {
-    display: none; /* Ocultar el menú por defecto */
-}
-
-/* Mostrar el menú cuando se activa */
-#nav-menu.active {
-    display: flex; /* Cambiar a flex para que los elementos se alineen en fila */
-}
 
 /* Estilos para el botón de menú hamburguesa */
 .menu-toggle {
