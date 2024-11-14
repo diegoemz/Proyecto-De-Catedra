@@ -1,12 +1,13 @@
-import { saveProduct, getProduct, getProductListSize, deleteProduct, getProducts, updateProduct } from "./firebase.js";
+import { saveProduct, getProducts, getProductListSize, 
+    deleteProduct, getProduct, updateProduct } from "./firebase.js";
 
-let addButton = document.getElementById("submitData");
-
-addButton.addEventListener("click", addData);
+let addButton = document.getElementById("submitdata");
+// Agrega un listener para el evento de click
+addButton.addEventListener("click", AddData);
 
 showData();
 
-function validateData() {
+function validateData(){
     let nombre = document.getElementById("nombre").value.trim();
     let dateTime = document.getElementById("dateTime").value.trim();
     let director = document.getElementById("director").value.trim();
@@ -29,6 +30,7 @@ function validateData() {
     document.getElementById("elenco-error-msg").innerHTML = "";
     document.getElementById("clasificacion-error-msg").innerHTML = "";
     document.getElementById("image-error-msg").innerHTML = "";
+
 
     let isValid = true;
 
@@ -77,7 +79,7 @@ function validateData() {
     return isValid;
 }
 
-async function addData() {
+async function AddData(){
     if (validateData()) {
         // Obtener valores de los campos
         let nombre = document.getElementById("nombre").value;
@@ -123,31 +125,33 @@ async function addData() {
 
         // Cerrar modal y mostrar confirmación
         document.getElementById("close-btn").click();
-        alertify.success('Obra añadida exitosamente');
-        
-        // Mostrar datos actualizados
+        alert('Obra añadida exitosamente');
         showData();
     }
 }
 
 async function showData(){
-    let html = "";
-    let size = await getProductListSize();
-    if(size == 0){
-        html = `<div class="card-body">
-                    <div class="row gx-2">
-                        <div class="col">
-                            <div class="p-3">
-                                <img src="img/no-data-found.png" class="img-fluid d-block">
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-    } else {
-        const productList = await getProducts();
+    
+    let html="";
+    // Recuperando el tamaño de la lista de productos
+    let size= await getProductListSize();
+
+    if(size==0){ // Si no hay productos en la colección
+        html=`<div class="card-body">
+                <div class="row gx-2">
+                <div class="col">
+                <div class="p-3">
+                    <img src="img/no-data-found.png" class="img-fluid d-block">
+                </div></div></div></div>`;
+        
+    }
+    else{ // Si hay productos
+        //Recuperando los productos
+        const productList= await getProducts();
         productList.forEach(element => {
-            const product = element.data();
-            html += `<div class="row gx-2">
+            console.log(element);
+            const product=element.data();
+            html+=`<div class="row gx-2">
                         <div class="col">
                             <div class="p-3">
                                 <div class="card d-flex card-all">
@@ -175,69 +179,92 @@ async function showData(){
                     </div>`;
         });
     }
-    document.getElementById("crud-table").innerHTML = html;
-
-    const btnsDelete = document.getElementById("crud-table").querySelectorAll('.btn-delete');
-    btnsDelete.forEach(btn => {
-        btn.addEventListener('click', (event) => {
-            alertify.confirm("Confirmación", "¿Quieres eliminar esta función?", 
-                function() {
-                    deleteProduct(event.target.dataset.id)
-                        .then(() => {
-                            alertify.success('Función eliminada correctamente');
-                            showData(); 
-                        })
-                        .catch((error) => {
-                            alertify.error('Hubo un error al eliminar la función');
-                        });
-                },
-                function() {
-                    alertify.error('Eliminación cancelada');
-                }
-            );
-        });
-    });
-    
+    document.getElementById("crud-table").innerHTML=html;
+    //Recuperando todos los botones con la clase btn-delete
+    const btnsDelete= document.getElementById("crud-table").querySelectorAll('.btn-delete');
+    btnsDelete.forEach(btn=>{
+        // Asociando un manejador de eventos para el evento click
+        btn.addEventListener('click',(event)=>{
+            deleteProduct(event.target.dataset.id);
+                    alert('Función eliminada correctamente.');
+                    showData();
+        })
+    })
 
 
+   // Recuperar todos los botones con la clase btn-edit
     const btnsEdits = document.getElementById("crud-table").querySelectorAll('.btn-edit');
     btnsEdits.forEach(btn => {
         btn.addEventListener('click', async (event) => {
-            let prod = await getProduct(event.target.dataset.id);
-            let id = prod.id;
-            prod = prod.data();
-    
-            document.getElementById("id-edit").value = id;
-            document.getElementById("nombre-edit").value = prod.nombre;
-            document.getElementById("dateTime-edit").value = prod.dateTime;
-            document.getElementById("director-edit").value = prod.director;
-            document.getElementById("productor-edit").value = prod.productor;
-            document.getElementById("localidades-edit").value = prod.localidades;
-            document.getElementById("price-edit").value = prod.price;
-            document.getElementById("descripcion-edit").value = prod.descripcion;
-            document.getElementById("elenco-edit").value = prod.elenco;
-            document.getElementById("clasificacion-edit").value = prod.clasificacion;
-    
-            let imagePreview = document.getElementById("image-div-edit");
-            imagePreview.innerHTML = `<img src="${prod.imagen}" alt="Imagen de la Obra" width="100%" height="100%">`;
+            try {
+                // Recuperando el producto a partir del id
+                let prod = await getProduct(event.target.dataset.id);
+                
+                if (prod) {
+                    // Guardando el id del producto
+                    let id = prod.id;
+                    // Recuperando exclusivamente los datos del producto
+                    prod = prod.data();
+
+                    // Verificar si los valores existen antes de asignarlos
+                    document.getElementById("id-edit").value = id || '';
+                    document.getElementById("nombre-edit").value = prod.nombre || '';
+                    document.getElementById("dateTime-edit").value = prod.dateTime || '';
+                    document.getElementById("director-edit").value = prod.director || '';
+                    document.getElementById("productor-edit").value = prod.productor || '';
+                    document.getElementById("localidades-edit").value = prod.localidades || '';
+                    document.getElementById("price-edit").value = prod.price || '';
+                    document.getElementById("descripcion-edit").value = prod.descripcion || '';
+                    document.getElementById("elenco-edit").value = prod.elenco || '';
+                    document.getElementById("clasificacion-edit").value = prod.clasificacion || '';
+
+                    // Mostrar la imagen del producto
+                    let imagePreview = document.getElementById("image-div");
+
+                    // Comprobar si la imagen existe antes de asignarla
+                    if (prod.image) {
+                        imagePreview.innerHTML = "<img src='" + prod.image + "' width='100%' height='100%'>";
+                    } else {
+                        imagePreview.innerHTML = "<p>No hay imagen disponible</p>";
+                    }
+                } else {
+                    console.error("Producto no encontrado.");
+                }
+            } catch (error) {
+                console.error("Error al obtener el producto:", error);
+                // Mostrar un mensaje de error si la obtención del producto falla
+                alert("Hubo un error al cargar los datos del producto.");
+            }
         });
     });
+}
 
-    document.querySelector("#update").onclick = function() {
-        const id = document.getElementById("id-edit").value;
-        const nombre = document.getElementById("nombre-edit").value;
-        const dateTime = document.getElementById("dateTime-edit").value;
-        const director = document.getElementById("director-edit").value;
-        const productor = document.getElementById("productor-edit").value;
-        const localidades = document.getElementById("localidades-edit").value;
-        const price = document.getElementById("price-edit").value;
-        const descripcion = document.getElementById("descripcion-edit").value;
-        const elenco = document.getElementById("elenco-edit").value;
-        const clasificacion = document.getElementById("clasificacion-edit").value;
-        const image = document.getElementById("inputGroupFile01-edit").files[0];
-    
-        // Actualiza la función con los datos obtenidos
-        updateProduct(id, { 
+document.querySelector("#update").onclick = async function () {
+    // Obtener los valores de los campos
+    const id = document.getElementById("id-edit").value;
+    const nombre = document.getElementById("nombre-edit").value;
+    const dateTime = document.getElementById("dateTime-edit").value;
+    const director = document.getElementById("director-edit").value;
+    const productor = document.getElementById("productor-edit").value;
+    const localidades = document.getElementById("localidades-edit").value;
+    const price = document.getElementById("price-edit").value;
+    const descripcion = document.getElementById("descripcion-edit").value;
+    const elenco = document.getElementById("elenco-edit").value;
+    const clasificacion = document.getElementById("clasificacion-edit").value;
+    const image = document.getElementById("inputGroupFile01-edit").files[0];
+
+    // Validación de campos
+    if (!id || !nombre || !dateTime || !director || !productor || !localidades || !price || !descripcion || !elenco || !clasificacion) {
+        alert("Todos los campos deben estar completos.");
+        return;
+    }
+
+    // Si no se ha seleccionado una imagen, establecer un valor por defecto
+    let imageData = image || null; // Si no hay imagen, se asigna null
+
+    // Actualiza el producto con los datos obtenidos
+    try {
+        await updateProduct(id, { 
             nombre, 
             dateTime, 
             director, 
@@ -247,28 +274,19 @@ async function showData(){
             descripcion, 
             elenco, 
             clasificacion, 
-            image
+            image: imageData // Se pasa la imagen o null si no se seleccionó una
         });
-        
-        showData(); // Actualiza la visualización de los datos
-    
-        // Cierra el modal y limpia los campos
-        document.getElementById("btn-close").click();
-        document.getElementById("id-edit").value = "";
-        document.getElementById("nombre-edit").value = "";
-        document.getElementById("dateTime-edit").value = "";
-        document.getElementById("director-edit").value = "";
-        document.getElementById("productor-edit").value = "";
-        document.getElementById("localidades-edit").value = "";
-        document.getElementById("price-edit").value = "";
-        document.getElementById("descripcion-edit").value = "";
-        document.getElementById("elenco-edit").value = "";
-        document.getElementById("clasificacion-edit").value = "";
-        document.getElementById("inputGroupFile01-edit").value = "";
-    
-        alertify.success("Data Updated Successfully");
-    };      
+
+        // Refrescar los datos de la vista
+        showData();
+
+        // Mostrar un mensaje de éxito
+        alert("Información Actualizada Correctamente");
+    } catch (error) {
+        console.error("Error al actualizar el producto:", error);
+        alert("Hubo un error al actualizar los datos. Por favor, inténtalo de nuevo.");
+    }
 };
 
-document.addEventListener("DOMContentLoaded", showData);
 
+document.addEventListener("DOMContentLoaded", showData);
