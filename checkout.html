@@ -26,26 +26,8 @@
 
     <div id="cart-summary">
         <h2>Tu carrito</h2>
-        <ul id="cart-items">
-            <!-- Ejemplo de artículos en el carrito -->
-            <li>
-                <span>Nombre del Producto</span>
-                <span>$12</span>
-            </li>
-            <li>
-                <span>Segundo Producto</span>
-                <span>$8</span>
-            </li>
-            <li>
-                <span>Tercer Producto</span>
-                <span>$5</span>
-            </li>
-            <li class="promo">
-                <span>Código promocional</span>
-                <span>- $5</span>
-            </li>
-        </ul>
-        <p>Total (USD): <strong>$20</strong></p>
+        <ul id="cart-items"></ul>
+        <p>Total (USD): <strong id="total-price">$0</strong></p>
     </div>
     
     <div id="checkout-container">
@@ -116,4 +98,15 @@
             </form>
         </section>
     </div>
+
+    <script src="js/checkout.js"></script> <!-- Enlaza tu archivo de JavaScript aquí -->
+</body>
+
+<footer>
+    <div class="container">
+        <p>&copy; Teatro Nacional de San Salvador</p>
+    </div>
+</footer>
+
+</html>
     
