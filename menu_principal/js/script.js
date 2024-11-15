@@ -1,3 +1,31 @@
+// Muestra la sección de funciones
+document.getElementById("visualizar-funciones").addEventListener("click", () => {
+    mostrarSeccion("funciones");
+});
+
+// Muestra la sección de empleados
+document.getElementById("visualizar-empleados").addEventListener("click", () => {
+    mostrarSeccion("empleados");
+});
+
+// Función para mostrar u ocultar secciones
+function mostrarSeccion(seccion) {
+    const funcionesContainer = document.getElementById("functions-container");
+    const empleadosContainer = document.getElementById("empleados-section");
+
+    funcionesContainer.style.display = "none"; // Ocultar todas las secciones
+    empleadosContainer.style.display = "none";
+
+    if (seccion === "funciones") {
+        funcionesContainer.style.display = "block"; // Mostrar funciones
+        showData(); // Cargar funciones
+    } else if (seccion === "empleados") {
+        empleadosContainer.style.display = "block"; // Mostrar empleados
+        showData_2(); // Cargar empleados
+    }
+}
+
+
 import { saveProduct, getProducts, getProductListSize, 
     deleteProduct, getProduct, updateProduct, saveEmployee, getEmployees, getEmployeesListSize, deleteEmployee } from "./firebase.js";
 
@@ -7,8 +35,39 @@ let addButton_2 = document.getElementById("submitdataemp")
 addButton.addEventListener("click", AddData);
 addButton_2.addEventListener("click", AddData_2);
 
-showData();
-showData_2();
+// Mostrar las funciones al hacer clic en "Visualizar Funciones"
+document.getElementById("visualizar-funciones").addEventListener("click", (event) => {
+    event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    const functionsContainer = document.getElementById("functions-container");
+    functionsContainer.style.display = "block"; // Muestra el contenedor
+    showData(); // Llama a la función para cargar los datos
+});
+
+// Ocultar las funciones al mover el cursor fuera del contenedor
+document.getElementById("functions-container").addEventListener("mouseleave", () => {
+    const functionsContainer = document.getElementById("functions-container");
+    functionsContainer.style.display = "none"; // Oculta el contenedor
+    document.getElementById("crud-table").innerHTML = ""; // Limpia los datos
+});
+
+// Mostrar las funciones al hacer clic en "Visualizar empleados"
+document.getElementById("visualizar-empleados").addEventListener("click", (event) => {
+    event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    const empleadosSection = document.getElementById("empleados-section");
+    empleadosSection.style.display = "block"; // Muestra el contenedor
+    showData_2(); // Llama a la función para cargar los datos
+});
+
+// Ocultar las funciones al mover el cursor fuera del contenedor
+document.getElementById("empleados-section").addEventListener("mouseleave", () => {
+    const empleadosSection = document.getElementById("empleados-section");
+    empleadosSection.style.display = "none"; // Oculta el contenedor
+    document.getElementById("crud-table-2").innerHTML = ""; // Limpia los datos
+});
+
+
+
+
 
 function validateData(){
     let nombre = document.getElementById("nombre").value.trim();
@@ -120,7 +179,6 @@ async function AddData(){
         // Cerrar modal y mostrar confirmación
         document.getElementById("close-btn").click();
         alert('Obra añadida exitosamente');
-        showData();
     }
 }
 
@@ -146,9 +204,9 @@ async function showData(){
             console.log(element);
             const product=element.data();
             html+=`<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card shadow-sm h-100">
+            <div class="card shadow-sm h-100" id="carta-funcion">
                 <img src="${product.image}" class="card-img-top" alt="Imagen de la obra">
-                <div class="card-body">
+                <div class="card-body" id="cartass">
                     <h5 class="card-title text-center">${product.nombre}</h5>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><strong>Fecha y Hora:</strong> ${product.dateTime}</li>
@@ -282,9 +340,11 @@ function validateData_2() {
     let telefono = document.getElementById("telefono-emp").value;
     let cargo = document.getElementById("cargo-emp").value;
     let departamento = document.getElementById("departamento-emp").value;
+    let user = document.getElementById("user").value;
+    let password = document.getElementById("password").value;
 
     // Resetear mensajes de error
-    ["nombre-emp", "apellido-emp", "date", "email-emp", "telefono-emp", "cargo-emp", "departamento-emp"].forEach(id => {
+    ["nombre-emp", "apellido-emp", "date", "email-emp", "telefono-emp", "cargo-emp", "departamento-emp", "user", "password"].forEach(id => {
         document.getElementById(id + "-error-msg").innerHTML = "";
     });
 
@@ -319,6 +379,14 @@ function validateData_2() {
         document.getElementById("departamento-emp-error-msg").innerHTML = "Debes seleccionar un departamento";
         isValid = false;
     }
+    if (user === ""){
+        document.getElementById("user-error-msg").innerHTML = "Debes colocar un user al empleado";
+        isValid = false;
+    }
+    if (password === ""){
+        document.getElementById("password-error-msg").innerHTML = "Debes colocar una contraseña al empleado";
+        isValid = false;
+    }
 
     return isValid;
 }
@@ -335,6 +403,8 @@ async function AddData_2() {
             let telefono = document.getElementById("telefono-emp").value;
             let cargo = document.getElementById("cargo-emp").value;
             let departamento = document.getElementById("departamento-emp").value;
+            let user = document.getElementById("user").value;
+            let password = document.getElementById("password").value;
 
             // Guardar datos del empleado
             await saveEmployee({
@@ -345,11 +415,13 @@ async function AddData_2() {
                 email,
                 telefono,
                 cargo,
-                departamento
+                departamento,
+                user,
+                password
             });
 
             // Limpiar campos después de guardar
-            ["dui-emp","nombre-emp", "apellido-emp", "date", "email-emp", "telefono-emp", "cargo-emp", "departamento-emp"].forEach(id => {
+            ["dui-emp","nombre-emp", "apellido-emp", "date", "email-emp", "telefono-emp", "cargo-emp", "departamento-emp", "user", "password"].forEach(id => {
                 document.getElementById(id).value = "";
             });
 
@@ -393,6 +465,8 @@ async function showData_2() {
                             <li class="list-group-item"><strong>Teléfono:</strong> ${employee.telefono}</li>
                             <li class="list-group-item"><strong>Cargo:</strong> ${employee.cargo}</li>
                             <li class="list-group-item"><strong>Departamento:</strong> ${employee.departamento}</li>
+                            <li class="list-group-item"><strong>user:</strong> ${employee.user}</li>
+                            <li class="list-group-item"><strong>Contraseña:</strong> ${employee.password}</li>
                         </ul>
                     </div>
                     <div class="card-footer text-center">

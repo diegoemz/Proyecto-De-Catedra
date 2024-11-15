@@ -1,61 +1,202 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar {
-    background-color: #343a40;
-    padding: 10px 20px;
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    background-color: rgb(34, 37, 41);
+    z-index: 1000;
+}    
+
+
+.sidebar .navbar-brand {
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    color: white; 
+    padding: 8px 12px; 
+    background-color: rgb(34, 37, 41); 
+    display: block; 
+    border-radius: 5px; 
+    margin-top: 40px;
 }
 
-.navbar-brand {
-    color: #fff;
-    font-weight: bold;
+
+.sidebar ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
 }
 
-.navbar-nav .nav-link {
-    color: #fff !important;
-    margin-right: 20px;
-    font-size: 16px;
+.sidebar ul li {
+    margin-bottom: 10px; 
 }
 
-.navbar-nav .nav-link:hover {
-    color: #ffd700 !important;
+.sidebar ul li a {
+    display: block; 
+    text-decoration: none; 
+    color: white; 
+    padding: 8px 12px; 
+    background-color: rgb(34, 37, 41); 
+    border-radius: 5px; 
+    font-size: 1rem; 
 }
 
-.navbar-toggler-icon {
-    background-color: #fff;
+.sidebar ul li a:hover {
+    background-color: rgb(60, 63, 68); 
 }
 
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.sidebar-image {
+    width: 100%; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
-.btn-add {
-    background-color: #007bff;
-    border: none;
-}
-
-.btn-add:hover {
-    background-color: #0056b3;
+.container-fluid{
+    padding: 0;
 }
 
 /* Modal styling */
 .modal-content {
     border-radius: 10px;
+    margin: 1%;
 }
 
 .modal-header {
-    background-color: #007bff;
+    background-color: #05101b;
     color: white;
 }
 
 .modal-footer .btn {
     width: 100%;
+    background-color: #05101b;
 }
 
+.modal{
+    --bs-modal-width: 77%;
+    margin-left: 160px;
+}
+
+.modal-backdrop {
+--bs-backdrop-bg: none;
+}
+
+.btn-close {
+    --bs-btn-close-color: #ffffff;
+}
 .form-control {
     border-radius: 5px;
+}
+
+
+.content {
+    padding-left: 300px; /* Ajusta el margen según el ancho del sidebar */
+    z-index: 999; /* Asegúrate de que el contenido principal esté por debajo del sidebar */
+    position: relative; /* Asegúrate de que el contenido esté en el flujo del documento */
+}
+
+#functions-container{
+    padding-top: 1%;
+    padding-left: 310px
+}
+
+#empleados-section{
+    padding-top: 1%;
+    padding-left: 310px
+}
+
+#crud-table {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+#crud-table-2 {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en filas */
+    gap: 15px;
+}
+
+.card {
+    width: 100%;
+    margin: 10px; /* Espacio entre las tarjetas */
+    border: none; /* Eliminar el borde por defecto */
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden; /* Evitar que el contenido se desborde */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves para efectos */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más profunda al pasar el ratón */
+}
+
+.card-img-top {
+    object-fit: cover; /* Mantener la proporción de la imagen */
+}
+
+.card-body {
+    padding: 20px; /* Espaciado interno */
+    background-color: #f8f9fa; /* Color de fondo suave */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Aumentar tamaño de fuente del título */
+    color: #333; /* Color del título */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+.list-group-item {
+    border: none; /* Eliminar borde de los elementos de la lista */
+    padding: 10px 0; /* Espaciado interno */
+}
+
+.card-footer {
+    background-color: #ffffff; /* Color de fondo del pie de la tarjeta */
+    border-top: 1px solid #ddd; /* Línea superior */
+}
+
+.btn {
+    border-radius: 20px; /* Bordes redondeados para los botones */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+}
+
+.btn-success {
+    background-color: #28a745; /* Color verde */
+    border: none; /* Sin borde */
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Color verde más oscuro al pasar el ratón */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Color rojo */
+    border: none; /* Sin borde */
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Color rojo más oscuro al pasar el ratón */
+}
+
+
+.fade{
+    animation: none;
+}
+
+
+
+.bi{
+    color: white;
+}
+
+#closee{
+    color: rgba(220, 23, 23, 0.772);
 }
