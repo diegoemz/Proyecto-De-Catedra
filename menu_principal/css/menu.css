@@ -79,3 +79,28 @@ body {
     margin-left: 350px;
     margin-top: 125px;
 }
+
+#crud-table-2 {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en filas */
+    justify-content: space-between; /* Espacio entre las tarjetas */
+}
+
+.card {
+    margin: 10px; /* Espacio entre las tarjetas */
+    flex: 1 1 calc(25% - 20px); /* Ajusta el tamaño de las tarjetas */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+}
+
+/* Asegúrate de que las tarjetas sean responsivas */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 20px); /* 2 tarjetas por fila en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        flex: 1 1 100%; /* 1 tarjeta por fila en pantallas muy pequeñas */
+    }
+}
