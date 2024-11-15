@@ -1,3 +1,31 @@
+// Muestra la sección de funciones
+document.getElementById("visualizar-funciones").addEventListener("click", () => {
+    mostrarSeccion("funciones");
+});
+
+// Muestra la sección de empleados
+document.getElementById("visualizar-empleados").addEventListener("click", () => {
+    mostrarSeccion("empleados");
+});
+
+// Función para mostrar u ocultar secciones
+function mostrarSeccion(seccion) {
+    const funcionesContainer = document.getElementById("functions-container");
+    const empleadosContainer = document.getElementById("empleados-section");
+
+    funcionesContainer.style.display = "none"; // Ocultar todas las secciones
+    empleadosContainer.style.display = "none";
+
+    if (seccion === "funciones") {
+        funcionesContainer.style.display = "block"; // Mostrar funciones
+        showData(); // Cargar funciones
+    } else if (seccion === "empleados") {
+        empleadosContainer.style.display = "block"; // Mostrar empleados
+        showData_2(); // Cargar empleados
+    }
+}
+
+
 import { saveProduct, getProducts, getProductListSize, 
     deleteProduct, getProduct, updateProduct, saveEmployee, getEmployees, getEmployeesListSize, deleteEmployee } from "./firebase.js";
 
