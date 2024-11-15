@@ -1,63 +1,59 @@
-import {getProducts, getProductListSize, 
-    deleteProduct, getProduct,} from "./admin_2/js/firebase.js";
+import { getProducts } from "../menu_principal/js/firebase.js";
 
 
-showData();
-showData_2();
-
-async function showData(){
+async function mostrarObra() {
+    const obra = await getProducts(); // Assumes getProducts() returns a promise that resolves to an array of products
+    const arr = [];
     
-    let html="";
-    // Recuperando el tamaño de la lista de productos
-    let size= await getProductListSize();
+    obra.forEach((item) => {
+        arr.push(item.data()); // Assuming each item has a data() method
+    });
 
-    if(size==0){ // Si no hay productos en la colección
-        html=`<div class="card-body">
-                <div class="row gx-2">
-                <div class="col">
-                <div class="p-3">
-                    <img src="img/no-data-found.png" class="img-fluid d-block">
-                </div></div></div></div>`;
+    console.log(arr);
+
+
+
+    // Selecciona el contenedor donde se agregarán las tarjetas
+    const contenedorCartelera = document.querySelector('.cartelera-container');
+    
+
+    // Agrega una tarjeta por cada objeto en el arreglo arr
+    arr.forEach((obra) => {
+        const fechaObjeto = new Date(obra.dateTime); // Convertir a objeto Date
+
+        // Obtener el año, mes y día
+        const año = fechaObjeto.getFullYear(); // Obtiene el año (ej. 2024)
+        const mes = fechaObjeto.getMonth() + 1; // Obtiene el mes (0-11), se suma 1 para obtener (1-12)
+        const dia = fechaObjeto.getDate(); // Obtiene el día (1-31)
+        const hora = fechaObjeto.getHours()%12; // Obtiene la hora (0-23)
+        const minutos = fechaObjeto.getMinutes();
         
-    }
-    else{ // Si hay productos
-        //Recuperando los productos
-        const productList= await getProducts();
-        productList.forEach(element => {
-            console.log(element);
-            const product=element.data();
-            html+=`<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card shadow-sm h-100">
-                <img src="${product.image}" class="card-img-top" alt="Imagen de la obra">
-                <div class="card-body">
-                    <h5 class="card-title text-center">${product.nombre}</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Fecha y Hora:</strong> ${product.dateTime}</li>
-                        <li class="list-group-item"><strong>Director:</strong> ${product.director}</li>
-                        <li class="list-group-item"><strong>Productor:</strong> ${product.productor}</li>
-                        <li class="list-group-item"><strong>Descripción:</strong> ${product.descripcion}</li>
-                        <li class="list-group-item"><strong>Clasificación:</strong> ${product.clasificacion}</li>
-                        <li class="list-group-item"><strong>Localidades:</strong> ${product.localidades}</li>
-                        <li class="list-group-item"><strong>Precio:</strong> $${product.price}</li>
-                    </ul>
+        const tarjetaHtml = `
+            <section class="cartelera-item">
+                <img src="${obra.image}" alt="${obra.nombre}">
+                <div class="contenido-cartelera">
+                    <h2>${obra.nombre.toUpperCase()}</h2>
+                    <div class="detalles">
+                        <p><strong>Fecha:</strong> ${dia}-${mes}-${año}</p>
+                        <p><strong>Hora:</strong> ${hora}:${String(minutos).padStart(2, '0')} p.m</p>
+                        <p><strong>Precio:</strong> $${parseFloat(obra.price).toFixed(2)}</p>
+                        <p><strong>Descripción:</strong> ${obra.descripcion}</p>
+                        <p><strong>Producción:</strong> ${obra.productor}</p>
+                        <p><strong>Dirección:</strong> ${obra.director}</p>
+                        <button onclick="openModal('${obra.nombre}', '${dia}-${mes}-${año}', '${hora}:${String(minutos).padStart(2, '0')} p.m', ${parseFloat(obra.price)})" class="btn-regreso">Adquirir Boletos</button>
+                    </div>
                 </div>
-                <div class="card-footer text-center">
-                    <button class="btn btn-success btn-edit" data-id="${element.id}" data-bs-toggle="modal" data-bs-target="#exampleModal-2">Editar</button>
-                    <button class="btn btn-danger btn-delete" data-id="${element.id}">Eliminar</button>
-                </div>
-            </div>
-        </div>`;
-        });
+            </section>
+        `;
+
+        // Agrega la tarjeta al contenedor
+        contenedorCartelera.innerHTML += tarjetaHtml;
+    });
     }
-    document.getElementById("crud-table").innerHTML=html;
-    //Recuperando todos los botones con la clase btn-delete
-    const btnsDelete= document.getElementById("crud-table").querySelectorAll('.btn-delete');
-    btnsDelete.forEach(btn=>{
-        // Asociando un manejador de eventos para el evento click
-        btn.addEventListener('click',(event)=>{
-            deleteProduct(event.target.dataset.id);
-                    alert('Función eliminada correctamente.');
-                    showData();
-        })
-    })
-}
+
+
+
+mostrarObra()
+
+
+
