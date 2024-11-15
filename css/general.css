@@ -178,12 +178,14 @@ footer .container {
         flex-direction: column;
         align-items: end;
         gap: 1rem;
-        position: absolute;
+        position: fixed; /* Cambiado de absolute a fixed */
         top: 0;
         right: 0;
-        bottom: 0;
+        width: 250px; /* Ajusta el ancho según tus necesidades */
+        height: 100%; /* Ocupa toda la altura de la ventana */
         background-color: #1B263B;
         padding: 2rem;
+        z-index: 1000; 
         box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
     }
 
