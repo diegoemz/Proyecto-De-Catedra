@@ -71,29 +71,31 @@
         </div>
     </nav>
 
+    <div id="functions-container" style="display: none;">
+        <!-- Aquí se mostrarán las funciones -->
+        <div id="crud-table"></div>
+    </div>
+
+    <div id="empleados-section" style="display: none;">
+        <div id="crud-table-2"></div>
+    </div>
+    
     <!-- Sidebar -->
     <nav class="sidebar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Teatro Nacional</a>
             <ul>
                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#addDataModal">Agregar Función</a></li>
-                <li><a href="#">Visualizar Funciones</a></li>
+                <li><a href="#" id="visualizar-funciones">Visualizar Funciones</a></li>
                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#addEmpleado">Agregar Empleado</a></li>
-                <li><a href="#">Visualizar Empleados</a></li>
+                <li><a href="#" id="visualizar-empleados">Visualizar Empleados</a></li>
                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#addCredencialesEmpleado">Agregar Credenciales</a></li>
                 <li><a href="login.html" class="text-danger">Cerrar Sesión</a></li>
             </ul>
         </div>
     </nav>
     <!-- Main Content -->
-    <div class="content">
-        <div class="container card-body-all">
-            <div class="card-container d-flex flex-wrap" id="crud-table">
-            </div>
-            <div class="card-container d-flex flex-wrap" id="crud-table-2">
-            </div>
-        </div>
-    </div> 
+  
     <!-- navbar end -->
 
     <!-- Add Module Start -->

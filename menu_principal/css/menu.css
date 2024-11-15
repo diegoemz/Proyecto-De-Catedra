@@ -64,3 +64,18 @@ body {
 .form-control {
     border-radius: 5px;
 }
+
+.content{
+    margin-left: 350px;
+    margin-top: 125px;
+}
+
+#functions-container{
+    margin-left: 350px;
+    margin-top: 125px;
+}
+
+#empleados-section{
+    margin-left: 350px;
+    margin-top: 125px;
+}
