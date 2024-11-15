@@ -290,6 +290,7 @@ async function showData(){
         });
     }
     document.getElementById("crud-table").innerHTML=html;
+
     //Recuperando todos los botones con la clase btn-delete
     const btnsDelete= document.getElementById("crud-table").querySelectorAll('.btn-delete');
     btnsDelete.forEach(btn=>{
@@ -303,96 +304,74 @@ async function showData(){
 
 
    // Recuperar todos los botones con la clase btn-edit
-    const btnsEdits = document.getElementById("crud-table").querySelectorAll('.btn-edit');
-    btnsEdits.forEach(btn => {
-        btn.addEventListener('click', async (event) => {
-            try {
-                // Recuperando el producto a partir del id
-                let prod = await getProduct(event.target.dataset.id);
+     const btnsEdits = document.getElementById("crud-table").querySelectorAll('.btn-edit');
+     btnsEdits.forEach(btn => {
+         btn.addEventListener('click', async (event) => {
+             try {
+                 // Recuperando el producto a partir del id
+                 let prod = await getProduct(event.target.dataset.id);
                 
-                if (prod) {
-                    // Guardando el id del producto
-                    let id = prod.id;
-                    // Recuperando exclusivamente los datos del producto
-                    prod = prod.data();
+                 if (prod) {
+                     // Guardando el id del producto
+                     let id = prod.id;
+                     // Recuperando exclusivamente los datos del producto
+                     prod = prod.data();
 
-                    // Verificar si los valores existen antes de asignarlos
-                    document.getElementById("id-edit").value = id || '';
-                    document.getElementById("nombre-edit").value = prod.nombre || '';
-                    document.getElementById("dateTime-edit").value = prod.dateTime || '';
-                    document.getElementById("director-edit").value = prod.director || '';
-                    document.getElementById("productor-edit").value = prod.productor || '';
-                    document.getElementById("localidades-edit").value = prod.localidades || '';
-                    document.getElementById("price-edit").value = prod.price || '';
-                    document.getElementById("descripcion-edit").value = prod.descripcion || '';
-                    document.getElementById("clasificacion-edit").value = prod.clasificacion || '';
+                     // Verificar si los valores existen antes de asignarlos
+                     document.getElementById("id-edit").value = id || '';
+                     document.getElementById("nombre-edit").value = prod.nombre || '';
+                     document.getElementById("dateTime-edit").value = prod.dateTime || '';
+                     document.getElementById("director-edit").value = prod.director || '';
+                     document.getElementById("productor-edit").value = prod.productor || '';
+                     document.getElementById("localidades-edit").value = prod.localidades || '';
+                     document.getElementById("price-edit").value = prod.price || '';
+                     document.getElementById("descripcion-edit").value = prod.descripcion || '';
+                     document.getElementById("clasificacion-edit").value = prod.clasificacion || '';
 
-                    // Mostrar la imagen del producto
-                    let imagePreview = document.getElementById("image-div");
+                     // Mostrar la imagen del producto
+                     let imagePreview = document.getElementById("image-div");
 
-                    // Comprobar si la imagen existe antes de asignarla
-                    if (prod.image) {
-                        imagePreview.innerHTML = "<img src='" + prod.image + "' width='100%' height='100%'>";
-                    } else {
-                        imagePreview.innerHTML = "<p>No hay imagen disponible</p>";
-                    }
-                } else {
-                    console.error("Producto no encontrado.");
-                }
-            } catch (error) {
-                console.error("Error al obtener el producto:", error);
-                // Mostrar un mensaje de error si la obtención del producto falla
-                alert("Hubo un error al cargar los datos del producto.");
-            }
-        });
-    });
+                     // Comprobar si la imagen existe antes de asignarla
+                     if (prod.image) {
+                         imagePreview.innerHTML = "<img src='" + prod.image + "' width='100%' height='100%'>";
+                     } else {
+                         imagePreview.innerHTML = "<p>No hay imagen disponible</p>";
+                     }
+                 } else {
+                     console.error("Producto no encontrado.");
+                 }
+             } catch (error) {
+                 console.error("Error al obtener el producto:", error);
+                 // Mostrar un mensaje de error si la obtención del producto falla
+                 alert("Hubo un error al cargar los datos del producto.");
+             }
+         });
+     });
 }
 
-document.querySelector("#update").onclick = async function () {
-    // Obtener los valores de los campos
+document.querySelector("#update").onclick = async function (){
     const id = document.getElementById("id-edit").value;
     const nombre = document.getElementById("nombre-edit").value;
-    const dateTime = document.getElementById("dateTime-edit").value;
+    const fecha = document.getElementById("dateTime-edit").value;
     const director = document.getElementById("director-edit").value;
     const productor = document.getElementById("productor-edit").value;
     const localidades = document.getElementById("localidades-edit").value;
-    const price = document.getElementById("price-edit").value;
-    const descripcion = document.getElementById("descripcion-edit").value;
+    const precio = document.getElementById("price-edit").value;
     const clasificacion = document.getElementById("clasificacion-edit").value;
-    const image = document.getElementById("inputGroupFile01-edit").files[0];
 
-    // Validación de campos
-    if (!id || !nombre || !dateTime || !director || !productor || !localidades || !price || !descripcion || !clasificacion) {
-        alert("Todos los campos deben estar completos.");
-        return;
-    }
+    updateProduct(id, {nombre, fecha, director, productor, localidades, precio, clasificacion})
+    showData();
 
-    // Si no se ha seleccionado una imagen, establecer un valor por defecto
-    let imageData = image || null; // Si no hay imagen, se asigna null
-
-    // Actualiza el producto con los datos obtenidos
-    try {
-        await updateProduct(id, { 
-            nombre, 
-            dateTime, 
-            director, 
-            productor, 
-            localidades, 
-            price, 
-            descripcion, 
-            clasificacion, 
-            image: imageData // Se pasa la imagen o null si no se seleccionó una
-        });
-
-        // Refrescar los datos de la vista
-        showData();
-
-        // Mostrar un mensaje de éxito
-        alert("Información Actualizada Correctamente");
-    } catch (error) {
-        console.error("Error al actualizar el producto:", error);
-        alert("Hubo un error al actualizar los datos. Por favor, inténtalo de nuevo.");
-    }
+    document.getElementById("btn-close").click();
+    document.getElementById("id-edit").value = "";
+    document.getElementById("nombre-edit").value = "";
+    document.getElementById("dateTime-edit").value = "";
+    document.getElementById("director-edit").value = "";
+    document.getElementById("productor-edit").value = "";
+    document.getElementById("localidades-edit").value = "";
+    document.getElementById("price-edit").value = "";
+    document.getElementById("clasificacion-edit").value = "";
+    alert("Información actualizada exitosamente");
 };
 
 document.addEventListener("DOMContentLoaded", showData);
