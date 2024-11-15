@@ -59,3 +59,45 @@ form button[type="submit"] {
     margin-bottom: 40px;
     margin-top: 40px;
 }
+
+
+
+.nav {
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  z-index: 1030; 
+  padding-top: 20px;
+  background-color: black;
+  text-align: center;
+  display: flex; /* Usar flexbox para centrar los elementos */
+  justify-content: center; /* Centrar los elementos dentro de la barra */
+  --bs-nav-link-color: white;
+}
+
+.nav-tabs {
+  width: 100%; /* Asegúrate de que la barra de navegación ocupe todo el ancho */
+}
+
+.nav-link {
+  display: flex; /* Cambiar a bloque para ocupar todo el ancho */
+  width: 100%; /* Asegura que el enlace ocupe todo el ancho del contenedor */
+  font-size: 1.1rem; /* Tamaño de fuente */
+  padding: 15px 30px;
+  border: none;
+  --bs-nav-tabs-link-active-bg: var(--bs-body-bg);
+  --bs-nav-tabs-border-radius: var(--bs-border-radius);
+}
+
+.nav-link:hover {
+  color: white; /* Color del texto negro al pasar el mouse */
+  padding: 15px 30px;
+  border: none
+}
+
+.nav-link.active {
+  padding: 15px 30px;
+  background-color: #fff; /* Color de fondo blanco para el botón activo */
+  color: #000; /* Color del texto negro para el botón activo */
+
+}
