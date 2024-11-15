@@ -1,4 +1,4 @@
-import { getProducts } from "../menu_principal/js/firebase.js";
+import { getProducts } from "../proyecto-pt2/js/firebase.js";
 
 
 async function mostrarObra() {
