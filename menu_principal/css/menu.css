@@ -162,6 +162,20 @@ body {
     background-color: rgb(60, 63, 68); 
 }
 
+
+.fade{
+    animation: none;
+}
+
+.modal-backdrop {
+--bs-backdrop-bg: none;
+}
+
+
+.navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .bi{
     color: white;
 }
