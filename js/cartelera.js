@@ -1,3 +1,25 @@
+let currentSlide = 0;
+        
+function showSlide(index) {
+    const slides = document.querySelectorAll('.image-slide');
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = index;
+    }
+    const offset = -currentSlide * 100; // -100% por cada slide
+    document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+}
+
+function moveSlide(direction) {
+    showSlide(currentSlide + direction);
+}
+
+// Inicializa el carrusel mostrando el primer slide
+showSlide(currentSlide);
+
 function openModal(title, date, time, price) {
     document.getElementById("modal-title").innerText = title;
     document.getElementById("modal-date").innerText = date;

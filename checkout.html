@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teatro Nacional</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="./css/checkout.css">
 </head>
@@ -11,37 +12,47 @@
     <header>
         <div class="container">
             <p class="logo">Teatro Nacional</p>
-            <nav>
-                <a href="index.html">Inicio</a>
-                <a href="cartelera.html">Cartelera</a>
-                <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
-                <a href="galeria.html">Galería</a>
-                <a href="quienes-somos.html">Quiénes Somos</a>
-                <a href="staff.html">Staff</a>
-                <a href="contactanos.html">Contáctanos</a>
-                <a href="carrito.html">Mis Tickets</a>
+            <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i>
+            </button>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cartelera.html">Cartelera</a></li>
+                    <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="staff.html">Staff</a></li>
+                    <li><a href="contactanos.html">Contáctanos</a></li>
+                    <li><a href="carrito.html">Mis Tickets</a></li>
+                </ul>
+                <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i>
+                </button>
             </nav>
         </div>
     </header>
 
     <div id="cart-summary">
-        <h2>Tu carrito</h2>
+        <h2>Tus Tickets</h2>
         <ul id="cart-items"></ul>
-        <p>Total (USD): <strong id="total-price">$0</strong></p>
+        <p id="toti">  Total (USD): <strong id="total-price">$0</strong></p>
     </div>
     
     <div id="checkout-container">
         <!-- Sección de Dirección de Facturación -->
         <section id="billing-address">
-            <h2>Dirección de Facturación</h2>
+            <h2> Datos Personales </h2>
             <form>
                 <div class="form-group">
-                    <label for="first-name">Nombres</label>
-                    <input type="text" id="first-name" placeholder="Nombre">
-                </div>
-                <div class="form-group">
-                    <label for="last-name">Apellidos</label>
-                    <input type="text" id="last-name" placeholder="Apellido">
+                    <div class="name-fields">
+                        <div class="form-field">
+                            <label for="first-name">Nombres</label>
+                            <input type="text" id="first-name" placeholder="Nombre">
+                        </div>
+                        <div class="form-field">
+                            <label for="last-name">Apellidos</label>
+                            <input type="text" id="last-name" placeholder="Apellido">
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Correo Electrónico (Opcional)</label>
@@ -67,17 +78,7 @@
         <section id="payment">
             <h2>Pago</h2>
             <form>
-                <div class="form-group">
-                    <label>
-                        <input type="radio" name="payment-method" value="credit-card" checked> Tarjeta de Crédito
-                    </label>
-                    <label>
-                        <input type="radio" name="payment-method" value="debit-card"> Tarjeta de Débito
-                    </label>
-                    <label>
-                        <input type="radio" name="payment-method" value="paypal"> PayPal
-                    </label>
-                </div>
+
                 <div class="form-group">
                     <label for="card-name">Nombre en la tarjeta</label>
                     <input type="text" id="card-name" placeholder="Nombre completo en la tarjeta">
@@ -94,12 +95,19 @@
                     <label for="cvv">CVV</label>
                     <input type="text" id="cvv" placeholder="123">
                 </div>
-                <button type="submit" id="checkout-button">Continuar al Pago</button>
             </form>
         </section>
     </div>
 
+    <!-- Nuevo contenedor para el botón -->
+    <div id="button-container">
+        <button id="checkout-button" onclick="redirectToCheckout()">Continuar al Pago</button>
+    </div>
+
     <script src="js/checkout.js"></script> <!-- Enlaza tu archivo de JavaScript aquí -->
+    <script src="./js/hamburguesa.js"></script>
+
+
 </body>
 
 <footer>

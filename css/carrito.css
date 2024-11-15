@@ -30,6 +30,7 @@ h1 {
 
 /* Estilo de la tabla del carrito */
 #carrito {
+    border-collapse: collapse; /* Elimina el espacio entre las celdas */
     margin-top: 20px;
     width: 100%; /* Ancho completo */
     border-collapse: collapse; /* Colapsar bordes */
@@ -115,3 +116,36 @@ h1 {
 .btn-eliminar:hover {
     background-color: #c9302c; /* Color más oscuro al pasar el ratón */
     transform:scale(1.1); /* Efecto de elevación al pasar el ratón */
+}
+
+@media (max-width: 768px) {
+    #carrito {
+        display: block; /* Cambia a bloque para permitir desplazamiento */
+        overflow-x: auto; /* Añade desplazamiento horizontal */
+    }
+
+    #carrito thead {
+        display: none; /* Oculta el encabezado en pantallas pequeñas */
+    }
+
+    #carrito tr {
+        display: block; /* Cada fila se convierte en un bloque */
+        margin-bottom: 15px; /* Espaciado entre filas */
+    }
+
+    #carrito td {
+        display: flex; /* Cambia a flex para el contenido */
+        justify-content: space-between; /* Espaciado entre contenido */
+        padding-left: 50%; /* Espaciado para el contenido */
+        position: relative; /* Posicionamiento relativo para etiquetas */
+    }
+
+    #carrito td::before {
+        content: attr(data-label); /* Usa el atributo data-label para mostrar el encabezado */
+        position: absolute; /* Posición absoluta para etiquetas */
+        left: 10px; /* Espaciado a la izquierda */
+        width: 50%; /* Ancho de la etiqueta */
+        padding-left: 10px; /* Espaciado interno */
+        font-weight: bold; /* Negrita para las etiquetas */
+    }
+}
