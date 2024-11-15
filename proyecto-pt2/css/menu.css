@@ -71,6 +71,16 @@ body {
     position: relative;
 }
 
+.modal-backdrop {
+    --bs-backdrop-bg: none;
+}
+    
+.modal{
+    --bs-modal-width: 75%;
+    margin-left: 160px;
+}
+
+
 #functions-container,
 #empleados-section {
     margin-left: 330px;
