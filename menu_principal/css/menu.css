@@ -162,6 +162,7 @@ body {
     background-color: rgb(60, 63, 68); 
 }
 
+
 .fade{
     animation: none;
 }
@@ -173,4 +174,8 @@ body {
 
 .navbar {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bi{
+    color: white;
 }
