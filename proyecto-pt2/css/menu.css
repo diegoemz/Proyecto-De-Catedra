@@ -35,7 +35,7 @@ body {
 }
 
 .sidebar ul li {
-    margin-bottom: 15px;
+
 }
 
 .sidebar ul li a {
@@ -98,7 +98,7 @@ body {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 10px;
-    border-bottom: 3px solid #2196F3; 
+    border-bottom: 3px solid #021423; 
     padding-bottom: 5px; 
 }
 
@@ -106,7 +106,7 @@ body {
     font-size: 32px; 
     font-weight: bold;
     margin-bottom: 10px;
-    border-bottom: 3px solid #2196F3; 
+    border-bottom: 3px solid #021423; 
     padding-bottom: 5px; 
 }
 
@@ -181,4 +181,15 @@ body {
 
 #closee{
     color: rgba(220, 23, 23, 0.772);
+}
+
+.sidebar-texto{
+    padding: 10px;
+}
+
+@media (min-width: 576px) {
+    .col-sm-6 {
+        flex: 0 0 auto;
+        width: 30%;
+    }
 }

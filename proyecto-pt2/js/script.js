@@ -366,10 +366,11 @@ document.querySelector("#update").onclick = async function (){
     const director = document.getElementById("director-edit").value;
     const productor = document.getElementById("productor-edit").value;
     const localidades = document.getElementById("localidades-edit").value;
-    const precio = document.getElementById("price-edit").value;
+    const price = document.getElementById("price-edit").value;
     const clasificacion = document.getElementById("clasificacion-edit").value;
+    const descripcion = document.getElementById("descripcion-edit").value;
 
-    updateProduct(id, {nombre, fecha, director, productor, localidades, precio, clasificacion})
+    updateProduct(id, {nombre, fecha, director, productor, localidades, descripcion, price, clasificacion})
     showData();
 
     document.getElementById("btn-close").click();
@@ -380,6 +381,7 @@ document.querySelector("#update").onclick = async function (){
     document.getElementById("productor-edit").value = "";
     document.getElementById("localidades-edit").value = "";
     document.getElementById("price-edit").value = "";
+    document.getElementById("descripcion-edit").value = "";
     document.getElementById("clasificacion-edit").value = "";
     alert("Información actualizada exitosamente");
 };
