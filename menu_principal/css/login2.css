@@ -1,0 +1,65 @@
+:root {
+    /* Colores */
+    --blanco-1: #F8F8F8;
+    --beige-1: #F2E3D5;
+    --azul-1: #012E40;
+    --azul-2: #024959;
+    --azul-3: #026773;
+    --azul-4: #3CA6A6;
+    --celeste-1: #234459;
+    --celeste-2: #3C7499;
+    --celeste-3: #5AAEE6;
+    --celeste-4: #94C1FF;
+}
+
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1rem;
+}
+
+/* Estilos para los inputs */
+form input[type="email"],
+form input[type="password"] {
+  border-radius: 20px; /* Bordes redondeados */
+  border: 1px solid #ced4da;
+  padding: 12px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Cambiar el borde al hacer foco en el input */
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  border-color: var(--celeste-3); /* Cambia el color de borde */
+  outline: none; /* Quitar el borde por defecto */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Botones */
+form button[type="submit"] {
+  border-radius: 20px; /* Bordes redondeados para el botón */
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.text-center{
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+#iniciar{
+    align-items: center;
+}
