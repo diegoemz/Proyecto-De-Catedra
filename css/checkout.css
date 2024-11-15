@@ -3,7 +3,8 @@
     flex-direction: column;
     gap: 20px;
     margin-top: 16px;
-    max-width: 70%;
+    max-width: 58%;
+    margin-left: 15px;
 }
 
 #cart-summary {
@@ -11,7 +12,8 @@
     padding: 16px;
     margin-top: 16px;
     float: right;
-    width: 27%;
+    width: 38%;
+    margin-right: 15px;
 }
 
 #cart-summary h2 {
