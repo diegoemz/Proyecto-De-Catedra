@@ -27,7 +27,7 @@ function mostrarSeccion(seccion) {
 import { saveProduct, getProducts, getProductListSize, 
     deleteProduct, getProduct, updateProduct} from "./firebase.js";
 
-import { getUsers, registerUser } from "./firebase2.js";
+import { getUsers, registerUser, deleteUser } from "./firebase2.js";
 
 document.getElementById("registerForm").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -122,6 +122,16 @@ async function showUsers() {
   
     // Insertar el HTML generado en el contenedor adecuado
     document.getElementById("crud-table-2").innerHTML = html;
+    //Recuperando todos los botones con la clase btn-delete
+    const btnsDeleteUser= document.getElementById("crud-table-2").querySelectorAll('.btn-delete');
+    btnsDeleteUser.forEach(btn=>{
+        // Asociando un manejador de eventos para el evento click
+        btn.addEventListener('click',(event)=>{
+            deleteUser(event.target.dataset.id);
+                    alert('Función eliminada correctamente.');
+                    showUsers();
+        })
+    })
   }  
 
 let addButton = document.getElementById("submitdata");
