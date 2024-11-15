@@ -112,3 +112,52 @@ body {
     --bs-modal-width: 77%;
     margin-left: 160px;
 }
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    background-color: rgb(34, 37, 41);
+    padding-top: 20px;
+    z-index: 1000;
+}    
+
+    .sidebar .container-fluid {
+    margin-top: 100px; 
+}
+
+.sidebar .navbar-brand {
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    color: white; 
+    padding: 8px 12px; 
+    background-color: rgb(34, 37, 41); 
+    display: block; 
+    border-radius: 5px; 
+}
+
+.sidebar ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px; 
+}
+
+.sidebar ul li a {
+    display: block; 
+    text-decoration: none; 
+    color: white; 
+    padding: 8px 12px; 
+    background-color: rgb(34, 37, 41); 
+    border-radius: 5px; 
+    font-size: 1rem; 
+}
+
+.sidebar ul li a:hover {
+    background-color: rgb(60, 63, 68); 
+}
