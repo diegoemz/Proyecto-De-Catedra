@@ -16,37 +16,75 @@
             left: 0;
             height: 100%;
             width: 300px;
-            background-color: #343a40;
+            background-color: rgb(34, 37, 41);
             padding-top: 20px;
             z-index: 1000;
+        }    
+
+            .sidebar .container-fluid {
+            margin-top: 100px; 
         }
 
-        /* Content adjustment */
-        .content {
-            margin-left: 300px;
-            padding: 20px;
+        .sidebar .navbar-brand {
+            font-size: 1.8rem; /* Tamaño del texto */
+            font-weight: bold; /* Negrita para mayor visibilidad */
+            color: white; /* Asegura que sea visible */
+            padding: 8px 12px; /* Mismo padding que las opciones */
+            background-color: rgb(34, 37, 41); /* Fondo igual al menú */
+            display: block; /* Ocupa toda la línea */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        .sidebar ul {
+            list-style: none; /* Quita los marcadores de lista */
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px; /* Reduce el espacio entre las opciones */
+        }
+
+        .sidebar ul li a {
+            display: block; /* Hace que toda el área sea clicable */
+            text-decoration: none; /* Quita el subrayado */
+            color: white; /* Texto blanco */
+            padding: 8px 12px; /* Mismo padding que el título */
+            background-color: rgb(34, 37, 41); /* Fondo del enlace */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 1rem; /* Ajusta el tamaño del texto */
+        }
+
+        .sidebar ul li a:hover {
+            background-color: rgb(60, 63, 68); /* Color de fondo al pasar el mouse */
         }
     </style>
 </head>
 
 <body>
 
-    <!-- navbar start -->
+        <!-- navbar start -->
+    <!-- Navbar superior -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid justify-content-center">
+            <span class="navbar-brand mb-0 h1 fs-1 text-white">Bienvenide</span>
+        </div>
+    </nav>
+
     <!-- Sidebar -->
     <nav class="sidebar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Teatro Nacional</a>
-            <div class="d-flex flex-column mt-4">
-                <button type="button" class="btn btn-danger mb-2"><a href="login.html" class="nav-link" style="text-decoration: none; color:black;">Cerrar Sesión</a></button>
-                <button type="button" class="btn btn-add mb-2" data-bs-toggle="modal" data-bs-target="#addDataModal">Agregar Función</button>
-                <button type="button" class="btn btn-add mb-2">Visualizar Funciones</button>
-                <button type="button" class="btn btn-add mb-2" data-bs-toggle="modal" data-bs-target="#addEmpleado">Agregar Empleado</button>
-                <button type="button" class="btn btn-add mb-2">Visualizar Empleados</button>
-                <button type="button" class="btn btn-add mb-2" data-bs-toggle="modal" data-bs-target="#addCredencialesEmpleado">Agregar Credenciales</button>
-            </div>
+            <ul>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#addDataModal">Agregar Función</a></li>
+                <li><a href="#">Visualizar Funciones</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#addEmpleado">Agregar Empleado</a></li>
+                <li><a href="#">Visualizar Empleados</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#addCredencialesEmpleado">Agregar Credenciales</a></li>
+                <li><a href="login.html" class="text-danger">Cerrar Sesión</a></li>
+            </ul>
         </div>
     </nav>
-
     <!-- Main Content -->
     <div class="content">
         <div class="container card-body-all">
