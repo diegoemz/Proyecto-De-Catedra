@@ -27,7 +27,39 @@ function mostrarSeccion(seccion) {
 import { saveProduct, getProducts, getProductListSize, 
     deleteProduct, getProduct, updateProduct} from "./firebase.js";
 
-import { getUsers } from "./firebase2.js";
+import { getUsers, registerUser } from "./firebase2.js";
+
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+  
+    let correo = document.getElementById("registerEmail").value;
+    let password = document.getElementById("registerPassword").value;
+    let firstName = document.getElementById("registerName").value;
+    let lastName = document.getElementById("registerLastName").value;
+    let fechaNac = document.getElementById("registerBirth").value;
+    let telefono = document.getElementById("registerPhone").value;
+    let cargo = document.getElementById("registerCharge").value;
+    let departamento = document.getElementById("registerDepartment").value;
+    
+    
+    const status = await registerUser(correo, password, firstName, lastName, fechaNac, telefono, cargo, departamento);
+  
+    if (status) {
+      alert("Usuario creado exitosamente");
+  
+      // Limpiar los controles del formulario
+      document.getElementById("registerEmail").value = '';
+      document.getElementById("registerPassword").value = '';
+      document.getElementById("registerName").value = '';
+      document.getElementById("registerLastName").value = '';
+      document.getElementById("registerBirth").value = '';
+      document.getElementById("registerPhone").value = '';
+      document.getElementById("registerCharge").value = '';
+      document.getElementById("registerDepartment").value = '';
+    } else {
+      alert("Ya existe un usuario asociado a este correo");
+    }
+  });
 
 async function showUsers() {
     let html = "";
