@@ -36,7 +36,14 @@
         <ul id="cart-items"></ul>
         <p id="toti">  Total (USD): <strong id="total-price">$0</strong></p>
     </div>
-    
+
+    <!-- Nuevo contenedor para el botón -->
+    <div id="button-container">
+        <h2>Pagar</h2>
+        <button id="checkout-button" onclick="processPayment()">Continuar al Pago</button>
+        <p>*Una vez que su pago haya sido procesado, recibirá un correo electrónico con los detalles de su membresía.</p>
+    </div>
+
     <div id="checkout-container">
         <!-- Sección de Dirección de Facturación -->
         <section id="billing-address">
@@ -46,11 +53,11 @@
                     <div class="name-fields">
                         <div class="form-field">
                             <label for="first-name">Nombres</label>
-                            <input type="text" id="first-name" placeholder="Nombre">
+                            <input type="text" id="first-name" placeholder="Nombres">
                         </div>
                         <div class="form-field">
                             <label for="last-name">Apellidos</label>
-                            <input type="text" id="last-name" placeholder="Apellido">
+                            <input type="text" id="last-name" placeholder="Apellidos">
                         </div>
                     </div>
                 </div>
@@ -60,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label for="phone">Número de Teléfono</label>
-                    <input type="tel" id="phone" placeholder="Ej: 12345678" required pattern="[0-9]{8}">
+                    <input type="tel" id="phone" placeholder="7784-1503" required pattern="[0-9]{8}">
                 </div>
                 <div class="form-group">
                     <label for="country">País</label>
@@ -76,7 +83,7 @@
     
         <!-- Sección de Pago -->
         <section id="payment">
-            <h2>Pago</h2>
+            <h2>Metodo de Pago</h2>
             <form>
 
                 <div class="form-group">
@@ -99,10 +106,7 @@
         </section>
     </div>
 
-    <!-- Nuevo contenedor para el botón -->
-    <div id="button-container">
-        <button id="checkout-button" onclick="redirectToCheckout()">Continuar al Pago</button>
-    </div>
+
 
     <script src="js/checkout.js"></script> <!-- Enlaza tu archivo de JavaScript aquí -->
     <script src="./js/hamburguesa.js"></script>

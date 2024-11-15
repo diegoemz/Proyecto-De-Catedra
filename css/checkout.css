@@ -59,9 +59,11 @@
     border-radius: 8px;
     background-color: #051235;
     padding-top: 4px;
-    padding-left: 4px;
-    padding-bottom: 2px;
-    margin-left: 8px;
+    padding-left: 15px;
+    padding-bottom: 4px;
+    margin-left: 4px;
+    font-size: 1.2em; /* Tamaño de la fuente del botón */
+
 }
 
 #billing-address, #payment {
@@ -135,17 +137,30 @@ select {
     
 }
 
+#button-container h2{
+    font-size: 1.8em; /* Aumentar el tamaño del encabezado */
+    margin-bottom: 15px; /* Espaciado inferior */
+    color: #051235;
+}
+
 #checkout-button {
+    margin-left: 4px;
     padding: 10px 20px; /* Espaciado interno del botón */
     font-size: 1.2em; /* Tamaño de la fuente del botón */
-    background-color: #007bff; /* Color de fondo del botón */
+    background-color: #0f3053; /* Color de fondo del botón */
     color: white; /* Color del texto del botón */
     border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 8px; /* Bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     transition: background-color 0.3s; /* Transición suave para el color de fondo */
 }
 
 #checkout-button:hover {
-    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+    background-color: #04172b; /* Color de fondo al pasar el mouse */
+}
+
+#button-container p {
+    margin-top: 10px;
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    color: #555; /* Color gris para el texto */
 }
