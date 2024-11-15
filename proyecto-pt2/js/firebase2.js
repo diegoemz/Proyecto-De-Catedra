@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { getFirestore, doc, addDoc, setDoc, getDoc, getDocs, collection, query, where} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getFirestore, doc, addDoc, setDoc, getDoc, deleteDoc, getDocs, collection, query, where} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -80,3 +80,5 @@ export async function getUsers() {
     return [];
   }
 }
+
+export const deleteUser=(firstName)=> deleteDoc(doc(db,'users',firstName))
