@@ -129,6 +129,7 @@ let addButton = document.getElementById("submitdata");
 addButton.addEventListener("click", AddData);
 
 showData();
+showUsers();
 
 function validateData(){
     let nombre = document.getElementById("nombre").value.trim();
