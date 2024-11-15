@@ -22,6 +22,23 @@ document.getElementById("functions-container").addEventListener("mouseleave", ()
     document.getElementById("crud-table").innerHTML = ""; // Limpia los datos
 });
 
+// Mostrar las funciones al hacer clic en "Visualizar empleados"
+document.getElementById("visualizar-empleados").addEventListener("click", (event) => {
+    event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    const empleadosSection = document.getElementById("empleados-section");
+    empleadosSection.style.display = "block"; // Muestra el contenedor
+    showData_2(); // Llama a la función para cargar los datos
+});
+
+// Ocultar las funciones al mover el cursor fuera del contenedor
+document.getElementById("empleados-section").addEventListener("mouseleave", () => {
+    const empleadosSection = document.getElementById("empleados-section");
+    empleadosSection.style.display = "none"; // Oculta el contenedor
+    document.getElementById("crud-table-2").innerHTML = ""; // Limpia los datos
+});
+
+
+
 
 
 function validateData(){
@@ -159,7 +176,7 @@ async function showData(){
             console.log(element);
             const product=element.data();
             html+=`<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card shadow-sm h-100">
+            <div class="card shadow-sm h-100" id="carta-funcion">
                 <img src="${product.image}" class="card-img-top" alt="Imagen de la obra">
                 <div class="card-body" id="cartass">
                     <h5 class="card-title text-center">${product.nombre}</h5>

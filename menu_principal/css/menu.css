@@ -67,10 +67,15 @@ body {
 
 .content{
     margin-left: 350px;
-    margin-top: 50px;
+    margin-top: 125px;
 }
 
 #functions-container{
     margin-left: 350px;
-    margin-top: 50px;
+    margin-top: 125px;
+}
+
+#empleados-section{
+    margin-left: 350px;
+    margin-top: 125px;
 }
