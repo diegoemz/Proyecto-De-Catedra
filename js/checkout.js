@@ -15,3 +15,35 @@ cartItems.forEach(item => {
 
 // Mostrar el total en el resumen
 document.getElementById('total-price').innerText = `$${totalPrice.toFixed(2)}`;
+
+function processPayment() {
+    // Obtener datos del formulario
+    const firstName = document.getElementById('first-name').value;
+    const lastName = document.getElementById('last-name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const country = document.getElementById('country').value;
+    const cardName = document.getElementById('card-name').value;
+    const cardNumber = document.getElementById('card-number').value;
+    const expiration = document.getElementById('expiration').value;
+    const cvv = document.getElementById('cvv').value;
+
+    // Crear un objeto con los datos
+    const paymentData = {
+        firstName,
+        lastName,
+        email,
+        phone,
+        country,
+        cardName,
+        cardNumber,
+        expiration,
+        cvv
+    };
+
+    // Guardar los datos en localStorage
+    localStorage.setItem('paymentData', JSON.stringify(paymentData));
+
+    // Redirigir a la página de éxito
+    window.location.href = 'exito.html';
+}
