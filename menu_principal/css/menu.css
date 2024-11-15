@@ -59,3 +59,13 @@ body {
 .form-control {
     border-radius: 5px;
 }
+
+.content{
+    margin-left: 350px;
+    margin-top: 50px;
+}
+
+#functions-container{
+    margin-left: 350px;
+    margin-top: 50px;
+}
