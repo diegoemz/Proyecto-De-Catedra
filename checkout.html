@@ -34,7 +34,7 @@
     <div id="cart-summary">
         <h2>Tus Tickets</h2>
         <ul id="cart-items"></ul>
-        <p>Total (USD): <strong id="total-price">$0</strong></p>
+        <p id="toti">  Total (USD): <strong id="total-price">$0</strong></p>
     </div>
     
     <div id="checkout-container">
@@ -43,12 +43,16 @@
             <h2> Datos Personales </h2>
             <form>
                 <div class="form-group">
-                    <label for="first-name">Nombres</label>
-                    <input type="text" id="first-name" placeholder="Nombre">
-                </div>
-                <div class="form-group">
-                    <label for="last-name">Apellidos</label>
-                    <input type="text" id="last-name" placeholder="Apellido">
+                    <div class="name-fields">
+                        <div class="form-field">
+                            <label for="first-name">Nombres</label>
+                            <input type="text" id="first-name" placeholder="Nombre">
+                        </div>
+                        <div class="form-field">
+                            <label for="last-name">Apellidos</label>
+                            <input type="text" id="last-name" placeholder="Apellido">
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Correo Electrónico (Opcional)</label>
@@ -74,17 +78,7 @@
         <section id="payment">
             <h2>Pago</h2>
             <form>
-                <div class="form-group">
-                    <label>
-                        <input type="radio" name="payment-method" value="credit-card" checked> Tarjeta de Crédito
-                    </label>
-                    <label>
-                        <input type="radio" name="payment-method" value="debit-card"> Tarjeta de Débito
-                    </label>
-                    <label>
-                        <input type="radio" name="payment-method" value="paypal"> PayPal
-                    </label>
-                </div>
+
                 <div class="form-group">
                     <label for="card-name">Nombre en la tarjeta</label>
                     <input type="text" id="card-name" placeholder="Nombre completo en la tarjeta">
@@ -101,9 +95,13 @@
                     <label for="cvv">CVV</label>
                     <input type="text" id="cvv" placeholder="123">
                 </div>
-                <button type="submit" id="checkout-button">Continuar al Pago</button>
             </form>
         </section>
+    </div>
+
+    <!-- Nuevo contenedor para el botón -->
+    <div id="button-container">
+        <button id="checkout-button" onclick="redirectToCheckout()">Continuar al Pago</button>
     </div>
 
     <script src="js/checkout.js"></script> <!-- Enlaza tu archivo de JavaScript aquí -->
