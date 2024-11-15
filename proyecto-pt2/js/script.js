@@ -128,7 +128,7 @@ async function showUsers() {
         // Asociando un manejador de eventos para el evento click
         btn.addEventListener('click',(event)=>{
             deleteUser(event.target.dataset.id);
-                    alert('Función eliminada correctamente.');
+                    alert('Empleado eliminado correctamente.');
                     showUsers();
         })
     })
