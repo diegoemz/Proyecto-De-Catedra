@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { getFirestore, doc, addDoc, setDoc, getDoc, getDocs, collection, query, where} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getFirestore, doc, addDoc, setDoc, getDoc, deleteDoc, getDocs, collection, query, where} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -41,28 +41,27 @@ import { getFirestore, doc, addDoc, setDoc, getDoc, getDocs, collection, query, 
   }
 }
 
-// Función para iniciar sesión
 export async function loginUser(email, password) {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    // Obtener datos del usuario desde la base de datos
+    // Obtener datos del usuario desde Firestore
     const dataUser = await getDoc(doc(db, 'users', user.uid));
 
     if (dataUser.exists()) {
-      console.log("Inicio de sesión exitoso:", dataUser.data().role);
-      return dataUser.data(); // Devolver los datos del usuario
+      const userData = dataUser.data();
+      console.log("Inicio de sesión exitoso:", userData.role);
+      return userData; // Retorna los datos, incluyendo el rol
     } else {
-      // Si el usuario no existe en la base de datos, lanzar un error
       throw new Error("El usuario no existe en la base de datos.");
     }
   } catch (error) {
-    // Manejar los errores de inicio de sesión, ya sea por credenciales incorrectas o cualquier otro error
     console.error("Error en el inicio de sesión:", error.message);
-    return null; // Retornar null en caso de error (esto evitará redirección)
+    return null; // En caso de error
   }
 }
+
 
 // Función para obtener la lista de usuarios
 export async function getUsers() {
@@ -81,3 +80,5 @@ export async function getUsers() {
     return [];
   }
 }
+
+export const deleteUser=(firstName)=> deleteDoc(doc(db,'users',firstName))

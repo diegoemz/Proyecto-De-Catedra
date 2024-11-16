@@ -1,4 +1,4 @@
-import { getProducts } from "../menu_principal/js/firebase.js";
+import { getProducts } from "../proyecto-pt2/js/firebase.js";
 
 
 async function mostrarObra() {
@@ -11,6 +11,13 @@ async function mostrarObra() {
 
     console.log(arr);
 
+    arr.sort((a, b) => {
+        const nameA = a.nombre.toLowerCase(); // Convertir a minúsculas para una comparación case-insensitive
+        const nameB = b.nombre.toLowerCase();
+        if (nameA < nameB) return -1; // Si nameA es menor, a va primero
+        if (nameA > nameB) return 1;  // Si nameA es mayor, b va primero
+        return 0; // Si son iguales, no cambia el orden
+    });
 
 
     // Selecciona el contenedor donde se agregarán las tarjetas

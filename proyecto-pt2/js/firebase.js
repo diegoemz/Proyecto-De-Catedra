@@ -35,4 +35,7 @@ const firebaseConfig = {
 
 export const deleteProduct=(id)=> deleteDoc(doc(db,'products',id))
 
+export const deleteUser=(firstName)=> deleteDoc(doc(db,'users',firstName))
+
+
 export const updateProduct=(id, newFields)=>updateDoc(doc(db,'products',id), newFields)

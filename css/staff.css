@@ -7,6 +7,15 @@
 
 }
 
+.admin-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 3%;
+    grid-template-columns: repeat(5, 1fr);
+}
+
 .staff-section {
     text-align: center;
     padding: 50px;
@@ -20,8 +29,8 @@
 
 .staff-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
